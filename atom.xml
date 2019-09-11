@@ -5,9 +5,9 @@
   <subtitle>cchblog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://cchblog.cn/"/>
+  <link href="https://blog.haichong.xyz/"/>
   <updated>2019-08-21T07:26:13.000Z</updated>
-  <id>https://cchblog.cn/</id>
+  <id>https://blog.haichong.xyz/</id>
   
   <author>
     <name>亥虫</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>二零一七年终总结</title>
-    <link href="https://cchblog.cn/2018/01/22/2017-conclusion/"/>
-    <id>https://cchblog.cn/2018/01/22/2017-conclusion/</id>
+    <link href="https://blog.haichong.xyz/2018/01/22/2017-conclusion/"/>
+    <id>https://blog.haichong.xyz/2018/01/22/2017-conclusion/</id>
     <published>2018-01-22T04:32:09.000Z</published>
     <updated>2019-08-21T07:26:13.000Z</updated>
     
@@ -35,10 +35,10 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://cchblog.cn/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://blog.haichong.xyz/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="https://cchblog.cn/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://blog.haichong.xyz/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
