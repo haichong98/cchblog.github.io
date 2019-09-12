@@ -23,13 +23,6 @@
   </url>
   
   <url>
-    <loc>https://blog.haichong.xyz/categories/index.html</loc>
-    
-    <lastmod>2019-08-21T07:26:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.haichong.xyz/archives/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
@@ -38,6 +31,13 @@
   
   <url>
     <loc>https://blog.haichong.xyz/contact/index.html</loc>
+    
+    <lastmod>2019-08-21T07:26:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.haichong.xyz/categories/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     
