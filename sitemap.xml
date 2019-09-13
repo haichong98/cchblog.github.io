@@ -16,6 +16,13 @@
   </url>
   
   <url>
+    <loc>https://cchblog.cn/about/index.html</loc>
+    
+    <lastmod>2019-08-21T07:26:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://cchblog.cn/archives/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
@@ -23,7 +30,7 @@
   </url>
   
   <url>
-    <loc>https://cchblog.cn/about/index.html</loc>
+    <loc>https://cchblog.cn/friends/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     
@@ -37,13 +44,6 @@
   </url>
   
   <url>
-    <loc>https://cchblog.cn/tags/index.html</loc>
-    
-    <lastmod>2019-08-21T07:26:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://cchblog.cn/contact/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
@@ -51,7 +51,7 @@
   </url>
   
   <url>
-    <loc>https://cchblog.cn/friends/index.html</loc>
+    <loc>https://cchblog.cn/tags/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     
