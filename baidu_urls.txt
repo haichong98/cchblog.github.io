@@ -1,2 +1,15 @@
 https://cchblog.cn/2019/09/17/cong-li-lun-dao-shi-jian-quan-fang-wei-ren-shi-dns-shi-jian-pian/
 https://cchblog.cn/2019/09/15/cong-li-lun-dao-shi-jian-quan-fang-wei-ren-shi-dns-li-lun-pian/
+https://cchblog.cn/2019/05/16/chong-zhuang-windows-xi-tong/
+https://cchblog.cn/2019/05/16/python-dian-zi-shu-ji/
+https://cchblog.cn/2019/05/16/02-xuan-ze-pai-xu/
+https://cchblog.cn/2019/05/15/01-er-fen-cha-zhao-suan-fa/
+https://cchblog.cn/2019/04/02/json-mo-kuai/
+https://cchblog.cn/2019/04/02/csv-mo-kuai/
+https://cchblog.cn/2019/04/02/pypdf2-mo-kuai/
+https://cchblog.cn/2019/03/31/clover-wu-guang-gao-lu-se-ban/
+https://cchblog.cn/2019/03/27/openpyxl-mo-kuai/
+https://cchblog.cn/2019/03/26/windows10-kai-qi-zhuo-yue-xing-neng/
+https://cchblog.cn/2019/03/26/bai-du-wang-pan-jia-su-xia-zai/
+https://cchblog.cn/2019/03/16/os-mo-kuai/
+https://cchblog.cn/2019/03/15/re-mo-kuai/

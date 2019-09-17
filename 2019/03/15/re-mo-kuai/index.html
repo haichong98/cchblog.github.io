@@ -1,0 +1,1276 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="正则表达式, 懂得感恩，是收获幸福的源泉。懂得感恩，你会发现原来自己周围的一切都是那样的美好。">
+    <meta name="baidu-site-verification" content>
+    <meta name="google-site-verification" content>
+    <meta name="description" content="创建正则表达式对象phoneNumRegex = re.compile(r’\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d’)
+传入一个字符串值，表示正则表达式，它将返回一个 Regex 模式对象（或者就简称为 Regex">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>正则表达式 | 亥虫的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">亥虫的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">亥虫的博客</div>
+        <div class="logo-desc">
+            
+            自由 | 奋斗 | python
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/haichong98" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/haichong98" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        正则表达式
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        <span class="chip bg-color">无标签</span>
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/python/" class="post-category" target="_blank">
+                            python
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-03-15
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    亥虫
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="创建正则表达式对象"><a href="#创建正则表达式对象" class="headerlink" title="创建正则表达式对象"></a>创建正则表达式对象</h2><p>phoneNumRegex = re.compile(r’\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d’)</p>
+<p>传入一个字符串值，表示正则表达式，它将返回一个 Regex 模式对象（或者就简称为 Regex 对象）。</p>
+<h2 id="匹配-Regex-对象"><a href="#匹配-Regex-对象" class="headerlink" title="匹配 Regex 对象"></a>匹配 Regex 对象</h2><p>如果字符串中没有找到该正则表达式模式，search()方法将返回 None。如果找到了该模式，search()方法将返回一个 Match 对象。Match 对象有一个 group()方法，它返回被查找字符串中实际匹配的文本</p>
+<p>phoneNumRegex = re.compile(r’\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d’)<br>mo = phoneNumRegex.search(‘My number is 415-555-4242.’)<br>print(‘Phone number found: ‘ + mo.group())<br>Phone number found: 415-555-4242</p>
+<h2 id="利用括号分组"><a href="#利用括号分组" class="headerlink" title="利用括号分组"></a>利用括号分组</h2><p>正则表达式字符串中的第一对括号是第 1 组。第二对括号是第 2 组。向 group()匹配对象方法传入整数 1 或 2，就可以取得匹配文本的不同部分。向 group()方法传入 0 或不传入参数，将返回整个匹配的文本。</p>
+<blockquote>
+<blockquote>
+<p>&gt; phoneNumRegex = re.compile(r’(\\d\\d\\d)-(\\d\\d\\d-\\d\\d\\d\\d)’)<br>&gt; mo = phoneNumRegex.search(‘My number is 415-555-4242.’)<br>&gt; mo.group(1)<br>‘415’ </p>
+</blockquote>
+</blockquote>
+<p>如果想要一次就获取所有的分组，请使用 groups()方法，注意函数名的复数形式。</p>
+<blockquote>
+<blockquote>
+<p>&gt; mo.groups()<br>(‘415’, ‘555-4242’)<br>&gt; areaCode, mainNumber = mo.groups()<br>&gt; print(areaCode)<br>415<br>&gt; print(mainNumber)<br>555-4242</p>
+</blockquote>
+</blockquote>
+<h2 id="管道匹配多个分组"><a href="#管道匹配多个分组" class="headerlink" title="管道匹配多个分组"></a>管道匹配多个分组</h2><p>字符|称为“管道”。希望匹配许多表达式中的一个时，就可以使用它。如果 Batman 和 Tina Fey 都出现在被查找的字符串中，第一次出现的匹配文本，将作为 Match 对象返回。</p>
+<blockquote>
+<blockquote>
+<p>&gt; heroRegex = re.compile (r’Batman|Tina Fey’)<br>&gt; mo1 = heroRegex.search(‘Batman and Tina Fey.’)<br>&gt; mo1.group()<br>‘Batman’<br>&gt; mo2 = heroRegex.search(‘Tina Fey and Batman.’)<br>&gt; mo2.group()<br>‘Tina Fey’ </p>
+</blockquote>
+</blockquote>
+<p>也可以使用管道来匹配多个模式中的一个，作为正则表达式的一部分。例如，假设你希望匹配 ‘Batman’ 、’Batmobile’ 、’Batcopter’ 和 ‘Batbat’ 中任意一个。因为所有这些字符串都以 Bat 开始，所以如果能够只指定一次前缀，就很方便。这可以通过括号实现。在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; batRegex = re.compile(r’Bat(man|mobile|copter|bat)’)<br>&gt; mo = batRegex.search(‘Batmobile lost a wheel’)<br>&gt; mo.group()<br>‘Batmobile’<br>&gt; mo.group(1)<br>‘mobile</p>
+</blockquote>
+</blockquote>
+<h2 id="用问号实现可选匹配"><a href="#用问号实现可选匹配" class="headerlink" title="用问号实现可选匹配"></a>用问号实现可选匹配</h2><p>有时候，想匹配的模式是可选的。就是说，不论这段文本在不在，正则表达式都会认为匹配。字符?表明它前面的分组在这个模式中是可选的。例如，在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; batRegex = re.compile(r’Bat(wo)?man’)<br>&gt; mo1 = batRegex.search(‘The Adventures of Batman’)<br>&gt; mo1.group()<br>‘Batman’<br>&gt; mo2 = batRegex.search(‘The Adventures of Batwoman’)<br>&gt; mo2.group()<br>‘Batwoman’</p>
+</blockquote>
+</blockquote>
+<p>你可以认为?是在说，“匹配这个问号之前的分组零次或一次”。</p>
+<h2 id="用星号匹配零次或多次"><a href="#用星号匹配零次或多次" class="headerlink" title="用星号匹配零次或多次"></a>用星号匹配零次或多次</h2><p>*（称为星号）意味着“匹配零次或多次”，即星号之前的分组，可以在文本中出现任意次。它可以完全不存在，或一次又一次地重复。让我们再来看看 Batman 的例子。</p>
+<blockquote>
+<blockquote>
+<p>&gt; batRegex = re.compile(r’Bat(wo)*man’)<br>&gt; mo1 = batRegex.search(‘The Adventures of Batman’)<br>&gt; mo1.group()<br>‘Batman’<br>&gt; mo2 = batRegex.search(‘The Adventures of Batwoman’)<br>&gt; mo2.group()<br>‘Batwoman’<br>&gt; mo3 = batRegex.search(‘The Adventures of Batwowowowoman’)<br>&gt; mo3.group()<br>‘Batwowowowoman’</p>
+</blockquote>
+</blockquote>
+<p>对于’Batman’，正则表达式的(wo)<em>部分匹配 wo 的零个实例。对于’Batwoman’，(wo)</em>匹配 wo 的一个实例。对于’Batwowowowoman’，(wo)*匹配 wo 的 4 个实例。</p>
+<h2 id="用加号匹配一次或多次"><a href="#用加号匹配一次或多次" class="headerlink" title="用加号匹配一次或多次"></a>用加号匹配一次或多次</h2><p>*意味着“匹配零次或多次”，+（加号）则意味着“匹配一次或多次”。星号不要求分组出现在匹配的字符串中，但加号不同，加号前面的分组必须“至少出现一次”。</p>
+<blockquote>
+<blockquote>
+<p>&gt; batRegex = re.compile(r’Bat(wo)+man’)<br>&gt; mo1 = batRegex.search(‘The Adventures of Batwoman’)<br>&gt; mo1.group()<br>‘Batwoman’<br>&gt; mo2 = batRegex.search(‘The Adventures of Batwowowowoman’)<br>&gt; mo2.group()<br>‘Batwowowowoman’<br>&gt; mo3 = batRegex.search(‘The Adventures of Batman’)<br>&gt; mo3 == None<br>True</p>
+</blockquote>
+</blockquote>
+<h2 id="用花括号匹配特定次数"><a href="#用花括号匹配特定次数" class="headerlink" title="用花括号匹配特定次数"></a>用花括号匹配特定次数</h2><p>正则表达式(Ha){3}将匹配字符串’HaHaHa’，但不会匹配’HaHa’，因为后者只重复了(Ha)分组两次。 除了一个数字，还可以指定一个范围，即在花括号中写下一个最小值、一个逗号和一个最大值。例如，正则表达式(Ha){3,5}将匹配’HaHaHa’、’HaHaHaHa’和’HaHaHaHaHa’。 也可以不写花括号中的第一个或第二个数字，不限定最小值或最大值。例如， (Ha){3,}将匹配 3 次或更多次实例，(Ha){,5}将匹配 0 到 5 次实例。</p>
+<blockquote>
+<blockquote>
+<p>&gt; haRegex = re.compile(r’(Ha){3}’)<br>&gt; mo1 = haRegex.search(‘HaHaHa’)<br>&gt; mo1.group()<br>‘HaHaHa’<br>&gt; mo2 = haRegex.search(‘Ha’)<br>&gt; mo2 == None<br>True </p>
+</blockquote>
+</blockquote>
+<p>这里，(Ha){3}匹配’HaHaHa’，但不匹配’Ha’。因为它不匹配’Ha’，所以 search()返回 None。</p>
+<h2 id="贪心和非贪心匹配"><a href="#贪心和非贪心匹配" class="headerlink" title="贪心和非贪心匹配"></a>贪心和非贪心匹配</h2><p>在字符串’HaHaHaHaHa’中，因为(Ha){3,5}可以匹配 3 个、4 个或 5 个实例，你可能会想，为什么在前面花括号的例子中，Match 对象的 group()调用会返回’HaHaHaHaHa’，而不是更短的可能结果。毕竟，’HaHaHa’和’HaHaHaHa’也能够有效地匹配正则表达式(Ha){3,5}。 Python 的正则表达式默认是“贪心”的，这表示在有二义的情况下，它们会尽可能匹配最长的字符串。花括号的“非贪心”版本匹配尽可能最短的字符串，即在结束的花括号后跟着一个问号。 在交互式环境中输入以下代码，注意在查找相同字符串时，花括号的贪心形式和非贪心形式之间的区别：</p>
+<blockquote>
+<blockquote>
+<p>&gt; greedyHaRegex = re.compile(r’(Ha){3,5}’)<br>&gt; mo1 = greedyHaRegex.search(‘HaHaHaHaHa’)<br>&gt; mo1.group()<br>‘HaHaHaHaHa’<br>&gt; nongreedyHaRegex = re.compile(r’(Ha){3,5}?’)<br>&gt; mo2 = nongreedyHaRegex.search(‘HaHaHaHaHa’)<br>&gt; mo2.group()<br>‘HaHaHa’ </p>
+</blockquote>
+</blockquote>
+<p>请注意，问号在正则表达式中可能有两种含义：声明非贪心匹配或表示可选的分组。这两种含义是完全无关的。</p>
+<h2 id="findall-方法"><a href="#findall-方法" class="headerlink" title="findall()方法"></a>findall()方法</h2><p>findall()方法返回一个字符串列表，只要在正则表达式中没有分组。列表中的每个字符串都是一段被查找的文本，它匹配该正则表达式。在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; phoneNumRegex = re.compile(r’\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d’) # has no groups<br>&gt; phoneNumRegex.findall(‘Cell: 415-555-9999 Work: 212-555-0000’)<br>[‘415-555-9999’, ‘212-555-0000’]</p>
+</blockquote>
+</blockquote>
+<p>如果在正则表达式中有分组，那么 findall 将返回元组的列表。每个元组表示一个找到的匹配，其中的项就是正则表达式中每个分组的匹配字符串。为了看看 findall()的效果，请在交互式环境中输入以下代码（请注意，被编译的正则表达式现在有括号分组）：</p>
+<blockquote>
+<blockquote>
+<p>&gt; phoneNumRegex = re.compile(r’(\\d\\d\\d)-(\\d\\d\\d)-(\\d\\d\\d\\d)’) # has groups<br>&gt; phoneNumRegex.findall(‘Cell: 415-555-9999 Work: 212-555-0000’)<br>[(‘415’, ‘555’, ‘1122’), (‘212’, ‘555’, ‘0000’)] </p>
+</blockquote>
+</blockquote>
+<p>作为 findall()方法的返回结果的总结，请记住下面两点：</p>
+<ol>
+<li>如果调用在一个没有分组的正则表达式上，例如\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d，方法 findall()将返回一个匹配字符串的列表，例如[‘415-555-9999’, ‘212-555-0000’]。</li>
+<li>如果调用在一个有分组的正则表达式上，例如(\\d\\d\\d)-(\\d\\d\\d)-(\\d\\d\\d\\d)，方 法 findall()将返回一个字符串的元组的列表（每个分组对应一个字符串），例如[(‘415’, ‘555’, ‘1122’), (‘212’, ‘555’, ‘0000’)]。</li>
+</ol>
+<h2 id="字符分类"><a href="#字符分类" class="headerlink" title="字符分类"></a>字符分类</h2><blockquote>
+<p>\\d 0 到 9 的任何数字 \\D 除 0 到 9 的数字以外的任何字符 \\w 任何字母、数字或下划线字符（可以认为是匹配“单词”字符） \\W 除字母、数字和下划线以外的任何字符 \\s 空格、制表符或换行符（可以认为是匹配“空白”字符） \\S 除空格、制表符和换行符以外的任何字符</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>&gt; xmasRegex = re.compile(r’\\d+\\s\\w+’)<br>&gt; xmasRegex.findall(‘12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7<br>swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge’)<br>[‘12 drummers’, ‘11 pipers’, ‘10 lords’, ‘9 ladies’, ‘8 maids’, ‘7 swans’, ‘6<br>geese’, ‘5 rings’, ‘4 birds’, ‘3 hens’, ‘2 doves’, ‘1 partridge’]</p>
+</blockquote>
+</blockquote>
+<p>正则表达式\\d+\\s\\w+匹配的文本有一个或多个数字(\\d+)，接下来是一个空白字符(\\s)，接下来是一个或多个字母/数字/下划线字符(\\w+)。findall()方法将返回所有匹配该正则表达式的字符串，放在一个列表中。</p>
+<h2 id="建立自己的字符分类"><a href="#建立自己的字符分类" class="headerlink" title="建立自己的字符分类"></a>建立自己的字符分类</h2><p>有时候你想匹配一组字符，但缩写的字符分类（\\d、\\w、\\s 等）太宽泛。你可以用方括号定义自己的字符分类。例如，字符分类[aeiouAEIOU]将匹配所有元音字符，不论大小写。在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; vowelRegex = re.compile(r’[aeiouAEIOU]‘)<br>&gt; vowelRegex.findall(‘RoboCop eats baby food. BABY FOOD.’)<br>[‘o’, ‘o’, ‘o’, ‘e’, ‘a’, ‘a’, ‘o’, ‘o’, ‘A’, ‘O’, ‘O’] </p>
+</blockquote>
+</blockquote>
+<p>也可以使用短横表示字母或数字的范围。例如，字符分类[a-zA-Z0-9]将匹配所有小写字母、大写字母和数字。 请注意，在方括号内，普通的正则表达式符号不会被解释。这意味着，你不需要前面加上倒斜杠转义.、*、?或()字符。例如，字符分类将匹配数字 0 到 5 和一个句点。你不需要将它写成[0-5\.]。 通过在字符分类的左方括号后加上一个插入字符（^），就可以得到“非字符类”。非字符类将匹配不在这个字符类中的所有字符。例如，在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; consonantRegex = re.compile(r’[^aeiouAEIOU]‘)<br>&gt; consonantRegex.findall(‘RoboCop eats baby food. BABY FOOD.’)<br>[‘R’, ‘b’, ‘c’, ‘p’, ‘ ‘, ‘t’, ‘s’, ‘ ‘, ‘b’, ‘b’, ‘y’, ‘ ‘, ‘f’, ‘d’, ‘.’, ‘<br>‘, ‘B’, ‘B’, ‘Y’, ‘ ‘, ‘F’, ‘D’, ‘.’]</p>
+</blockquote>
+</blockquote>
+<p>现在，不是匹配所有元音字符，而是匹配所有非元音字符。</p>
+<h2 id="插入字符和美元字符"><a href="#插入字符和美元字符" class="headerlink" title="插入字符和美元字符"></a>插入字符和美元字符</h2><ul>
+<li>（^），表明匹配必须发生在被查找文本开始处。</li>
+<li>（$），表示该字符串必须以这个正则表达式的模式结束。</li>
+</ul>
+<p>可以同时使用^和$，表明整个字符串必须匹配该模式，也就是说，只匹配该字符串的某个子集是不够的。正则表达式 r’^Hello’匹配以’Hello’开始的字符串。在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; beginsWithHello = re.compile(r’^Hello’)<br>&gt; beginsWithHello.search(‘Hello world!’)<br>&lt;_sre.SRE_Match object; span=(0, 5), match=’Hello’&gt;<br>&gt; beginsWithHello.search(‘He said hello.’) == None<br>True</p>
+</blockquote>
+</blockquote>
+<p>正则表达式 r’\\d$’匹配以数字 0 到 9 结束的字符串。在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; endsWithNumber = re.compile(r’\\d$’)<br>&gt; endsWithNumber.search(‘Your number is 42’)<br>&lt;_sre.SRE_Match object; span=(16, 17), match=’2’&gt;</p>
+</blockquote>
+</blockquote>
+<p>正则表达式 r’^\\d+$’匹配从开始到结束都是数字的字符串。在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; wholeStringIsNum = re.compile(r’^\\d+$’)<br>&gt; wholeStringIsNum.search(‘1234567890’)<br>&lt;_sre.SRE_Match object; span=(0, 10), match=’1234567890’&gt;<br>&gt; wholeStringIsNum.search(‘12345xyz67890’) == None<br>True<br>&gt; wholeStringIsNum.search(‘12 34567890’) == None<br>True</p>
+</blockquote>
+</blockquote>
+<p>前面交互式脚本例子中的最后两次 search()调用表明，如果使用了^和$，那么整个字符串必须匹配该正则表达式。</p>
+<h2 id="通配字符"><a href="#通配字符" class="headerlink" title="通配字符"></a>通配字符</h2><p>在正则表达式中，.（句点）字符称为“通配符”。它匹配除了换行之外的所有字符。例如，在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; atRegex = re.compile(r’.at’)<br>&gt; atRegex.findall(‘The cat in the hat sat on the flat mat.’)<br>[‘cat’, ‘hat’, ‘sat’, ‘lat’, ‘mat’]</p>
+</blockquote>
+</blockquote>
+<p>要记住，句点字符只匹配一个字符</p>
+<h2 id="用点-星匹配所有字符"><a href="#用点-星匹配所有字符" class="headerlink" title="用点-星匹配所有字符"></a>用点-星匹配所有字符</h2><p>句点字符表示“除换行外所有单个字符”，星号字符表示“前面字符出现零次或多次”。在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; nameRegex = re.compile(r’First Name: (.<em>) Last Name: (.</em>)’)<br>&gt; mo = nameRegex.search(‘First Name: Al Last Name: Sweigart’)<br>&gt; mo.group(1)<br>‘Al’<br>&gt; mo.group(2)<br>‘Sweigart’</p>
+</blockquote>
+</blockquote>
+<p>点-星使用“贪心”模式：它总是匹配尽可能多的文本。要用“非贪心”模式匹配所有文本，就使用点-星和问号。</p>
+<blockquote>
+<blockquote>
+<p>&gt; nongreedyRegex = re.compile(r’&lt;.<em>?&gt;’)<br>&gt; mo = nongreedyRegex.search(‘<to serve man> for dinner.&gt;’)<br>&gt; mo.group()<br>‘<to serve man>‘<br>&gt; greedyRegex = re.compile(r’&lt;.</to></to></em>&gt;’)<br>&gt; mo = greedyRegex.search(‘<to serve man> for dinner.&gt;’)<br>&gt; mo.group()<br>‘<to serve man> for dinner.&gt;’</to></to></p>
+</blockquote>
+</blockquote>
+<p>两个正则表达式都可以翻译成“匹配一个左尖括号，接下来是任意字符，接下来是一个右尖括号”。但是字符串’ for dinner.&gt;’对右肩括号有两种可能的匹配。在非贪心的正则表达式中，Python 匹配最短可能的字符串：’’。在贪心版本中，Python 匹配最长可能的字符串：’ for dinner.&gt;’。</p>
+<h2 id="用句点字符匹配换行"><a href="#用句点字符匹配换行" class="headerlink" title="用句点字符匹配换行"></a>用句点字符匹配换行</h2><p>点-星将匹配除换行外的所有字符。通过传入 re.DOTALL 作为 re.compile()的第二个参数，可以让句点字符匹配所有字符，包括换行字符。</p>
+<blockquote>
+<blockquote>
+<p>&gt; noNewlineRegex = re.compile(‘.<em>‘)<br>&gt; noNewlineRegex.search(‘Serve the public trust.\\nProtect the innocent.<br>\\nUphold the law.’).group()<br>‘Serve the public trust.’<br>&gt; newlineRegex = re.compile(‘.</em>‘, re.DOTALL)<br>&gt; newlineRegex.search(‘Serve the public trust.\\nProtect the innocent.\\nUphold the law.’).group()<br>‘Serve the public trust.\\nProtect the innocent.\\nUphold the law.’</p>
+</blockquote>
+</blockquote>
+<h2 id="不区分大小写的匹配"><a href="#不区分大小写的匹配" class="headerlink" title="不区分大小写的匹配"></a>不区分大小写的匹配</h2><p>要让正则表达式不区分大小写，可以向 re.compile()传入 re.IGNORECASE 或 re.I，作为第二个参数。 在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; robocop = re.compile(r’robocop’, re.I)<br>&gt; robocop.search(‘RoboCop is part man, part machine, all cop.’).group()<br>‘RoboCop’<br>&gt; robocop.search(‘ROBOCOP protects the innocent.’).group()<br>‘ROBOCOP’ </p>
+</blockquote>
+</blockquote>
+<h2 id="用-sub-方法替换字符串"><a href="#用-sub-方法替换字符串" class="headerlink" title="用 sub()方法替换字符串"></a>用 sub()方法替换字符串</h2><p>第一个参数是一个字符串，用于取代发现的匹配。第二个参数是一个字符串，即正则表达式。sub()方法返回替换完成后的字符串。例如，在交互式环境中输入以下代码：</p>
+<blockquote>
+<blockquote>
+<p>&gt; namesRegex = re.compile(r’Agent \\w+’)<br>&gt; namesRegex.sub(‘CENSORED’, ‘Agent Alice gave the secret documents to Agent Bob.’)<br>‘CENSORED gave the secret documents to CENSORED.’</p>
+</blockquote>
+</blockquote>
+<p>有时候，你可能需要使用匹配的文本本身，作为替换的一部分。在 sub()的第一个参数中，可以输入\\1、\\2、\\3……。表示“在替换中输入分组 1、2、3……的文本”。 例如，假定想要隐去密探的姓名，只显示他们姓名的第一个字母。要做到这一点，可以使用正则表达式 Agent (\\w)\\w<em>，传入 r’\\1<em>*</em></em>‘作为 sub()的第一个参数。字符串中的\\1 将由分组 1 匹配的文本所替代，也就是正则表达式的(\\w)分组。</p>
+<blockquote>
+<blockquote>
+<p>&gt; agentNamesRegex = re.compile(r’Agent (\\w)\\w<em>‘)<br>&gt; agentNamesRegex.sub(r’\\1<strong><strong>‘, ‘Agent Alice told Agent Carol that Agent<br>Eve knew Agent Bob was a double agent.’)<br>A</strong></strong> told C<strong><em><em> that E</em></em></strong> knew B<em>*</em></em> was a double agent.’</p>
+</blockquote>
+</blockquote>
+<h2 id="管理复杂的正则表达式"><a href="#管理复杂的正则表达式" class="headerlink" title="管理复杂的正则表达式"></a>管理复杂的正则表达式</h2><p>忽略正则表达式字符串中的空白符和注释，可以向 re.compile()传入变量 re.VERBOSE，作为第二个参数。</p>
+<p>phoneRegex = re.compile(r’’’(<br> (\\d{3}|\(\\d{3}\))? # area code<br> (\\s|-|\.)? # separator<br> \\d{3} # first 3 digits<br> (\\s|-|\.) # separator<br> \\d{4} # last 4 digits<br> (\\s<em>(ext|x|ext.)\\s</em>\\d{2,5})? # extension<br> )’’’, re.VERBOSE)</p>
+<p>请注意，前面的例子使用了三重引号(‘“)，创建了一个多行字符串。这样就可以将正则表达式定义放在多行中，让它更可读。</p>
+<h2 id="组合使用-re-IGNOREC-ASE、re-DOTALL-和-re-VERBOSE"><a href="#组合使用-re-IGNOREC-ASE、re-DOTALL-和-re-VERBOSE" class="headerlink" title="组合使用 re.IGNOREC ASE、re.DOTALL 和 re.VERBOSE"></a>组合使用 re.IGNOREC ASE、re.DOTALL 和 re.VERBOSE</h2><p>可以使用管道字符（|）将变量组合起来，从而绕过这个限制。管道字符在这里称为“按位或”操作符。所以，如果希望正则表达式不区分大小写，并且句点字符匹配换行，就可以这样构造 re.compile()调用：</p>
+<blockquote>
+<blockquote>
+<p>&gt; someRegexValue = re.compile(‘foo’, re.IGNORECASE | re.DOTALL)</p>
+</blockquote>
+</blockquote>
+
+            </div>
+            <hr />
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">写作不易，客官能否打赏一杯奶茶？</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《正则表达式》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/03/15/re-mo-kuai/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                亥虫
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '570ce87cbc1a78b34852',
+        clientSecret: 'b7dafb83327f6ff9dc6ddcec2af59e212cae2244',
+        repo: 'cchblog.github.io',
+        owner: 'haichong98',
+        admin: "haichong98",
+        id: md5('2019/03/15/re-mo-kuai/'),
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/03/16/os-mo-kuai/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="读写文件">
+                        
+                        <span class="card-title">读写文件</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            文件与文件路径Windows 上的倒斜杠以及 OS X 和 Linux 上的正斜杠在 Windows 上，路径书写使用倒斜杠作为文件夹之间的分隔符。但在 OS X 和Linux 上，使用正斜杠作为它们的路径分隔符。如果想要程序运行在所有操作
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/模块/" target="_blank">
+                        <span class="chip bg-color">模块</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/15/re-mo-kuai/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
+                        
+                        <span class="card-title">正则表达式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            创建正则表达式对象phoneNumRegex = re.compile(r’\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d’)
+传入一个字符串值，表示正则表达式，它将返回一个 Regex 模式对象（或者就简称为 Regex
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 亥虫的博客<br />'
+            + '作者: 亥虫<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2019 HaiChong. All Rights Reserved.
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">17.7k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+            <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/haichong98" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1243726062@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://user.qzone.qq.com/1243726062" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 0;
+        var uvcountOffset = 0;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
