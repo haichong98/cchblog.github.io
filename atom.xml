@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cchblog.cn/"/>
-  <updated>2019-09-16T08:39:07.928Z</updated>
+  <updated>2019-09-17T02:36:03.111Z</updated>
   <id>https://cchblog.cn/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>从理论到实践，全方位认识DNS（实践篇）</title>
+    <link href="https://cchblog.cn/2019/09/17/cong-li-lun-dao-shi-jian-quan-fang-wei-ren-shi-dns-shi-jian-pian/"/>
+    <id>https://cchblog.cn/2019/09/17/cong-li-lun-dao-shi-jian-quan-fang-wei-ren-shi-dns-shi-jian-pian/</id>
+    <published>2019-09-17T01:28:55.000Z</published>
+    <updated>2019-09-17T02:36:03.111Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="网络" scheme="https://cchblog.cn/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="协议森林" scheme="https://cchblog.cn/tags/%E5%8D%8F%E8%AE%AE%E6%A3%AE%E6%9E%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从理论到实践，全方位认识DNS（理论篇）</title>
     <link href="https://cchblog.cn/2019/09/15/cong-li-lun-dao-shi-jian-quan-fang-wei-ren-shi-dns-li-lun-pian/"/>
     <id>https://cchblog.cn/2019/09/15/cong-li-lun-dao-shi-jian-quan-fang-wei-ren-shi-dns-li-lun-pian/</id>
     <published>2019-09-15T14:11:05.000Z</published>
-    <updated>2019-09-16T08:39:07.928Z</updated>
+    <updated>2019-09-17T02:33:23.096Z</updated>
     
     <summary type="html">
     
