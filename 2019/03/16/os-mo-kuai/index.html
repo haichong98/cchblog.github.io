@@ -444,14 +444,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
                 
@@ -468,74 +468,60 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="文件与文件路径"><a href="#文件与文件路径" class="headerlink" title="文件与文件路径"></a>文件与文件路径</h1><h2 id="Windows-上的倒斜杠以及-OS-X-和-Linux-上的正斜杠"><a href="#Windows-上的倒斜杠以及-OS-X-和-Linux-上的正斜杠" class="headerlink" title="Windows 上的倒斜杠以及 OS X 和 Linux 上的正斜杠"></a>Windows 上的倒斜杠以及 OS X 和 Linux 上的正斜杠</h2><p>在 Windows 上，路径书写使用倒斜杠作为文件夹之间的分隔符。但在 OS X 和Linux 上，使用正斜杠作为它们的路径分隔符。如果想要程序运行在所有操作系统上，在编写 Python 脚本时，就必须处理这两种情况。 os.path.join()会返回一个文件路径的字符串，包含正确的路径分隔符。在交互式环境中输入以下代码：</p>
-<blockquote>
-<blockquote>
-<p>&gt; import os<br>&gt; os.path.join(‘usr’, ‘bin’, ‘spam’)<br>‘usr\\\bin\\\spam’</p>
-</blockquote>
-</blockquote>
-<p>我在 Windows 上运行这些交互式环境的例子，所以，os.path.join(‘usr’, ‘bin’,’spam’)返回’usr\\\bin\\\spam’（请注意，倒斜杠有两个，因为每个倒斜杠需要由另一个倒斜杠字符来转义）。如果我在 OS X 或 Linux 上调用这个函数，该字符串就会是’usr/bin/spam’。 下面的例子将一个文件名列表中的名称，添加到文件夹名称的末尾。</p>
-<blockquote>
-<blockquote>
-<p>&gt; myFiles = [‘accounts.txt’, ‘details.csv’, ‘invite.docx’]<br>&gt; for filename in myFiles:<br> print(os.path.join(‘C:\\\Users\\\asweigart’, filename))<br>C:\\Users\\asweigart\\accounts.txt<br>C:\\Users\\asweigart\\details.csv<br>C:\\Users\\asweigart\\invite.docx</p>
-</blockquote>
-</blockquote>
-<h2 id="当前工作目录"><a href="#当前工作目录" class="headerlink" title="当前工作目录"></a>当前工作目录</h2><p>利用 os.getcwd()函数，可以取得当前工作路径的字符串，并可以利用 os.chdir()改变它。在交互式环境中输入以下代码：</p>
-<blockquote>
-<blockquote>
-<p>&gt; import os<br>&gt; os.getcwd()<br>‘C:\\\Python34’<br>&gt; os.chdir(‘C:\\\Windows\\\System32’)<br>&gt; os.getcwd()<br>‘C:\\\Windows\\\System32’</p>
-</blockquote>
-</blockquote>
-<p>这里，当前工作目录设置为 C:\\Python34，所以文件名 project.docx 指向C:\\Python34\\project.docx。如果我们将当前工作目录改为 C:\\Windows，文件就被解释为 C:\\Windows\\project.docx。如果要更改的当前工作目录不存在，Python 就会显示一个错误。</p>
-<blockquote>
-<blockquote>
-<p>&gt; os.chdir(‘C:\\\ThisFolderDoesNotExist’)<br>Traceback (most recent call last):<br> File “&lt;pyshell#18&gt;”, line 1, in <module><br> os.chdir(‘C:\\\ThisFolderDoesNotExist’)<br>FileNotFoundError: [WinError 2] The system cannot find the file specified:<br>‘C:\\\ThisFolderDoesNotExist’</module></p>
-</blockquote>
-</blockquote>
-<p>注意： 虽然文件夹是目录的更新的名称，但请注意，当前工作目录（或当前目录）是标准术语，没有当前工作文件夹这种说法。</p>
+<pre><code>&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.path.join(&#39;usr&#39;, &#39;bin&#39;, &#39;spam&#39;)
+&#39;usrbinspam&#39;</code></pre><p>我在 Windows 上运行这些交互式环境的例子，所以，os.path.join(‘usr’, ‘bin’,’spam’)返回’usrbinspam’（请注意，倒斜杠有两个，因为每个倒斜杠需要由另一个倒斜杠字符来转义）。如果我在 OS X 或 Linux 上调用这个函数，该字符串就会是’usr/bin/spam’。 下面的例子将一个文件名列表中的名称，添加到文件夹名称的末尾。</p>
+<pre><code>&gt;&gt;&gt; myFiles = [&#39;accounts.txt&#39;, &#39;details.csv&#39;, &#39;invite.docx&#39;]
+&gt;&gt;&gt; for filename in myFiles:
+ print(os.path.join(&#39;C:Usersasweigart&#39;, filename))
+C:Usersasweigartaccounts.txt
+C:Usersasweigartdetails.csv
+C:Usersasweigartinvite.docx</code></pre><h2 id="当前工作目录"><a href="#当前工作目录" class="headerlink" title="当前工作目录"></a>当前工作目录</h2><p>利用 os.getcwd()函数，可以取得当前工作路径的字符串，并可以利用 os.chdir()改变它。在交互式环境中输入以下代码：</p>
+<pre><code>&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.getcwd()
+&#39;C:Python34&#39;
+&gt;&gt;&gt; os.chdir(&#39;C:WindowsSystem32&#39;)
+&gt;&gt;&gt; os.getcwd()
+&#39;C:WindowsSystem32&#39;</code></pre><p>这里，当前工作目录设置为 C:Python34，所以文件名 project.docx 指向C:Python34project.docx。如果我们将当前工作目录改为 C:Windows，文件就被解释为 C:Windowsproject.docx。如果要更改的当前工作目录不存在，Python 就会显示一个错误。</p>
+<pre><code>&gt;&gt;&gt; os.chdir(&#39;C:ThisFolderDoesNotExist&#39;)
+Traceback (most recent call last):
+ File &quot;&lt;pyshell#18&gt;&quot;, line 1, in &lt;module&gt;
+ os.chdir(&#39;C:ThisFolderDoesNotExist&#39;)
+FileNotFoundError: [WinError 2] The system cannot find the file specified:
+&#39;C:ThisFolderDoesNotExist&#39;</code></pre><p>注意： 虽然文件夹是目录的更新的名称，但请注意，当前工作目录（或当前目录）是标准术语，没有当前工作文件夹这种说法。</p>
 <h2 id="用-os-makedirs-创建新文件夹"><a href="#用-os-makedirs-创建新文件夹" class="headerlink" title="用 os.makedirs()创建新文件夹"></a>用 os.makedirs()创建新文件夹</h2><p>程序可以用 os.makedirs()函数创建新文件夹（目录）。在交互式环境中输入以下代码：</p>
-<blockquote>
-<blockquote>
-<p>&gt; import os<br>&gt; os.makedirs(‘C:\\\delicious\\\walnut\\\waffles’)</p>
-</blockquote>
-</blockquote>
-<p>这不仅将创建 C:\\delicious 文件夹，也会在 C:\\delicious 下创建 walnut 文件夹，并在 C:\\delicious\\walnut 中创建 waffles 文件夹。也就是说，os.makedirs()将创建所有必要的中间文件夹，目的是确保完整路径名存在。</p>
+<pre><code>&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.makedirs(&#39;C:deliciouswalnutwaffles&#39;)</code></pre><p>这不仅将创建 C:delicious 文件夹，也会在 C:delicious 下创建 walnut 文件夹，并在 C:deliciouswalnut 中创建 waffles 文件夹。也就是说，os.makedirs()将创建所有必要的中间文件夹，目的是确保完整路径名存在。</p>
 <h2 id="处理绝对路径和相对路径"><a href="#处理绝对路径和相对路径" class="headerlink" title="处理绝对路径和相对路径"></a>处理绝对路径和相对路径</h2><p>调用 os.path.abspath(path)将返回参数的绝对路径的字符串。这是将相对路径转换为绝对路径的简便方法。</p>
 <ul>
 <li>调用 os.path.isabs(path)，如果参数是一个绝对路径，就返回 True，如果参数是一个相对路径，就返回 False。</li>
-<li>调用 os.path.relpath(path, start)将返回从 start 路径到 path 的相对路径的字符串。如果没有提供 start，就使用当前工作目录作为开始路径。在交互式环境中尝试以下函数：</li>
+<li>调用 os.path.relpath(path, start)将返回从 start 路径到 path 的相对路径的字符串。如果没有提供 start，就使用当前工作目录作为开始路径。在交互式环境中尝试以下函数：<pre><code>&gt;&gt;&gt; os.path.abspath(&#39;.&#39;)
+&#39;C:Python34&#39;
+&gt;&gt;&gt; os.path.abspath(&#39;.Scripts&#39;)
+&#39;C:Python34Scripts&#39;
+&gt;&gt;&gt; os.path.isabs(&#39;.&#39;)
+False
+&gt;&gt;&gt; os.path.isabs(os.path.abspath(&#39;.&#39;))
+True</code></pre>在交互式环境中，输入以下对 os.path.relpath()的调用：<pre><code>&gt;&gt;&gt; os.path.relpath(&#39;C:Windows&#39;, &#39;C:&#39;)
+&#39;Windows&#39;
+&gt;&gt;&gt; os.path.relpath(&#39;C:Windows&#39;, &#39;C:spameggs&#39;)
+&#39;....Windows&#39;
+&gt;&gt;&gt; os.getcwd()
+&#39;C:Python34&#39;</code></pre>调用 os.path.dirname(path)将返回一个字符串，它包含 path 参数中最后一个斜杠之前的所有内容。调用 os.path.basename(path)将返回一个字符串，它包含 path 参数中最后一个斜杠之后的所有内容。基本名称跟在路径中最后一个斜杠后，它和文件名一样，目录名称是最后一个斜杠之前的所有内容。<pre><code>&gt;&gt;&gt; path = &#39;C:WindowsSystem32calc.exe&#39;
+&gt;&gt;&gt; os.path.basename(path)
+&#39;calc.exe&#39;
+&gt;&gt;&gt; os.path.dirname(path)
+&#39;C:WindowsSystem32&#39;</code></pre>如果同时需要一个路径的目录名称和基本名称，就可以调用 os.path.split()，获得这两个字符串的元组，像这样：<pre><code>&gt;&gt;&gt; calcFilePath = &#39;C:WindowsSystem32calc.exe&#39;
+&gt;&gt;&gt; os.path.split(calcFilePath)
+(&#39;C:WindowsSystem32&#39;, &#39;calc.exe&#39;)</code></pre>但如果需要两个值，os.path.split()是很好的快捷方式。同时也请注意，os.path.split()不会接受一个文件路径并返回每个文件夹的字符串的列表。如果需要这样，请使用 split()字符串方法，并根据 os.path.sep 中的字符串进行分割。<pre><code>&gt;&gt;&gt; calcFilePath.split(os.path.sep)
+[&#39;C:&#39;, &#39;Windows&#39;, &#39;System32&#39;, &#39;calc.exe&#39;]
+</code></pre></li>
 </ul>
 <blockquote>
 <blockquote>
-<p>&gt; os.path.abspath(‘.’)<br>‘C:\\\Python34’<br>&gt; os.path.abspath(‘.\\\Scripts’)<br>‘C:\\\Python34\\\Scripts’<br>&gt; os.path.isabs(‘.’)<br>False<br>&gt; os.path.isabs(os.path.abspath(‘.’))<br>True</p>
-</blockquote>
-</blockquote>
-<p>在交互式环境中，输入以下对 os.path.relpath()的调用：</p>
 <blockquote>
-<blockquote>
-<p>&gt; os.path.relpath(‘C:\\\Windows’, ‘C:\\\’)<br>‘Windows’<br>&gt; os.path.relpath(‘C:\\\Windows’, ‘C:\\\spam\\\eggs’)<br>‘..\\..\\\Windows’<br>&gt; os.getcwd()<br>‘C:\\\Python34’</p>
-</blockquote>
-</blockquote>
-<p>调用 os.path.dirname(path)将返回一个字符串，它包含 path 参数中最后一个斜杠之前的所有内容。调用 os.path.basename(path)将返回一个字符串，它包含 path 参数中最后一个斜杠之后的所有内容。基本名称跟在路径中最后一个斜杠后，它和文件名一样，目录名称是最后一个斜杠之前的所有内容。</p>
-<blockquote>
-<blockquote>
-<p>&gt; path = ‘C:\\\Windows\\\System32\\\calc.exe’<br>&gt; os.path.basename(path)<br>‘calc.exe’<br>&gt; os.path.dirname(path)<br>‘C:\\\Windows\\\System32’</p>
-</blockquote>
-</blockquote>
-<p>如果同时需要一个路径的目录名称和基本名称，就可以调用 os.path.split()，获得这两个字符串的元组，像这样：</p>
-<blockquote>
-<blockquote>
-<p>&gt; calcFilePath = ‘C:\\\Windows\\\System32\\\calc.exe’<br>&gt; os.path.split(calcFilePath)<br>(‘C:\\\Windows\\\System32’, ‘calc.exe’)</p>
-</blockquote>
-</blockquote>
-<p>但如果需要两个值，os.path.split()是很好的快捷方式。同时也请注意，os.path.split()不会接受一个文件路径并返回每个文件夹的字符串的列表。如果需要这样，请使用 split()字符串方法，并根据 os.path.sep 中的字符串进行分割。</p>
-<blockquote>
-<blockquote>
-<p>&gt; calcFilePath.split(os.path.sep)<br>[‘C:’, ‘Windows’, ‘System32’, ‘calc.exe’]</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>&gt; ‘/usr/bin’.split(os.path.sep)<br>[‘’, ‘usr’, ‘bin’]</p>
+<p>‘/usr/bin’.split(os.path.sep)<br>[‘’, ‘usr’, ‘bin’]</p>
+<pre><code></code></pre></blockquote>
 </blockquote>
 </blockquote>
 <h2 id="查看文件大小和文件夹内容"><a href="#查看文件大小和文件夹内容" class="headerlink" title="查看文件大小和文件夹内容"></a>查看文件大小和文件夹内容</h2><ul>
@@ -543,29 +529,34 @@
 <li>调用 os.listdir(path)将返回文件名字符串的列表，包含 path 参数中的每个文件（请注意，这个函数在 os 模块中，而不是 os.path）。</li>
 </ul>
 <p>补充： os.listdir(path) 函数显示的是path下的所有文件名，包括文件夹名字，但是文件夹下的文件名就不会显示出来了</p>
-<blockquote>
-<blockquote>
-<p>&gt; os.path.getsize(‘C:\\\Windows\\\System32\\\calc.exe’)<br>776192<br>&gt; os.listdir(‘C:\\\Windows\\\System32’)<br>[‘0409’, ‘12520437.cpx’, ‘12520850.cpx’, ‘5U877.ax’, ‘aaclient.dll’,<br>–snip–<br>‘xwtpdui.dll’, ‘xwtpw32.dll’, ‘zh-CN’, ‘zh-HK’, ‘zh-TW’, ‘zipfldr.dll’]</p>
-</blockquote>
-</blockquote>
-<p>可以看到，我的计算机上的 calc.exe 程序是 776192 字节。在我的 C:\\Windows\\system32 下有许多文件。如果想知道这个目录下所有文件的总字节数，就可以同时使用 os.path.getsize()和 os.listdir()。</p>
-<blockquote>
-<blockquote>
-<p>&gt; totalSize = 0<br>&gt; for filename in os.listdir(‘C:\\\Windows\\\System32’):<br> totalSize = totalSize + os.path.getsize(os.path.join(‘C:\\\Windows\\\System32’, filename))<br>&gt; print(totalSize)<br>1117846456</p>
-</blockquote>
-</blockquote>
-<p>当循环遍历 C:\\Windows\\System32 文件夹中的每个文件时，totalSize 变量依次增加每个文件的字节数。请注意，我在调用 os.path.getsize()时，使用了 os.path.join()来连接文件夹名称和当前的文件名。os.path.getsize()返回的整数添加到 totalSize 中。在循环遍历所有文件后，我打印出 totalSize，看看 C:\\Windows\\System32 文件夹的总字节数。</p>
+<pre><code>&gt;&gt;&gt; os.path.getsize(&#39;C:WindowsSystem32calc.exe&#39;)
+776192
+&gt;&gt;&gt; os.listdir(&#39;C:WindowsSystem32&#39;)
+[&#39;0409&#39;, &#39;12520437.cpx&#39;, &#39;12520850.cpx&#39;, &#39;5U877.ax&#39;, &#39;aaclient.dll&#39;,
+--snip--
+&#39;xwtpdui.dll&#39;, &#39;xwtpw32.dll&#39;, &#39;zh-CN&#39;, &#39;zh-HK&#39;, &#39;zh-TW&#39;, &#39;zipfldr.dll&#39;]</code></pre><p>可以看到，我的计算机上的 calc.exe 程序是 776192 字节。在我的 C:Windowssystem32 下有许多文件。如果想知道这个目录下所有文件的总字节数，就可以同时使用 os.path.getsize()和 os.listdir()。</p>
+<pre><code>&gt;&gt;&gt; totalSize = 0
+&gt;&gt;&gt; for filename in os.listdir(&#39;C:WindowsSystem32&#39;):
+ totalSize = totalSize + os.path.getsize(os.path.join(&#39;C:WindowsSystem32&#39;, filename))
+&gt;&gt;&gt; print(totalSize)
+1117846456</code></pre><p>当循环遍历 C:WindowsSystem32 文件夹中的每个文件时，totalSize 变量依次增加每个文件的字节数。请注意，我在调用 os.path.getsize()时，使用了 os.path.join()来连接文件夹名称和当前的文件名。os.path.getsize()返回的整数添加到 totalSize 中。在循环遍历所有文件后，我打印出 totalSize，看看 C:WindowsSystem32 文件夹的总字节数。</p>
 <h2 id="检查路径有效性"><a href="#检查路径有效性" class="headerlink" title="检查路径有效性"></a>检查路径有效性</h2><p>如果你提供的路径不存在，许多 Python 函数就会崩溃并报错。os.path 模块提供了一些函数，用于检测给定的路径是否存在，以及它是文件还是文件夹。</p>
 <ul>
 <li>如果 path 参数所指的文件或文件夹存在，调用 os.path.exists(path)将返回 True，否则返回 False。</li>
 <li>如果 path 参数存在，并且是一个文件，调用 os.path.isfile(path)将返回 True，否则返回 False。</li>
-<li>如果 path 参数存在，并且是一个文件夹，调用 os.path.isdir(path)将返回 True，否则返回 False。</li>
+<li>如果 path 参数存在，并且是一个文件夹，调用 os.path.isdir(path)将返回 True，否则返回 False。<pre><code>&gt;&gt;&gt; os.path.exists(&#39;C:Windows&#39;)
+True
+&gt;&gt;&gt; os.path.exists(&#39;C:some_made_up_folder&#39;)
+False
+&gt;&gt;&gt; os.path.isdir(&#39;C:WindowsSystem32&#39;)
+True
+&gt;&gt;&gt; os.path.isfile(&#39;C:WindowsSystem32&#39;)
+False
+&gt;&gt;&gt; os.path.isdir(&#39;C:WindowsSystem32calc.exe&#39;)
+False
+&gt;&gt;&gt; os.path.isfile(&#39;C:WindowsSystem32calc.exe&#39;)
+True</code></pre></li>
 </ul>
-<blockquote>
-<blockquote>
-<p>&gt; os.path.exists(‘C:\\\Windows’)<br>True<br>&gt; os.path.exists(‘C:\\\some_made_up_folder’)<br>False<br>&gt; os.path.isdir(‘C:\\\Windows\\\System32’)<br>True<br>&gt; os.path.isfile(‘C:\\\Windows\\\System32’)<br>False<br>&gt; os.path.isdir(‘C:\\\Windows\\\System32\\\calc.exe’)<br>False<br>&gt; os.path.isfile(‘C:\\\Windows\\\System32\\\calc.exe’)<br>True</p>
-</blockquote>
-</blockquote>
 
             </div>
             <hr />
@@ -873,6 +864,14 @@
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/模块/" target="_blank">
+                        <span class="chip bg-color">模块</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -1030,7 +1029,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">17.7k</span>
+            <span class="white-color">19.5k</span>
             
 
             <br>

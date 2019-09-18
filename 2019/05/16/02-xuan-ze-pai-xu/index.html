@@ -8,8 +8,31 @@
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
     <meta name="description" content="一、内存工作原理需要将数据存储到内存时，你请求计算机提供存储空间，计算机给你一个存储地址。
-二、运行时间数组    链表 读取    O(1)    O(n) 插入    O(n)    O(1) 删除    O(n)    O(1)
-三、">
+二、运行时间
+
+
+
+数组
+链表
+
+
+
+读取
+O(1)
+O(n)
+
+
+插入
+O(n)
+O(1)
+
+
+删除
+O(n)
+O(1)
+
+
+三、实现代码def ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -407,7 +430,11 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">无标签</span>
+                        
+                        <a href="/tags/算法/" target="_blank">
+                            <span class="chip bg-color">算法</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
@@ -442,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    133
+                    135
                 </div>
                 
 
@@ -466,11 +493,51 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="一、内存工作原理"><a href="#一、内存工作原理" class="headerlink" title="一、内存工作原理"></a>一、内存工作原理</h3><p>需要将数据存储到内存时，你请求计算机提供存储空间，计算机给你一个存储地址。</p>
-<h3 id="二、运行时间"><a href="#二、运行时间" class="headerlink" title="二、运行时间"></a>二、运行时间</h3><p>数组    链表 读取    O(1)    O(n) 插入    O(n)    O(1) 删除    O(n)    O(1)</p>
-<h3 id="三、实现代码"><a href="#三、实现代码" class="headerlink" title="三、实现代码"></a>三、实现代码</h3><p>def find_smallest(arr):<br>    smallest = 0<br>    smallest_index = arr[0]<br>    for i in range(1, len(arr)):<br>        if smallest &gt; arr[i]:<br>            smallest = arr[i]<br>            smallest_index = i<br>    return smallest_index</p>
-<p>def selection_sort(arr):<br>    new_arr = []<br>    for i in range(len(arr)):<br>        smallest = find_smallest(arr)<br>        new_arr.append(arr.pop(smallest))<br>    return new_arr</p>
-<p>if __name__ == ‘__main__‘:<br>    arr = [5, 2, 4, 1, 7, 3]<br>    print(selection_sort(arr))</p>
+<h3 id="二、运行时间"><a href="#二、运行时间" class="headerlink" title="二、运行时间"></a>二、运行时间</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>数组</th>
+<th>链表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>读取</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>插入</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<h3 id="三、实现代码"><a href="#三、实现代码" class="headerlink" title="三、实现代码"></a>三、实现代码</h3><pre><code>def find_smallest(arr):
+    smallest = 0
+    smallest_index = arr[0]
+    for i in range(1, len(arr)):
+        if smallest &gt; arr[i]:
+            smallest = arr[i]
+            smallest_index = i
+    return smallest_index
 
+
+def selection_sort(arr):
+    new_arr = []
+    for i in range(len(arr)):
+        smallest = find_smallest(arr)
+        new_arr.append(arr.pop(smallest))
+    return new_arr
+
+
+if __name__ == &#39;__main__&#39;:
+    arr = [5, 2, 4, 1, 7, 3]
+    print(selection_sort(arr))</code></pre>
             </div>
             <hr />
 
@@ -728,6 +795,14 @@
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/书籍/" target="_blank">
+                        <span class="chip bg-color">书籍</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -767,6 +842,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/算法/" target="_blank">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -926,7 +1009,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">17.7k</span>
+            <span class="white-color">19.5k</span>
             
 
             <br>
