@@ -469,7 +469,7 @@ O(1)
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    135
+                    132
                 </div>
                 
 
@@ -517,27 +517,28 @@ O(1)
 <td>O(1)</td>
 </tr>
 </tbody></table>
-<h3 id="三、实现代码"><a href="#三、实现代码" class="headerlink" title="三、实现代码"></a>三、实现代码</h3><pre><code>def find_smallest(arr):
-    smallest = 0
-    smallest_index = arr[0]
-    for i in range(1, len(arr)):
-        if smallest &gt; arr[i]:
-            smallest = arr[i]
-            smallest_index = i
-    return smallest_index
+<h3 id="三、实现代码"><a href="#三、实现代码" class="headerlink" title="三、实现代码"></a>三、实现代码</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">find_smallest</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    smallest <span class="token operator">=</span> <span class="token number">0</span>
+    smallest_index <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> smallest <span class="token operator">></span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            smallest <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            smallest_index <span class="token operator">=</span> i
+    <span class="token keyword">return</span> smallest_index
 
 
-def selection_sort(arr):
-    new_arr = []
-    for i in range(len(arr)):
-        smallest = find_smallest(arr)
-        new_arr.append(arr.pop(smallest))
-    return new_arr
+<span class="token keyword">def</span> <span class="token function">selection_sort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    new_arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        smallest <span class="token operator">=</span> find_smallest<span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+        new_arr<span class="token punctuation">.</span>append<span class="token punctuation">(</span>arr<span class="token punctuation">.</span>pop<span class="token punctuation">(</span>smallest<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> new_arr
 
 
-if __name__ == &#39;__main__&#39;:
-    arr = [5, 2, 4, 1, 7, 3]
-    print(selection_sort(arr))</code></pre>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>selection_sort<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1009,7 +1010,7 @@ if __name__ == &#39;__main__&#39;:
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">19.5k</span>
+            <span class="white-color">17.4k</span>
             
 
             <br>

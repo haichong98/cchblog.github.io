@@ -449,7 +449,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    211
+                    208
                 </div>
                 
 
@@ -473,27 +473,28 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="一、使用场景"><a href="#一、使用场景" class="headerlink" title="一、使用场景"></a>一、使用场景</h3><p>仅当列表是有序的时候，二分查找才管用。</p>
-<h3 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h3><pre><code>def binary_search(my_list, item):
-    low = 0
-    high = len(my_list) - 1
+<h3 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">binary_search</span><span class="token punctuation">(</span>my_list<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    low <span class="token operator">=</span> <span class="token number">0</span>
+    high <span class="token operator">=</span> len<span class="token punctuation">(</span>my_list<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
 
-    while low &lt;= high:
-        mid = (low + high) // 2
-        guess = my_list[mid]
-        if item == guess:
-            return mid
-        elif item &gt; guess:
-            low = mid + 1
-        else:
-            high = mid - 1
+    <span class="token keyword">while</span> low <span class="token operator">&lt;=</span> high<span class="token punctuation">:</span>
+        mid <span class="token operator">=</span> <span class="token punctuation">(</span>low <span class="token operator">+</span> high<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+        guess <span class="token operator">=</span> my_list<span class="token punctuation">[</span>mid<span class="token punctuation">]</span>
+        <span class="token keyword">if</span> item <span class="token operator">==</span> guess<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> mid
+        <span class="token keyword">elif</span> item <span class="token operator">></span> guess<span class="token punctuation">:</span>
+            low <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            high <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
 
-    return None
+    <span class="token keyword">return</span> None
 
 
-if __name__ == &#39;__main__&#39;:
-    my_list = [1, 3, 5, 6, 9]
-    print(binary_search(my_list, 9))
-    print(binary_search(my_list, -1))</code></pre><h3 id="三、算法的时间复杂度"><a href="#三、算法的时间复杂度" class="headerlink" title="三、算法的时间复杂度"></a>三、算法的时间复杂度</h3><p>二分算法的大 O 运行时间为 O(log N) 简单算法的大 O 运行时间为 O(N)</p>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    my_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>binary_search<span class="token punctuation">(</span>my_list<span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>binary_search<span class="token punctuation">(</span>my_list<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="三、算法的时间复杂度"><a href="#三、算法的时间复杂度" class="headerlink" title="三、算法的时间复杂度"></a>三、算法的时间复杂度</h3><p>二分算法的<code>大O运行时间</code>为 <code>O(log N)</code> 简单算法的<code>大O运行时间</code>为 <code>O(N)</code></p>
 <h3 id="四、小结"><a href="#四、小结" class="headerlink" title="四、小结"></a>四、小结</h3><ol>
 <li>二分查找的速度比简单查找快得多。</li>
 <li>O(log n)比O(n)快。需要搜索的元素越多，前者比后者就快得越多。</li>
@@ -973,7 +974,7 @@ if __name__ == &#39;__main__&#39;:
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">19.5k</span>
+            <span class="white-color">17.4k</span>
             
 
             <br>

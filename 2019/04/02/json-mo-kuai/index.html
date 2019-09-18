@@ -7,7 +7,9 @@
     <meta name="keywords" content="json 模块, 懂得感恩，是收获幸福的源泉。懂得感恩，你会发现原来自己周围的一切都是那样的美好。">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
-    <meta name="description" content="用 loads()函数读取 JSON&amp;gt;&amp;gt;&amp;gt; stringOfJsonData = &amp;#39;{&amp;quot;name&amp;quot;: &amp;quot;Zophie&amp;quot;, &amp;quot;isCat&amp;quot;: true, &amp;">
+    <meta name="description" content="用 loads()函数读取 JSON&gt;&gt;&gt; stringOfJsonData = &#39;{&#34;name&#34;: &#34;Zophie&#34;, &#34;isCat&#34;: true, &#34;miceCaught&#34;: 0,
+&#34;felineIQ&#34;: null}&#39;
+&gt;&gt;&gt; impo">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -444,7 +446,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    201
+                    133
                 </div>
                 
 
@@ -467,18 +469,20 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="用-loads-函数读取-JSON"><a href="#用-loads-函数读取-JSON" class="headerlink" title="用 loads()函数读取 JSON"></a>用 loads()函数读取 JSON</h2><pre><code>&gt;&gt;&gt; stringOfJsonData = &#39;{&quot;name&quot;: &quot;Zophie&quot;, &quot;isCat&quot;: true, &quot;miceCaught&quot;: 0,
-&quot;felineIQ&quot;: null}&#39;
-&gt;&gt;&gt; import json
-&gt;&gt;&gt; jsonDataAsPythonValue = json.loads(stringOfJsonData)
-&gt;&gt;&gt; jsonDataAsPythonValue
-{&#39;isCat&#39;: True, &#39;miceCaught&#39;: 0, &#39;name&#39;: &#39;Zophie&#39;, &#39;felineIQ&#39;: None}</code></pre><p>要将包含 JSON 数据的字符串转换为 Python 的值，就将它传递给 json.loads()函数（这个名字的意思是“load string”，而不 是“loads”）。</p>
-<h2 id="用-dumps-函数写出-JSON"><a href="#用-dumps-函数写出-JSON" class="headerlink" title="用 dumps 函数写出 JSON"></a>用 dumps 函数写出 JSON</h2><pre><code>&gt;&gt;&gt; pythonValue = {&#39;isCat&#39;: True, &#39;miceCaught&#39;: 0, &#39;name&#39;: &#39;Zophie&#39;,
-&#39;felineIQ&#39;: None}
-&gt;&gt;&gt; import json
-&gt;&gt;&gt; stringOfJsonData = json.dumps(pythonValue)
-&gt;&gt;&gt; stringOfJsonData
-&#39;{&quot;isCat&quot;: true, &quot;felineIQ&quot;: null, &quot;miceCaught&quot;: 0, &quot;name&quot;: &quot;Zophie&quot; }&#39; </code></pre><p>json.dumps()函数（它表示“dump string”，而不是 “dumps”）将一个 Python 值转换成 JSON 格式的数据字符串。</p>
+                <h2 id="用-loads-函数读取-JSON"><a href="#用-loads-函数读取-JSON" class="headerlink" title="用 loads()函数读取 JSON"></a>用 loads()函数读取 JSON</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> stringOfJsonData <span class="token operator">=</span> '<span class="token punctuation">{</span><span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Zophie"</span><span class="token punctuation">,</span> <span class="token string">"isCat"</span><span class="token punctuation">:</span> true<span class="token punctuation">,</span> <span class="token string">"miceCaught"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token string">"felineIQ"</span><span class="token punctuation">:</span> null<span class="token punctuation">}</span>'
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> json
+<span class="token operator">>></span><span class="token operator">></span> jsonDataAsPythonValue <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>stringOfJsonData<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> jsonDataAsPythonValue
+<span class="token punctuation">{</span><span class="token string">'isCat'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token string">'miceCaught'</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Zophie'</span><span class="token punctuation">,</span> <span class="token string">'felineIQ'</span><span class="token punctuation">:</span> None<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>要将包含 JSON 数据的字符串转换为 Python 的值，就将它传递给 <code>json.loads()</code>函数（这个名字的意思是“load string”，而不 是“loads”）。</p>
+<h2 id="用-dumps-函数写出-JSON"><a href="#用-dumps-函数写出-JSON" class="headerlink" title="用 dumps 函数写出 JSON"></a>用 dumps 函数写出 JSON</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> pythonValue <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'isCat'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token string">'miceCaught'</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Zophie'</span><span class="token punctuation">,</span>
+<span class="token string">'felineIQ'</span><span class="token punctuation">:</span> None<span class="token punctuation">}</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> json
+<span class="token operator">>></span><span class="token operator">></span> stringOfJsonData <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>pythonValue<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> stringOfJsonData
+<span class="token string">'{"isCat": true, "felineIQ": null, "miceCaught": 0, "name": "Zophie" }'</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>json.dumps()</code>函数（它表示“dump string”，而不是 “dumps”）将一个 Python 值转换成 JSON 格式的数据字符串。</p>
 
             </div>
             <hr />
@@ -951,7 +955,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">19.5k</span>
+            <span class="white-color">17.4k</span>
             
 
             <br>

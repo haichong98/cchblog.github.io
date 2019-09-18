@@ -444,14 +444,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    6 分
                 </div>
                 
                 
@@ -467,95 +467,103 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="文件与文件路径"><a href="#文件与文件路径" class="headerlink" title="文件与文件路径"></a>文件与文件路径</h1><h2 id="Windows-上的倒斜杠以及-OS-X-和-Linux-上的正斜杠"><a href="#Windows-上的倒斜杠以及-OS-X-和-Linux-上的正斜杠" class="headerlink" title="Windows 上的倒斜杠以及 OS X 和 Linux 上的正斜杠"></a>Windows 上的倒斜杠以及 OS X 和 Linux 上的正斜杠</h2><p>在 Windows 上，路径书写使用倒斜杠作为文件夹之间的分隔符。但在 OS X 和Linux 上，使用正斜杠作为它们的路径分隔符。如果想要程序运行在所有操作系统上，在编写 Python 脚本时，就必须处理这两种情况。 os.path.join()会返回一个文件路径的字符串，包含正确的路径分隔符。在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; import os
-&gt;&gt;&gt; os.path.join(&#39;usr&#39;, &#39;bin&#39;, &#39;spam&#39;)
-&#39;usrbinspam&#39;</code></pre><p>我在 Windows 上运行这些交互式环境的例子，所以，os.path.join(‘usr’, ‘bin’,’spam’)返回’usrbinspam’（请注意，倒斜杠有两个，因为每个倒斜杠需要由另一个倒斜杠字符来转义）。如果我在 OS X 或 Linux 上调用这个函数，该字符串就会是’usr/bin/spam’。 下面的例子将一个文件名列表中的名称，添加到文件夹名称的末尾。</p>
-<pre><code>&gt;&gt;&gt; myFiles = [&#39;accounts.txt&#39;, &#39;details.csv&#39;, &#39;invite.docx&#39;]
-&gt;&gt;&gt; for filename in myFiles:
- print(os.path.join(&#39;C:Usersasweigart&#39;, filename))
-C:Usersasweigartaccounts.txt
-C:Usersasweigartdetails.csv
-C:Usersasweigartinvite.docx</code></pre><h2 id="当前工作目录"><a href="#当前工作目录" class="headerlink" title="当前工作目录"></a>当前工作目录</h2><p>利用 os.getcwd()函数，可以取得当前工作路径的字符串，并可以利用 os.chdir()改变它。在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; import os
-&gt;&gt;&gt; os.getcwd()
-&#39;C:Python34&#39;
-&gt;&gt;&gt; os.chdir(&#39;C:WindowsSystem32&#39;)
-&gt;&gt;&gt; os.getcwd()
-&#39;C:WindowsSystem32&#39;</code></pre><p>这里，当前工作目录设置为 C:Python34，所以文件名 project.docx 指向C:Python34project.docx。如果我们将当前工作目录改为 C:Windows，文件就被解释为 C:Windowsproject.docx。如果要更改的当前工作目录不存在，Python 就会显示一个错误。</p>
-<pre><code>&gt;&gt;&gt; os.chdir(&#39;C:ThisFolderDoesNotExist&#39;)
-Traceback (most recent call last):
- File &quot;&lt;pyshell#18&gt;&quot;, line 1, in &lt;module&gt;
- os.chdir(&#39;C:ThisFolderDoesNotExist&#39;)
-FileNotFoundError: [WinError 2] The system cannot find the file specified:
-&#39;C:ThisFolderDoesNotExist&#39;</code></pre><p>注意： 虽然文件夹是目录的更新的名称，但请注意，当前工作目录（或当前目录）是标准术语，没有当前工作文件夹这种说法。</p>
+                <h1 id="文件与文件路径"><a href="#文件与文件路径" class="headerlink" title="文件与文件路径"></a>文件与文件路径</h1><h2 id="Windows-上的倒斜杠以及-OS-X-和-Linux-上的正斜杠"><a href="#Windows-上的倒斜杠以及-OS-X-和-Linux-上的正斜杠" class="headerlink" title="Windows 上的倒斜杠以及 OS X 和 Linux 上的正斜杠"></a>Windows 上的倒斜杠以及 OS X 和 Linux 上的正斜杠</h2><p>在 Windows 上，路径书写使用倒斜杠作为文件夹之间的分隔符。但在 OS X 和Linux 上，使用正斜杠作为它们的路径分隔符。如果想要程序运行在所有操作系统上，在编写 Python 脚本时，就必须处理这两种情况。 <code>os.path.join()</code>会返回一个文件路径的字符串，包含正确的路径分隔符。在交互式环境中输入以下代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> os
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">'usr'</span><span class="token punctuation">,</span> <span class="token string">'bin'</span><span class="token punctuation">,</span> <span class="token string">'spam'</span><span class="token punctuation">)</span>
+<span class="token string">'usrbinspam'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>我在 Windows 上运行这些交互式环境的例子，所以，<code>os.path.join(&#39;usr&#39;, &#39;bin&#39;,&#39;spam&#39;)</code>返回<code>&#39;usrbinspam&#39;</code>（请注意，倒斜杠有两个，因为每个倒斜杠需要由另一个倒斜杠字符来转义）。如果我在 OS X 或 Linux 上调用这个函数，该字符串就会是<code>&#39;usr/bin/spam&#39;</code>。 下面的例子将一个文件名列表中的名称，添加到文件夹名称的末尾。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> myFiles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'accounts.txt'</span><span class="token punctuation">,</span> <span class="token string">'details.csv'</span><span class="token punctuation">,</span> <span class="token string">'invite.docx'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> filename <span class="token keyword">in</span> myFiles<span class="token punctuation">:</span>
+ <span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">'C:Usersasweigart'</span><span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">)</span>
+C<span class="token punctuation">:</span>Usersasweigartaccounts<span class="token punctuation">.</span>txt
+C<span class="token punctuation">:</span>Usersasweigartdetails<span class="token punctuation">.</span>csv
+C<span class="token punctuation">:</span>Usersasweigartinvite<span class="token punctuation">.</span>docx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="当前工作目录"><a href="#当前工作目录" class="headerlink" title="当前工作目录"></a>当前工作目录</h2><p>利用 <code>os.getcwd()</code>函数，可以取得当前工作路径的字符串，并可以利用 <code>os.chdir()</code>改变它。在交互式环境中输入以下代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> os
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'C:Python34'</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>chdir<span class="token punctuation">(</span><span class="token string">'C:WindowsSystem32'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'C:WindowsSystem32'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里，当前工作目录设置为 <code>C:Python34</code>，所以文件名 project.docx 指向<code>C:Python34project.docx</code>。如果我们将当前工作目录改为 <code>C:Windows</code>，文件就被解释为 <code>C:Windowsproject.docx</code>。如果要更改的当前工作目录不存在，Python 就会显示一个错误。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>chdir<span class="token punctuation">(</span><span class="token string">'C:ThisFolderDoesNotExist'</span><span class="token punctuation">)</span>
+Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+ File <span class="token string">"&lt;pyshell#18>"</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+ os<span class="token punctuation">.</span>chdir<span class="token punctuation">(</span><span class="token string">'C:ThisFolderDoesNotExist'</span><span class="token punctuation">)</span>
+FileNotFoundError<span class="token punctuation">:</span> <span class="token punctuation">[</span>WinError <span class="token number">2</span><span class="token punctuation">]</span> The system cannot find the file specified<span class="token punctuation">:</span>
+<span class="token string">'C:ThisFolderDoesNotExist'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意： 虽然文件夹是目录的更新的名称，但请注意，当前工作目录（或当前目录）是标准术语，没有当前工作文件夹这种说法。</p>
 <h2 id="用-os-makedirs-创建新文件夹"><a href="#用-os-makedirs-创建新文件夹" class="headerlink" title="用 os.makedirs()创建新文件夹"></a>用 os.makedirs()创建新文件夹</h2><p>程序可以用 os.makedirs()函数创建新文件夹（目录）。在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; import os
-&gt;&gt;&gt; os.makedirs(&#39;C:deliciouswalnutwaffles&#39;)</code></pre><p>这不仅将创建 C:delicious 文件夹，也会在 C:delicious 下创建 walnut 文件夹，并在 C:deliciouswalnut 中创建 waffles 文件夹。也就是说，os.makedirs()将创建所有必要的中间文件夹，目的是确保完整路径名存在。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> os
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span><span class="token string">'C:deliciouswalnutwaffles'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这不仅将创建 <code>C:delicious</code> 文件夹，也会在 <code>C:delicious</code> 下创建 walnut 文件夹，并在 <code>C:deliciouswalnut</code> 中创建 waffles 文件夹。也就是说，<code>os.makedirs()</code>将创建所有必要的中间文件夹，目的是确保完整路径名存在。</p>
 <h2 id="处理绝对路径和相对路径"><a href="#处理绝对路径和相对路径" class="headerlink" title="处理绝对路径和相对路径"></a>处理绝对路径和相对路径</h2><p>调用 os.path.abspath(path)将返回参数的绝对路径的字符串。这是将相对路径转换为绝对路径的简便方法。</p>
 <ul>
-<li>调用 os.path.isabs(path)，如果参数是一个绝对路径，就返回 True，如果参数是一个相对路径，就返回 False。</li>
-<li>调用 os.path.relpath(path, start)将返回从 start 路径到 path 的相对路径的字符串。如果没有提供 start，就使用当前工作目录作为开始路径。在交互式环境中尝试以下函数：<pre><code>&gt;&gt;&gt; os.path.abspath(&#39;.&#39;)
-&#39;C:Python34&#39;
-&gt;&gt;&gt; os.path.abspath(&#39;.Scripts&#39;)
-&#39;C:Python34Scripts&#39;
-&gt;&gt;&gt; os.path.isabs(&#39;.&#39;)
-False
-&gt;&gt;&gt; os.path.isabs(os.path.abspath(&#39;.&#39;))
-True</code></pre>在交互式环境中，输入以下对 os.path.relpath()的调用：<pre><code>&gt;&gt;&gt; os.path.relpath(&#39;C:Windows&#39;, &#39;C:&#39;)
-&#39;Windows&#39;
-&gt;&gt;&gt; os.path.relpath(&#39;C:Windows&#39;, &#39;C:spameggs&#39;)
-&#39;....Windows&#39;
-&gt;&gt;&gt; os.getcwd()
-&#39;C:Python34&#39;</code></pre>调用 os.path.dirname(path)将返回一个字符串，它包含 path 参数中最后一个斜杠之前的所有内容。调用 os.path.basename(path)将返回一个字符串，它包含 path 参数中最后一个斜杠之后的所有内容。基本名称跟在路径中最后一个斜杠后，它和文件名一样，目录名称是最后一个斜杠之前的所有内容。<pre><code>&gt;&gt;&gt; path = &#39;C:WindowsSystem32calc.exe&#39;
-&gt;&gt;&gt; os.path.basename(path)
-&#39;calc.exe&#39;
-&gt;&gt;&gt; os.path.dirname(path)
-&#39;C:WindowsSystem32&#39;</code></pre>如果同时需要一个路径的目录名称和基本名称，就可以调用 os.path.split()，获得这两个字符串的元组，像这样：<pre><code>&gt;&gt;&gt; calcFilePath = &#39;C:WindowsSystem32calc.exe&#39;
-&gt;&gt;&gt; os.path.split(calcFilePath)
-(&#39;C:WindowsSystem32&#39;, &#39;calc.exe&#39;)</code></pre>但如果需要两个值，os.path.split()是很好的快捷方式。同时也请注意，os.path.split()不会接受一个文件路径并返回每个文件夹的字符串的列表。如果需要这样，请使用 split()字符串方法，并根据 os.path.sep 中的字符串进行分割。<pre><code>&gt;&gt;&gt; calcFilePath.split(os.path.sep)
-[&#39;C:&#39;, &#39;Windows&#39;, &#39;System32&#39;, &#39;calc.exe&#39;]
-</code></pre></li>
+<li>调用 <code>os.path.isabs(path)</code>，如果参数是一个绝对路径，就返回 True，如果参数是一个相对路径，就返回 False。</li>
+<li>调用 <code>os.path.relpath(path, start)</code>将返回从 start 路径到 path 的相对路径的字符串。如果没有提供 start，就使用当前工作目录作为开始路径。在交互式环境中尝试以下函数：<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span>
+<span class="token string">'C:Python34'</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span><span class="token string">'.Scripts'</span><span class="token punctuation">)</span>
+<span class="token string">'C:Python34Scripts'</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isabs<span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isabs<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+在交互式环境中，输入以下对 <code>os.path.relpath()</code>的调用：<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>relpath<span class="token punctuation">(</span><span class="token string">'C:Windows'</span><span class="token punctuation">,</span> <span class="token string">'C:'</span><span class="token punctuation">)</span>
+<span class="token string">'Windows'</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>relpath<span class="token punctuation">(</span><span class="token string">'C:Windows'</span><span class="token punctuation">,</span> <span class="token string">'C:spameggs'</span><span class="token punctuation">)</span>
+<span class="token string">'....Windows'</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'C:Python34'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+调用 <code>os.path.dirname(path)</code>将返回一个字符串，它包含 path 参数中最后一个斜杠之前的所有内容。调用 <code>os.path.basename(path)</code>将返回一个字符串，它包含 path 参数中最后一个斜杠之后的所有内容。基本名称跟在路径中最后一个斜杠后，它和文件名一样，目录名称是最后一个斜杠之前的所有内容。<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> path <span class="token operator">=</span> <span class="token string">'C:WindowsSystem32calc.exe'</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>basename<span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+<span class="token string">'calc.exe'</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+<span class="token string">'C:WindowsSystem32'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+如果同时需要一个路径的目录名称和基本名称，就可以调用 <code>os.path.split()</code>，获得这两个字符串的元组，像这样：<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> calcFilePath <span class="token operator">=</span> <span class="token string">'C:WindowsSystem32calc.exe'</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>split<span class="token punctuation">(</span>calcFilePath<span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'C:WindowsSystem32'</span><span class="token punctuation">,</span> <span class="token string">'calc.exe'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+但如果需要两个值，<code>os.path.split()</code>是很好的快捷方式。同时也请注意，<code>os.path.split()</code>不会接受一个文件路径并返回每个文件夹的字符串的列表。如果需要这样，请使用 <code>split()</code>字符串方法，并根据 <code>os.path.sep</code> 中的字符串进行分割。<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> calcFilePath<span class="token punctuation">.</span>split<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>sep<span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'C:'</span><span class="token punctuation">,</span> <span class="token string">'Windows'</span><span class="token punctuation">,</span> <span class="token string">'System32'</span><span class="token punctuation">,</span> <span class="token string">'calc.exe'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token string">'/usr/bin'</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>sep<span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'usr'</span><span class="token punctuation">,</span> <span class="token string">'bin'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+查看文件大小和文件夹内容</li>
 </ul>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>‘/usr/bin’.split(os.path.sep)<br>[‘’, ‘usr’, ‘bin’]</p>
-<pre><code></code></pre></blockquote>
-</blockquote>
-</blockquote>
-<h2 id="查看文件大小和文件夹内容"><a href="#查看文件大小和文件夹内容" class="headerlink" title="查看文件大小和文件夹内容"></a>查看文件大小和文件夹内容</h2><ul>
-<li>调用 os.path.getsize(path)将返回 path 参数中文件的字节数。</li>
-<li>调用 os.listdir(path)将返回文件名字符串的列表，包含 path 参数中的每个文件（请注意，这个函数在 os 模块中，而不是 os.path）。</li>
+<hr>
+<ul>
+<li>调用 <code>os.path.getsize(path)</code>将返回 path 参数中文件的字节数。</li>
+<li>调用 <code>os.listdir(path)</code>将返回文件名字符串的列表，包含 path 参数中的每个文件（请注意，这个函数在 os 模块中，而不是 os.path）。</li>
 </ul>
-<p>补充： os.listdir(path) 函数显示的是path下的所有文件名，包括文件夹名字，但是文件夹下的文件名就不会显示出来了</p>
-<pre><code>&gt;&gt;&gt; os.path.getsize(&#39;C:WindowsSystem32calc.exe&#39;)
-776192
-&gt;&gt;&gt; os.listdir(&#39;C:WindowsSystem32&#39;)
-[&#39;0409&#39;, &#39;12520437.cpx&#39;, &#39;12520850.cpx&#39;, &#39;5U877.ax&#39;, &#39;aaclient.dll&#39;,
---snip--
-&#39;xwtpdui.dll&#39;, &#39;xwtpw32.dll&#39;, &#39;zh-CN&#39;, &#39;zh-HK&#39;, &#39;zh-TW&#39;, &#39;zipfldr.dll&#39;]</code></pre><p>可以看到，我的计算机上的 calc.exe 程序是 776192 字节。在我的 C:Windowssystem32 下有许多文件。如果想知道这个目录下所有文件的总字节数，就可以同时使用 os.path.getsize()和 os.listdir()。</p>
-<pre><code>&gt;&gt;&gt; totalSize = 0
-&gt;&gt;&gt; for filename in os.listdir(&#39;C:WindowsSystem32&#39;):
- totalSize = totalSize + os.path.getsize(os.path.join(&#39;C:WindowsSystem32&#39;, filename))
-&gt;&gt;&gt; print(totalSize)
-1117846456</code></pre><p>当循环遍历 C:WindowsSystem32 文件夹中的每个文件时，totalSize 变量依次增加每个文件的字节数。请注意，我在调用 os.path.getsize()时，使用了 os.path.join()来连接文件夹名称和当前的文件名。os.path.getsize()返回的整数添加到 totalSize 中。在循环遍历所有文件后，我打印出 totalSize，看看 C:WindowsSystem32 文件夹的总字节数。</p>
+<p>补充： <code>os.listdir(path)</code> 函数显示的是path下的所有文件名，包括文件夹名字，但是文件夹下的文件名就不会显示出来了</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>getsize<span class="token punctuation">(</span><span class="token string">'C:WindowsSystem32calc.exe'</span><span class="token punctuation">)</span>
+<span class="token number">776192</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span><span class="token string">'C:WindowsSystem32'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'0409'</span><span class="token punctuation">,</span> <span class="token string">'12520437.cpx'</span><span class="token punctuation">,</span> <span class="token string">'12520850.cpx'</span><span class="token punctuation">,</span> <span class="token string">'5U877.ax'</span><span class="token punctuation">,</span> <span class="token string">'aaclient.dll'</span><span class="token punctuation">,</span>
+<span class="token operator">-</span><span class="token operator">-</span>snip<span class="token operator">-</span><span class="token operator">-</span>
+<span class="token string">'xwtpdui.dll'</span><span class="token punctuation">,</span> <span class="token string">'xwtpw32.dll'</span><span class="token punctuation">,</span> <span class="token string">'zh-CN'</span><span class="token punctuation">,</span> <span class="token string">'zh-HK'</span><span class="token punctuation">,</span> <span class="token string">'zh-TW'</span><span class="token punctuation">,</span> <span class="token string">'zipfldr.dll'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到，我的计算机上的 calc.exe 程序是 776192 字节。在我的 <code>C:Windowssystem32</code> 下有许多文件。如果想知道这个目录下所有文件的总字节数，就可以同时使用 <code>os.path.getsize()</code>和 <code>os.listdir()</code>。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> totalSize <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> filename <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span><span class="token string">'C:WindowsSystem32'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+ totalSize <span class="token operator">=</span> totalSize <span class="token operator">+</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>getsize<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">'C:WindowsSystem32'</span><span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>totalSize<span class="token punctuation">)</span>
+<span class="token number">1117846456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当循环遍历<code>C:WindowsSystem32</code>文件夹中的每个文件时，totalSize 变量依次增加每个文件的字节数。请注意，我在调用 <code>os.path.getsize()</code>时，使用了 <code>os.path.join()</code>来连接文件夹名称和当前的文件名。<code>os.path.getsize()</code>返回的整数添加到 totalSize 中。在循环遍历所有文件后，我打印出 totalSize，看看 <code>C:WindowsSystem32</code> 文件夹的总字节数。</p>
 <h2 id="检查路径有效性"><a href="#检查路径有效性" class="headerlink" title="检查路径有效性"></a>检查路径有效性</h2><p>如果你提供的路径不存在，许多 Python 函数就会崩溃并报错。os.path 模块提供了一些函数，用于检测给定的路径是否存在，以及它是文件还是文件夹。</p>
 <ul>
-<li>如果 path 参数所指的文件或文件夹存在，调用 os.path.exists(path)将返回 True，否则返回 False。</li>
-<li>如果 path 参数存在，并且是一个文件，调用 os.path.isfile(path)将返回 True，否则返回 False。</li>
-<li>如果 path 参数存在，并且是一个文件夹，调用 os.path.isdir(path)将返回 True，否则返回 False。<pre><code>&gt;&gt;&gt; os.path.exists(&#39;C:Windows&#39;)
-True
-&gt;&gt;&gt; os.path.exists(&#39;C:some_made_up_folder&#39;)
-False
-&gt;&gt;&gt; os.path.isdir(&#39;C:WindowsSystem32&#39;)
-True
-&gt;&gt;&gt; os.path.isfile(&#39;C:WindowsSystem32&#39;)
-False
-&gt;&gt;&gt; os.path.isdir(&#39;C:WindowsSystem32calc.exe&#39;)
-False
-&gt;&gt;&gt; os.path.isfile(&#39;C:WindowsSystem32calc.exe&#39;)
-True</code></pre></li>
+<li>如果 path 参数所指的文件或文件夹存在，调用 <code>os.path.exists(path)</code>将返回 True，否则返回 False。</li>
+<li>如果 path 参数存在，并且是一个文件，调用 <code>os.path.isfile(path)</code>将返回 True，否则返回 False。</li>
+<li>如果 path 参数存在，并且是一个文件夹，调用 <code>os.path.isdir(path)</code>将返回 True，否则返回 False。<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token string">'C:Windows'</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token string">'C:some_made_up_folder'</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span><span class="token string">'C:WindowsSystem32'</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isfile<span class="token punctuation">(</span><span class="token string">'C:WindowsSystem32'</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span><span class="token string">'C:WindowsSystem32calc.exe'</span><span class="token punctuation">)</span>
+<span class="token boolean">False</span>
+<span class="token operator">>></span><span class="token operator">></span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isfile<span class="token punctuation">(</span><span class="token string">'C:WindowsSystem32calc.exe'</span><span class="token punctuation">)</span>
+<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
 
             </div>
@@ -1029,7 +1037,7 @@ True</code></pre></li>
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">19.5k</span>
+            <span class="white-color">17.4k</span>
             
 
             <br>

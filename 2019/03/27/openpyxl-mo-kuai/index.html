@@ -445,14 +445,14 @@ openpyxl.load_workbook()函数接受文件名，返回一个 workbook 数据类�
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.2k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    11 分
                 </div>
                 
                 
@@ -469,116 +469,127 @@ openpyxl.load_workbook()函数接受文件名，返回一个 workbook 数据类�
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="openpyxl-load-workbook"><a href="#openpyxl-load-workbook" class="headerlink" title="openpyxl.load_workbook()"></a>openpyxl.load_workbook()</h3><hr>
-<p>openpyxl.load_workbook()函数接受文件名，返回一个 workbook 数据类型的值。这个 workbook 对象代表这个 Excel 文件，有点类似 File 对象代表一个打开的文本文件。</p>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wb = openpyxl.load_workbook(&#39;example.xlsx&#39;)
-&gt;&gt;&gt; type(wb)
-&lt;class &#39;openpyxl.workbook.workbook.Workbook&#39;&gt;</code></pre><h3 id="openpyxl-get-sheet-names"><a href="#openpyxl-get-sheet-names" class="headerlink" title="openpyxl.get_sheet_names()"></a>openpyxl.get_sheet_names()</h3><hr>
+<p><code>openpyxl.load_workbook()</code>函数接受文件名，返回一个 workbook 数据类型的值。这个 workbook 对象代表这个 Excel 文件，有点类似 File 对象代表一个打开的文本文件。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'example.xlsx'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> type<span class="token punctuation">(</span>wb<span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'openpyxl.workbook.workbook.Workbook'</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="openpyxl-get-sheet-names"><a href="#openpyxl-get-sheet-names" class="headerlink" title="openpyxl.get_sheet_names()"></a>openpyxl.get_sheet_names()</h3><hr>
 <p>可以取得工作簿中所有表名的列表</p>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wb = openpyxl.load_workbook(&#39;example.xlsx&#39;)
-&gt;&gt;&gt; wb.get_sheet_names()
-[&#39;Sheet1&#39;, &#39;Sheet2&#39;, &#39;Sheet3&#39;]</code></pre><h3 id="openpyxl-get-sheet-by-name"><a href="#openpyxl-get-sheet-by-name" class="headerlink" title="openpyxl.get_sheet_by_name()"></a>openpyxl.get_sheet_by_name()</h3><hr>
-<p>每个表由一个 Worksheet 对象表示，可以通过向工作簿方法 get_sheet_by_name()传递表名字符串获得。</p>
-<pre><code>&gt;&gt;&gt; sheet = wb.get_sheet_by_name(&#39;Sheet3&#39;)
-&gt;&gt;&gt; sheet
-&lt;Worksheet &quot;Sheet3&quot;&gt;</code></pre><h3 id="openpyxl-get-active-sheet"><a href="#openpyxl-get-active-sheet" class="headerlink" title="openpyxl.get_active_sheet()"></a>openpyxl.get_active_sheet()</h3><hr>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'example.xlsx'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'Sheet1'</span><span class="token punctuation">,</span> <span class="token string">'Sheet2'</span><span class="token punctuation">,</span> <span class="token string">'Sheet3'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="openpyxl-get-sheet-by-name"><a href="#openpyxl-get-sheet-by-name" class="headerlink" title="openpyxl.get_sheet_by_name()"></a>openpyxl.get_sheet_by_name()</h3><hr>
+<p>每个表由一个 Worksheet 对象表示，可以通过向工作簿方法 <code>get_sheet_by_name()</code>传递表名字符串获得。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_sheet_by_name<span class="token punctuation">(</span><span class="token string">'Sheet3'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet
+<span class="token operator">&lt;</span>Worksheet <span class="token string">"Sheet3"</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="openpyxl-get-active-sheet"><a href="#openpyxl-get-active-sheet" class="headerlink" title="openpyxl.get_active_sheet()"></a>openpyxl.get_active_sheet()</h3><hr>
 <p>取得工作簿的活动表。活动表是工作簿在 Excel 中打开时出现的工作表。在取得 Worksheet对象后，可以通过 title 属性取得它的名称。</p>
-<pre><code>&gt;&gt;&gt; sheet.title
-&#39;Sheet3&#39;
-&gt;&gt;&gt; anotherSheet = wb.get_active_sheet()
-&gt;&gt;&gt; anotherSheet
-&lt;Worksheet &quot;Sheet1&quot;&gt;</code></pre><h3 id="Cell-对象"><a href="#Cell-对象" class="headerlink" title="Cell 对象"></a>Cell 对象</h3><hr>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wb = openpyxl.load_workbook(&#39;example.xlsx&#39;)
-&gt;&gt;&gt; sheet = wb.get_sheet_by_name(&#39;Sheet1&#39;)
-&gt;&gt;&gt; sheet[&#39;A1&#39;]
-&lt;Cell Sheet1.A1&gt;
-&gt;&gt;&gt; sheet[&#39;A1&#39;].value
-datetime.datetime(2015, 4, 5, 13, 34, 2)
-&gt;&gt;&gt; print(sheet[&#39;A1&#39;].value)
-2015-04-05 13:34:02
-&gt;&gt;&gt; c = sheet[&#39;B1&#39;]
-&gt;&gt;&gt; c.value
-&#39;Apples&#39;
-&gt;&gt;&gt; &#39;Row &#39; + str(c.row) + &#39;, Column &#39; + c.column + &#39; is &#39; + c.value
-Traceback (most recent call last):
-  File &quot;&lt;input&gt;&quot;, line 1, in &lt;module&gt;
-TypeError: must be str, not int
-&gt;&gt;&gt; &#39;Row &#39; + str(c.row) + &#39;, Column &#39; + str(c.column) + &#39; is &#39; + c.value
-&#39;Row 1, Column 2 is Apples&#39;
-&gt;&gt;&gt; &#39;Cell &#39; + c.coordinate + &#39; is &#39; + c.value
-&#39;Cell B1 is Apples&#39;
-&gt;&gt;&gt; sheet[&#39;C1&#39;].value
-73</code></pre><p>注意：中间有一个报错是因为书中的 c.column 是 ‘B’，改版之后变成了 2 Cell 对象有一个 value 属性，不出意外，它包含这个单元格中保存的值。Cell 对象也有 row、column 和 coordinate 属性，提供该单元格的位置信息。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>title
+<span class="token string">'Sheet3'</span>
+<span class="token operator">>></span><span class="token operator">></span> anotherSheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> anotherSheet
+<span class="token operator">&lt;</span>Worksheet <span class="token string">"Sheet1"</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Cell-对象"><a href="#Cell-对象" class="headerlink" title="Cell 对象"></a>Cell 对象</h3><hr>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'example.xlsx'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_sheet_by_name<span class="token punctuation">(</span><span class="token string">'Sheet1'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span>
+<span class="token operator">&lt;</span>Cell Sheet1<span class="token punctuation">.</span>A1<span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value
+datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">(</span><span class="token number">2015</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+<span class="token number">2015</span><span class="token operator">-</span><span class="token number">04</span><span class="token operator">-</span><span class="token number">05</span> <span class="token number">13</span><span class="token punctuation">:</span><span class="token number">34</span><span class="token punctuation">:</span><span class="token number">02</span>
+<span class="token operator">>></span><span class="token operator">></span> c <span class="token operator">=</span> sheet<span class="token punctuation">[</span><span class="token string">'B1'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> c<span class="token punctuation">.</span>value
+<span class="token string">'Apples'</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token string">'Row '</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>c<span class="token punctuation">.</span>row<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">', Column '</span> <span class="token operator">+</span> c<span class="token punctuation">.</span>column <span class="token operator">+</span> <span class="token string">' is '</span> <span class="token operator">+</span> c<span class="token punctuation">.</span>value
+Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"&lt;input>"</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+TypeError<span class="token punctuation">:</span> must be str<span class="token punctuation">,</span> <span class="token operator">not</span> int
+<span class="token operator">>></span><span class="token operator">></span> <span class="token string">'Row '</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>c<span class="token punctuation">.</span>row<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">', Column '</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>c<span class="token punctuation">.</span>column<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' is '</span> <span class="token operator">+</span> c<span class="token punctuation">.</span>value
+<span class="token string">'Row 1, Column 2 is Apples'</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token string">'Cell '</span> <span class="token operator">+</span> c<span class="token punctuation">.</span>coordinate <span class="token operator">+</span> <span class="token string">' is '</span> <span class="token operator">+</span> c<span class="token punctuation">.</span>value
+<span class="token string">'Cell B1 is Apples'</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'C1'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value
+<span class="token number">73</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意：中间有一个报错是因为书中的 c.column 是 ‘B’，改版之后变成了 2 Cell 对象有一个 value 属性，不出意外，它包含这个单元格中保存的值。Cell 对象也有 row、column 和 coordinate 属性，提供该单元格的位置信息。</p>
 <h3 id="Worksheet-cell"><a href="#Worksheet-cell" class="headerlink" title="Worksheet.cell()"></a>Worksheet.cell()</h3><hr>
 <p>调用表的 cell()方法时，可以传入整数作为 row 和 column 关键字参数，也可以得到一个单元格。第一行或第一列的整数是 1，不是 0。</p>
-<pre><code>&gt;&gt;&gt; sheet.cell(row=1, column=2)
-&lt;Cell Sheet1.B1&gt;
-&gt;&gt;&gt; sheet.cell(row=1, column=2).value
-&#39;Apples&#39;
-&gt;&gt;&gt; for i in range(1, 8, 2):
- print(i, sheet.cell(row=i, column=2).value)
-1 Apples
-3 Pears
-5 Apples
-7 Strawberries</code></pre><h3 id="Worksheet-get-highest-row-和-Worksheet-get-highest-column"><a href="#Worksheet-get-highest-row-和-Worksheet-get-highest-column" class="headerlink" title="Worksheet.get_highest_row 和 Worksheet.get_highest_column"></a>Worksheet.get_highest_row 和 Worksheet.get_highest_column</h3><hr>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> column<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>Cell Sheet1<span class="token punctuation">.</span>B1<span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> column<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value
+<span class="token string">'Apples'</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+ <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> sheet<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>i<span class="token punctuation">,</span> column<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+<span class="token number">1</span> Apples
+<span class="token number">3</span> Pears
+<span class="token number">5</span> Apples
+<span class="token number">7</span> Strawberries<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Worksheet-get-highest-row-和-Worksheet-get-highest-column"><a href="#Worksheet-get-highest-row-和-Worksheet-get-highest-column" class="headerlink" title="Worksheet.get_highest_row 和 Worksheet.get_highest_column"></a>Worksheet.get_highest_row 和 Worksheet.get_highest_column</h3><hr>
 <p>get_highest_row 改成 max_row get_highest_column改成 max_column</p>
-<pre><code>&gt;&gt;&gt; sheet.max_row
-7
-&gt;&gt;&gt; sheet.max_column
-3</code></pre><h3 id="column-index-from-string-和-get-column-letter"><a href="#column-index-from-string-和-get-column-letter" class="headerlink" title="column_index_from_string() 和 get_column_letter()"></a>column_index_from_string() 和 get_column_letter()</h3><hr>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>max_row
+<span class="token number">7</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>max_column
+<span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="column-index-from-string-和-get-column-letter"><a href="#column-index-from-string-和-get-column-letter" class="headerlink" title="column_index_from_string() 和 get_column_letter()"></a>column_index_from_string() 和 get_column_letter()</h3><hr>
 <p>原来导入包的途径</p>
-<p> from openpyxl.cell import get_column_letter, column_index_from_string</p>
+<pre class="line-numbers language-python"><code class="language-python"> <span class="token keyword">from</span> openpyxl<span class="token punctuation">.</span>cell <span class="token keyword">import</span> get_column_letter<span class="token punctuation">,</span> column_index_from_string<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>新版本</p>
-<p>from openpyxl.utils import get_column_letter, column_index_from_string</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> openpyxl<span class="token punctuation">.</span>utils <span class="token keyword">import</span> get_column_letter<span class="token punctuation">,</span> column_index_from_string<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>使用</p>
-<pre><code>&gt;&gt;&gt; get_column_letter(1)
-&#39;A&#39;
-&gt;&gt;&gt; get_column_letter(900)
-&#39;AHP&#39;
-&gt;&gt;&gt; wb = openpyxl.load_workbook(&#39;example.xlsx&#39;)
-&gt;&gt;&gt; sheet = wb.get_sheet_by_name(&#39;Sheet1&#39;)
-&gt;&gt;&gt; get_column_letter(sheet.max_column)
-&#39;C&#39;
-&gt;&gt;&gt; column_index_from_string(&#39;A&#39;)
-1
-&gt;&gt;&gt; column_index_from_string(&#39;AA&#39;)
-27</code></pre><h3 id="Worksheet-对象切片"><a href="#Worksheet-对象切片" class="headerlink" title="Worksheet 对象切片"></a>Worksheet 对象切片</h3><hr>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> get_column_letter<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token string">'A'</span>
+<span class="token operator">>></span><span class="token operator">></span> get_column_letter<span class="token punctuation">(</span><span class="token number">900</span><span class="token punctuation">)</span>
+<span class="token string">'AHP'</span>
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'example.xlsx'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_sheet_by_name<span class="token punctuation">(</span><span class="token string">'Sheet1'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> get_column_letter<span class="token punctuation">(</span>sheet<span class="token punctuation">.</span>max_column<span class="token punctuation">)</span>
+<span class="token string">'C'</span>
+<span class="token operator">>></span><span class="token operator">></span> column_index_from_string<span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span>
+<span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> column_index_from_string<span class="token punctuation">(</span><span class="token string">'AA'</span><span class="token punctuation">)</span>
+<span class="token number">27</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Worksheet-对象切片"><a href="#Worksheet-对象切片" class="headerlink" title="Worksheet 对象切片"></a>Worksheet 对象切片</h3><hr>
 <p>取得电子表格中一行、一列或一个矩形区域中的所有Cell 对象。然后可以循环遍历这个切片中的所有单元格。</p>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wb = openpyxl.load_workbook(&#39;example.xlsx&#39;)
-&gt;&gt;&gt; sheet = wb.get_sheet_by_name(&#39;Sheet1&#39;)
-&gt;&gt;&gt; tuple(sheet[&#39;A1&#39;:&#39;C3&#39;])
-((&lt;Cell Sheet1.A1&gt;, &lt;Cell Sheet1.B1&gt;, &lt;Cell Sheet1.C1&gt;), (&lt;Cell Sheet1.A2&gt;,
-&lt;Cell Sheet1.B2&gt;, &lt;Cell Sheet1.C2&gt;), (&lt;Cell Sheet1.A3&gt;, &lt;Cell Sheet1.B3&gt;,
-&lt;Cell Sheet1.C3&gt;))
-&gt;&gt;&gt; sheet[&#39;A1&#39;:&#39;C3&#39;]
-((&lt;Cell &#39;Sheet1&#39;.A1&gt;, &lt;Cell &#39;Sheet1&#39;.B1&gt;, &lt;Cell &#39;Sheet1&#39;.C1&gt;), (&lt;Cell &#39;Sheet1&#39;.A2&gt;, &lt;Cell &#39;Sheet1&#39;.B2&gt;, &lt;Cell &#39;Sheet1&#39;.C2&gt;), (&lt;Cell &#39;Sheet1&#39;.A3&gt;, &lt;Cell &#39;Sheet1&#39;.B3&gt;, &lt;Cell &#39;Sheet1&#39;.C3&gt;))
-&gt;&gt;&gt; for rowOfCellObjects in sheet[&#39;A1&#39;:&#39;C3&#39;]:
-        for cellObj in rowOfCellObjects:
-            print(cellObj.coordinate, cellObj.value)
-        print(&#39;--- END OF ROW ---&#39;)
-A1 2015-04-05 13:34:02
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'example.xlsx'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_sheet_by_name<span class="token punctuation">(</span><span class="token string">'Sheet1'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> tuple<span class="token punctuation">(</span>sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">:</span><span class="token string">'C3'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Cell Sheet1<span class="token punctuation">.</span>A1<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Cell Sheet1<span class="token punctuation">.</span>B1<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Cell Sheet1<span class="token punctuation">.</span>C1<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>Cell Sheet1<span class="token punctuation">.</span>A2<span class="token operator">></span><span class="token punctuation">,</span>
+<span class="token operator">&lt;</span>Cell Sheet1<span class="token punctuation">.</span>B2<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Cell Sheet1<span class="token punctuation">.</span>C2<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>Cell Sheet1<span class="token punctuation">.</span>A3<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Cell Sheet1<span class="token punctuation">.</span>B3<span class="token operator">></span><span class="token punctuation">,</span>
+<span class="token operator">&lt;</span>Cell Sheet1<span class="token punctuation">.</span>C3<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">:</span><span class="token string">'C3'</span><span class="token punctuation">]</span>
+<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Cell <span class="token string">'Sheet1'</span><span class="token punctuation">.</span>A1<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Cell <span class="token string">'Sheet1'</span><span class="token punctuation">.</span>B1<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Cell <span class="token string">'Sheet1'</span><span class="token punctuation">.</span>C1<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>Cell <span class="token string">'Sheet1'</span><span class="token punctuation">.</span>A2<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Cell <span class="token string">'Sheet1'</span><span class="token punctuation">.</span>B2<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Cell <span class="token string">'Sheet1'</span><span class="token punctuation">.</span>C2<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>Cell <span class="token string">'Sheet1'</span><span class="token punctuation">.</span>A3<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Cell <span class="token string">'Sheet1'</span><span class="token punctuation">.</span>B3<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Cell <span class="token string">'Sheet1'</span><span class="token punctuation">.</span>C3<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> rowOfCellObjects <span class="token keyword">in</span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">:</span><span class="token string">'C3'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> cellObj <span class="token keyword">in</span> rowOfCellObjects<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>cellObj<span class="token punctuation">.</span>coordinate<span class="token punctuation">,</span> cellObj<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'--- END OF ROW ---'</span><span class="token punctuation">)</span>
+A1 <span class="token number">2015</span><span class="token operator">-</span><span class="token number">04</span><span class="token operator">-</span><span class="token number">05</span> <span class="token number">13</span><span class="token punctuation">:</span><span class="token number">34</span><span class="token punctuation">:</span><span class="token number">02</span>
 B1 Apples
-C1 73
---- END OF ROW ---
-A2 2015-04-05 03:41:23
+C1 <span class="token number">73</span>
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> END OF ROW <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+A2 <span class="token number">2015</span><span class="token operator">-</span><span class="token number">04</span><span class="token operator">-</span><span class="token number">05</span> <span class="token number">03</span><span class="token punctuation">:</span><span class="token number">41</span><span class="token punctuation">:</span><span class="token number">23</span>
 B2 Cherries
-C2 85
---- END OF ROW ---
-A3 2015-04-06 12:46:51
+C2 <span class="token number">85</span>
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> END OF ROW <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+A3 <span class="token number">2015</span><span class="token operator">-</span><span class="token number">04</span><span class="token operator">-</span><span class="token number">06</span> <span class="token number">12</span><span class="token punctuation">:</span><span class="token number">46</span><span class="token punctuation">:</span><span class="token number">51</span>
 B3 Pears
-C3 14
---- END OF ROW ---</code></pre><p>这个元组包含 3 个元组：每个元组代表 1 行，从指定区域的顶部到底部。这 3个内部元组中的每一个包含指定区域中一行的 Cell 对象，从最左边的单元格到最右边。所以总的来说，工作表的这个切片包含了从 A1 到 C3 区域的所有 Cell 对象，从左上角的单元格开始，到右下角的单元格结束。</p>
+C3 <span class="token number">14</span>
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> END OF ROW <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个元组包含 3 个元组：每个元组代表 1 行，从指定区域的顶部到底部。这 3个内部元组中的每一个包含指定区域中一行的 Cell 对象，从最左边的单元格到最右边。所以总的来说，工作表的这个切片包含了从 A1 到 C3 区域的所有 Cell 对象，从左上角的单元格开始，到右下角的单元格结束。</p>
 <h3 id="Worksheet-columns-和-Worksheet-rows"><a href="#Worksheet-columns-和-Worksheet-rows" class="headerlink" title="Worksheet.columns 和 Worksheet.rows"></a>Worksheet.columns 和 Worksheet.rows</h3><hr>
 <p>原来获取特定列的方法，特定行的方法是</p>
-<pre><code>sheet.columns[1]
-sheet.rows[1]</code></pre><p>现在 <code>sheet.columns</code> 和 <code>sheet.rows</code> 是 <code>generator</code> ，再像原来那样取值会报错，解决：</p>
-<pre><code>list(sheet.columns)[1]
-list(sheet.rows)[1]</code></pre><p>循环取值</p>
-<pre><code>for cellObj in list(sheet.columns)[1]:
-    print(cellObj.value)
+<pre class="line-numbers language-python"><code class="language-python">sheet<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+sheet<span class="token punctuation">.</span>rows<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>现在 <code>sheet.columns</code> 和 <code>sheet.rows</code> 是 <code>generator</code> ，再像原来那样取值会报错，解决：</p>
+<pre class="line-numbers language-python"><code class="language-python">list<span class="token punctuation">(</span>sheet<span class="token punctuation">.</span>columns<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+list<span class="token punctuation">(</span>sheet<span class="token punctuation">.</span>rows<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>循环取值</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> cellObj <span class="token keyword">in</span> list<span class="token punctuation">(</span>sheet<span class="token punctuation">.</span>columns<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>cellObj<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
 
 Apples
 Cherries
@@ -586,177 +597,197 @@ Pears
 Oranges
 Apples
 Bananas
-Strawberries</code></pre><h3 id="openpyxl-Workbook"><a href="#openpyxl-Workbook" class="headerlink" title="openpyxl.Workbook()"></a>openpyxl.Workbook()</h3><hr>
-<p>调用 openpyxl.Workbook()函数，创建一个新的空 Workbook 对象。</p>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wb = openpyxl.Workbook()
-&gt;&gt;&gt; wb.get_sheet_names()
-[&#39;Sheet&#39;]
-&gt;&gt;&gt; sheet = wb.get_active_sheet()
-&gt;&gt;&gt; sheet.title
-&#39;Sheet&#39;
-&gt;&gt;&gt; sheet.title = &#39;Spam Bacon Eggs Sheet&#39;
-&gt;&gt;&gt; wb.get_sheet_names()
-[&#39;Spam Bacon Eggs Sheet&#39;]</code></pre><h3 id="Workbook-save"><a href="#Workbook-save" class="headerlink" title="Workbook.save()"></a>Workbook.save()</h3><hr>
-<p>当修改Workbook 对象或它的工作表和单元格时，电子表格文件不会保存，除非你调用 save()工作簿方法。</p>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wb = openpyxl.load_workbook(&#39;example.xlsx&#39;)
-&gt;&gt;&gt; sheet = wb.get_active_sheet()
-&gt;&gt;&gt; sheet.title = &#39;Spam Spam Spam&#39;
-&gt;&gt;&gt; wb.save(&#39;example_copy.xlsx&#39;)</code></pre><p>这里，我们改变了工作表的名称。为了保存变更，我们将文件名作为字符串传递给 save()方法。传入的文件名与最初的文件名不同，例如’example_copy.xlsx’，这将变更保存到电子表格的一份拷贝中。 当你编辑从文件中加载的一个电子表格时，总是应该将新的、编辑过的电子表格保存到不同的文件名中。这样，如果代码中有缺陷，导致新的保存到文件中数据不对或讹误，还有最初的电子表格文件可以处理。 补充： 有时候调用 save 函数时报错如下：</p>
-<pre><code>&gt;&gt;&gt; wb.save(&#39;styled.xlsx&#39;)
-Traceback (most recent call last):
-  File &quot;&lt;input&gt;&quot;, line 1, in &lt;module&gt;
-  File &quot;G:python36libsite-packagesopenpyxlworkbookworkbook.py&quot;, line 396, in save
-    save_workbook(self, filename)
-  File &quot;G:python36libsite-packagesopenpyxlwriterexcel.py&quot;, line 292, in save_workbook
-    archive = ZipFile(filename, &#39;w&#39;, ZIP_DEFLATED, allowZip64=True)
-  File &quot;G:python36libzipfile.py&quot;, line 1090, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: &#39;styled.xlsx&#39;</code></pre><p>解决：关闭打开的 excel 文档</p>
+Strawberries<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="openpyxl-Workbook"><a href="#openpyxl-Workbook" class="headerlink" title="openpyxl.Workbook()"></a>openpyxl.Workbook()</h3><hr>
+<p>调用 <code>openpyxl.Workbook()</code>函数，创建一个新的空 Workbook 对象。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>title
+<span class="token string">'Sheet'</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'Spam Bacon Eggs Sheet'</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'Spam Bacon Eggs Sheet'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Workbook-save"><a href="#Workbook-save" class="headerlink" title="Workbook.save()"></a>Workbook.save()</h3><hr>
+<p>当修改Workbook 对象或它的工作表和单元格时，电子表格文件不会保存，除非你调用 <code>save()</code>工作簿方法。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'example.xlsx'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'Spam Spam Spam'</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'example_copy.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里，我们改变了工作表的名称。为了保存变更，我们将文件名作为字符串传递给 <code>save()</code>方法。传入的文件名与最初的文件名不同，例如’example_copy.xlsx’，这将变更保存到电子表格的一份拷贝中。 当你编辑从文件中加载的一个电子表格时，总是应该将新的、编辑过的电子表格保存到不同的文件名中。这样，如果代码中有缺陷，导致新的保存到文件中数据不对或讹误，还有最初的电子表格文件可以处理。 补充： 有时候调用 save 函数时报错如下：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'styled.xlsx'</span><span class="token punctuation">)</span>
+Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"&lt;input>"</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+  File <span class="token string">"G:python36libsite-packagesopenpyxlworkbookworkbook.py"</span><span class="token punctuation">,</span> line <span class="token number">396</span><span class="token punctuation">,</span> <span class="token keyword">in</span> save
+    save_workbook<span class="token punctuation">(</span>self<span class="token punctuation">,</span> filename<span class="token punctuation">)</span>
+  File <span class="token string">"G:python36libsite-packagesopenpyxlwriterexcel.py"</span><span class="token punctuation">,</span> line <span class="token number">292</span><span class="token punctuation">,</span> <span class="token keyword">in</span> save_workbook
+    archive <span class="token operator">=</span> ZipFile<span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> ZIP_DEFLATED<span class="token punctuation">,</span> allowZip64<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+  File <span class="token string">"G:python36libzipfile.py"</span><span class="token punctuation">,</span> line <span class="token number">1090</span><span class="token punctuation">,</span> <span class="token keyword">in</span> __init__
+    self<span class="token punctuation">.</span>fp <span class="token operator">=</span> io<span class="token punctuation">.</span>open<span class="token punctuation">(</span>file<span class="token punctuation">,</span> filemode<span class="token punctuation">)</span>
+PermissionError<span class="token punctuation">:</span> <span class="token punctuation">[</span>Errno <span class="token number">13</span><span class="token punctuation">]</span> Permission denied<span class="token punctuation">:</span> <span class="token string">'styled.xlsx'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>解决：关闭打开的 excel 文档</p>
 <h3 id="Workbook-create-sheet"><a href="#Workbook-create-sheet" class="headerlink" title="Workbook.create_sheet()"></a>Workbook.create_sheet()</h3><hr>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wb = openpyxl.Workbook()
-&gt;&gt;&gt; wb.get_sheet_names()
-[&#39;Sheet&#39;]
-&gt;&gt;&gt; wb.create_sheet()
-&lt;Worksheet &quot;Sheet1&quot;&gt;
-&gt;&gt;&gt; wb.get_sheet_names()
-[&#39;Sheet&#39;, &#39;Sheet1&#39;]
-&gt;&gt;&gt; wb.create_sheet(index=0, title=&#39;First Sheet&#39;)
-&lt;Worksheet &quot;First Sheet&quot;&gt;
-&gt;&gt;&gt; wb.get_sheet_names()
-[&#39;First Sheet&#39;, &#39;Sheet&#39;, &#39;Sheet1&#39;]
-&gt;&gt;&gt; wb.create_sheet(index=2, title=&#39;Middle Sheet&#39;)
-&lt;Worksheet &quot;Middle Sheet&quot;&gt;
-&gt;&gt;&gt; wb.get_sheet_names()
-[&#39;First Sheet&#39;, &#39;Sheet&#39;, &#39;Middle Sheet&#39;, &#39;Sheet1&#39;]</code></pre><p>create_sheet()方法返回一个新的 Worksheet 对象，名为 SheetX，它默认是工作簿的最后一个工作表。或者，可以利用 index 和 title 关键字参数，指定新工作表的索引或名称。 补充：Worksheet.get_active_sheet() 函数，会根据Worksheet.get_sheet_names() 函数的下标为 0 的值获取 Worksheet 对象</p>
-<pre><code>&gt;&gt;&gt; wb.create_sheet(index=0, title=&#39;First Sheet&#39;)
-&lt;Worksheet &quot;First Sheet&quot;&gt;
-&gt;&gt;&gt; wb.get_sheet_names()
-[&#39;First Sheet&#39;, &#39;Sheet&#39;, &#39;Sheet1&#39;]
-&gt;&gt;&gt; wb.get_active_sheet()
-&lt;Worksheet &quot;First Sheet&quot;&gt;
-&gt;&gt;&gt; wb.create_sheet(index=0, title=&#39;new First Sheet&#39;)
-&lt;Worksheet &quot;new First Sheet&quot;&gt;
-&gt;&gt;&gt; wb.get_sheet_names()
-[&#39;new First Sheet&#39;, &#39;First Sheet&#39;, &#39;Sheet&#39;, &#39;Sheet1&#39;]
-&gt;&gt;&gt; wb.get_active_sheet()
-&lt;Worksheet &quot;new First Sheet&quot;&gt;</code></pre><h3 id="Workbook-remove-sheet"><a href="#Workbook-remove-sheet" class="headerlink" title="Workbook.remove_sheet()"></a>Workbook.remove_sheet()</h3><hr>
-<pre><code>&gt;&gt;&gt; wb.get_sheet_names()
-[&#39;new First Sheet&#39;, &#39;First Sheet&#39;, &#39;Sheet&#39;, &#39;Sheet1&#39;]
-&gt;&gt;&gt; wb.remove(wb.get_sheet_by_name(&#39;new First Sheet&#39;))
-&gt;&gt;&gt; wb.remove(wb.get_sheet_by_name(&#39;Sheet1&#39;))
-&gt;&gt;&gt; wb.get_sheet_names()
-[&#39;First Sheet&#39;, &#39;Sheet&#39;]</code></pre><p>remove_sheet() 方法接受一个 Worksheet 对象作为其参数，而不是工作表名称的字符串。如果你只知道要删除的工作表的名称，就调用 get_sheet_by_name() ，将它的返回值传入  remove_sheet()。 在工作簿中添加或删除工作表之后，记得调用 save()方法来保存变更。</p>
-<h2 id="将值写入单元格"><a href="#将值写入单元格" class="headerlink" title="将值写入单元格"></a>将值写入单元格</h2><pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wb = openpyxl.Workbook()
-&gt;&gt;&gt; sheet = wb.get_sheet_by_name(&#39;Sheet&#39;)
-&gt;&gt;&gt; sheet[&#39;A1&#39;] = &#39;Hello world!&#39;
-&gt;&gt;&gt; sheet[&#39;A1&#39;].value
-&#39;Hello world!&#39;</code></pre><h2 id="Font-对象"><a href="#Font-对象" class="headerlink" title="Font 对象"></a>Font 对象</h2><p>书中代码如下：</p>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; from openpyxl.styles import Font, Style
-&gt;&gt;&gt; wb = openpyxl.Workbook()
-&gt;&gt;&gt; sheet = wb.get_sheet_by_name(&#39;Sheet&#39;)
-&gt;&gt;&gt; italic24Font = Font(size=24, italic=True)
-&gt;&gt;&gt; styleObj = Style(font=italic24Font)
-&gt;&gt;&gt; sheet[&#39;A&#39;].style/styleObj
-&gt;&gt;&gt; sheet[&#39;A1&#39;] = &#39;Hello world!&#39;
-&gt;&gt;&gt; wb.save(&#39;styled.xlsx&#39;)</code></pre><p>会报错：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>create_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>Worksheet <span class="token string">"Sheet1"</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet1'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>create_sheet<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">'First Sheet'</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>Worksheet <span class="token string">"First Sheet"</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'First Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet1'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>create_sheet<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">'Middle Sheet'</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>Worksheet <span class="token string">"Middle Sheet"</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'First Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Middle Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet1'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>create_sheet()</code>方法返回一个新的 Worksheet 对象，名为 SheetX，它默认是工作簿的最后一个工作表。或者，可以利用 index 和 title 关键字参数，指定新工作表的索引或名称。 补充：<code>Worksheet.get_active_sheet()</code> 函数，会根据<code>Worksheet.get_sheet_names()</code> 函数的下标为 0 的值获取 Worksheet 对象</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>create_sheet<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">'First Sheet'</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>Worksheet <span class="token string">"First Sheet"</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'First Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet1'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>Worksheet <span class="token string">"First Sheet"</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>create_sheet<span class="token punctuation">(</span>index<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">'new First Sheet'</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>Worksheet <span class="token string">"new First Sheet"</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'new First Sheet'</span><span class="token punctuation">,</span> <span class="token string">'First Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet1'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>Worksheet <span class="token string">"new First Sheet"</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Workbook-remove-sheet"><a href="#Workbook-remove-sheet" class="headerlink" title="Workbook.remove_sheet()"></a>Workbook.remove_sheet()</h3><hr>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'new First Sheet'</span><span class="token punctuation">,</span> <span class="token string">'First Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet1'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>wb<span class="token punctuation">.</span>get_sheet_by_name<span class="token punctuation">(</span><span class="token string">'new First Sheet'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>wb<span class="token punctuation">.</span>get_sheet_by_name<span class="token punctuation">(</span><span class="token string">'Sheet1'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>get_sheet_names<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'First Sheet'</span><span class="token punctuation">,</span> <span class="token string">'Sheet'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>remove_sheet()</code> 方法接受一个 Worksheet 对象作为其参数，而不是工作表名称的字符串。如果你只知道要删除的工作表的名称，就调用<code>get_sheet_by_name()</code>，将它的返回值传入  <code>remove_sheet()</code>。 在工作簿中添加或删除工作表之后，记得调用<code>save()</code>方法来保存变更。</p>
+<h2 id="将值写入单元格"><a href="#将值写入单元格" class="headerlink" title="将值写入单元格"></a>将值写入单元格</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_sheet_by_name<span class="token punctuation">(</span><span class="token string">'Sheet'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Hello world!'</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value
+<span class="token string">'Hello world!'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Font-对象"><a href="#Font-对象" class="headerlink" title="Font 对象"></a>Font 对象</h2><p>书中代码如下：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> openpyxl<span class="token punctuation">.</span>styles <span class="token keyword">import</span> Font<span class="token punctuation">,</span> Style
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_sheet_by_name<span class="token punctuation">(</span><span class="token string">'Sheet'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> italic24Font <span class="token operator">=</span> Font<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token number">24</span><span class="token punctuation">,</span> italic<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> styleObj <span class="token operator">=</span> Style<span class="token punctuation">(</span>font<span class="token operator">=</span>italic24Font<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>style<span class="token operator">/</span>styleObj
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Hello world!'</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'styled.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>会报错：</p>
 <p><code>ImportError: cannot import name &#39;Style&#39;</code></p>
 <p>解决：</p>
-<pre><code>&gt;&gt;&gt; from openpyxl.styles import Font
-&gt;&gt;&gt; wb = openpyxl.Workbook()
-&gt;&gt;&gt; sheet = wb.get_sheet_by_name(&#39;Sheet&#39;)
-&gt;&gt;&gt; sheet[&#39;A1&#39;] = &#39;Hello world!&#39;
-&gt;&gt;&gt; italic24Font = Font(name=&#39;Calibri&#39;,size=24, italic=True)
-&gt;&gt;&gt; sheet[&#39;A1&#39;].font = italic24Font
-&gt;&gt;&gt; wb.save(&#39;styled.xlsx&#39;)</code></pre><p>Font 函数中的 name 参数是选择字体，size 字体大小，italic 是否为斜体，最后将 Font 对象赋值给 Cell 对象的 font 属性即可 创建了各种字体风格：</p>
-<pre><code>&gt;&gt;&gt; wb = openpyxl.Workbook()
-&gt;&gt;&gt; sheet = wb.get_sheet_by_name(&#39;Sheet&#39;)
-&gt;&gt;&gt; fontObj1 = Font(name=&#39;Times New Roman&#39;, bold=True)
-&gt;&gt;&gt; sheet[&#39;A1&#39;].font = fontObj1
-&gt;&gt;&gt; fontObj2 = Font(name=&#39;Calibri&#39;,size=24, italic=True)
-&gt;&gt;&gt; sheet[&#39;B3&#39;].font = fontObj2
-&gt;&gt;&gt; sheet[&#39;A1&#39;] = &#39;Bold Times New Roman&#39;
-&gt;&gt;&gt; sheet[&#39;B3&#39;] = &#39;24 pt Italic&#39;
-&gt;&gt;&gt; wb.save(&#39;styles.xlsx&#39;)</code></pre><h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>–</p>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wb = openpyxl.Workbook()
-&gt;&gt;&gt; sheet = wb.get_active_sheet()
-&gt;&gt;&gt; sheet[&#39;A1&#39;] = 200
-&gt;&gt;&gt; sheet[&#39;A2&#39;] = 300
-&gt;&gt;&gt; sheet[&#39;A3&#39;] = &#39;=SUM(A1:A2)&#39;
-&gt;&gt;&gt; wb.save(&#39;writeFormula.xlsx&#39;)</code></pre><p>单元格 A1 和 A2 分别设置为 200 和 300。单元格 A3 设置为一个公式，求出 A1和 A2 的和。如果在 Excel 中打开这个电子表格，A3 的值将显示为 500。 load_workbook()的 data_only 关键字参数设置为 True。这意味着 Workbook 对象要么显示公式，要么显示公式的结果，不能兼得。</p>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wbFormulas = openpyxl.load_workbook(&#39;writeFormula.xlsx&#39;)
-&gt;&gt;&gt; sheet = wbFormulas.get_active_sheet()
-&gt;&gt;&gt; sheet[&#39;A3&#39;].value
-&#39;=SUM(A1:A2)&#39;
-&gt;&gt;&gt; wbDataOnly = openpyxl.load_workbook(&#39;writeFormula.xlsx&#39;, data_only=True)
-&gt;&gt;&gt; sheet = wbDataOnly.get_active_sheet()
-&gt;&gt;&gt; sheet[&#39;A3&#39;].value
-500</code></pre><h3 id="row-dimensions-和-column-dimensions"><a href="#row-dimensions-和-column-dimensions" class="headerlink" title="row_dimensions 和 column_dimensions"></a>row_dimensions 和 column_dimensions</h3><pre><code>&gt;&gt;&gt; wb = openpyxl.Workbook()
-&gt;&gt;&gt; sheet = wb.get_active_sheet()
-&gt;&gt;&gt; sheet = wb.get_active_sheet()
-&gt;&gt;&gt; sheet[&#39;A1&#39;] = &#39;Tall row&#39;
-&gt;&gt;&gt; sheet[&#39;B2&#39;] = &#39;Wide column&#39;
-&gt;&gt;&gt; sheet.row_dimensions[1].height = 70
-&gt;&gt;&gt; sheet.column_dimensions[&#39;B&#39;].width = 20
-&gt;&gt;&gt; wb.save(&#39;dimensions.xlsx&#39;) </code></pre><h3 id="Worksheet-merge-cells"><a href="#Worksheet-merge-cells" class="headerlink" title="Worksheet.merge_cells()"></a>Worksheet.merge_cells()</h3><hr>
-<pre><code>&gt;&gt;&gt; wb = openpyxl.Workbook()
-&gt;&gt;&gt; sheet = wb.get_active_sheet()
-&gt;&gt;&gt; sheet.merge_cells(&#39;A1:D3&#39;)
-&gt;&gt;&gt; sheet[&#39;A1&#39;] = &#39;Twelve cells merged together.&#39;
-&gt;&gt;&gt; sheet.merge_cells(&#39;C5:D5&#39;)
-&gt;&gt;&gt; sheet[&#39;C5&#39;] = &#39;Two merged cells.&#39;
-&gt;&gt;&gt; wb.save(&#39;merged.xlsx&#39;)</code></pre><p><strong>合并后只可以往左上角写入数据，也就是区间中</strong><code>:</code><strong>左边的坐标。</strong>如果这些要合并的单元格都有数据，只会保留左上角的数据，其他则丢弃。换句话说<strong>若合并前不是在左上角写入数据，合并后单元格中不会有数据。</strong></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> openpyxl<span class="token punctuation">.</span>styles <span class="token keyword">import</span> Font
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_sheet_by_name<span class="token punctuation">(</span><span class="token string">'Sheet'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Hello world!'</span>
+<span class="token operator">>></span><span class="token operator">></span> italic24Font <span class="token operator">=</span> Font<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'Calibri'</span><span class="token punctuation">,</span>size<span class="token operator">=</span><span class="token number">24</span><span class="token punctuation">,</span> italic<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>font <span class="token operator">=</span> italic24Font
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'styled.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Font 函数中的 name 参数是选择字体，size 字体大小，italic 是否为斜体，最后将 Font 对象赋值给 Cell 对象的 font 属性即可 创建了各种字体风格：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_sheet_by_name<span class="token punctuation">(</span><span class="token string">'Sheet'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> fontObj1 <span class="token operator">=</span> Font<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'Times New Roman'</span><span class="token punctuation">,</span> bold<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>font <span class="token operator">=</span> fontObj1
+<span class="token operator">>></span><span class="token operator">></span> fontObj2 <span class="token operator">=</span> Font<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'Calibri'</span><span class="token punctuation">,</span>size<span class="token operator">=</span><span class="token number">24</span><span class="token punctuation">,</span> italic<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'B3'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>font <span class="token operator">=</span> fontObj2
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Bold Times New Roman'</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'B3'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'24 pt Italic'</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'styles.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>–</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">200</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A2'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">300</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A3'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'=SUM(A1:A2)'</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'writeFormula.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>单元格 A1 和 A2 分别设置为 200 和 300。单元格 A3 设置为一个公式，求出 A1和 A2 的和。如果在 Excel 中打开这个电子表格，A3 的值将显示为 500。 load_workbook()的 data_only 关键字参数设置为 True。这意味着 Workbook 对象要么显示公式，要么显示公式的结果，不能兼得。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wbFormulas <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'writeFormula.xlsx'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wbFormulas<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A3'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value
+<span class="token string">'=SUM(A1:A2)'</span>
+<span class="token operator">>></span><span class="token operator">></span> wbDataOnly <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'writeFormula.xlsx'</span><span class="token punctuation">,</span> data_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wbDataOnly<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A3'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value
+<span class="token number">500</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="row-dimensions-和-column-dimensions"><a href="#row-dimensions-和-column-dimensions" class="headerlink" title="row_dimensions 和 column_dimensions"></a>row_dimensions 和 column_dimensions</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Tall row'</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'B2'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Wide column'</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>row_dimensions<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token number">70</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>column_dimensions<span class="token punctuation">[</span><span class="token string">'B'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token number">20</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'dimensions.xlsx'</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Worksheet-merge-cells"><a href="#Worksheet-merge-cells" class="headerlink" title="Worksheet.merge_cells()"></a>Worksheet.merge_cells()</h3><hr>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>merge_cells<span class="token punctuation">(</span><span class="token string">'A1:D3'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Twelve cells merged together.'</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>merge_cells<span class="token punctuation">(</span><span class="token string">'C5:D5'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">[</span><span class="token string">'C5'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Two merged cells.'</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'merged.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>合并后只可以往左上角写入数据，也就是区间中</strong><code>:</code><strong>左边的坐标。</strong>如果这些要合并的单元格都有数据，只会保留左上角的数据，其他则丢弃。换句话说<strong>若合并前不是在左上角写入数据，合并后单元格中不会有数据。</strong></p>
 <h3 id="Worksheet-unmerge-cells"><a href="#Worksheet-unmerge-cells" class="headerlink" title="Worksheet.unmerge_cells()"></a>Worksheet.unmerge_cells()</h3><hr>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wb = openpyxl.load_workbook(&#39;merged.xlsx&#39;)
-&gt;&gt;&gt; sheet = wb.get_active_sheet()
-&gt;&gt;&gt; sheet.unmerge_cells(&#39;A1:D3&#39;)
-&gt;&gt;&gt; sheet.unmerge_cells(&#39;C5:D5&#39;)
-&gt;&gt;&gt; wb.save(&#39;merged.xlsx&#39;)</code></pre><p>拆分后，值回到A1位置。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'merged.xlsx'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>unmerge_cells<span class="token punctuation">(</span><span class="token string">'A1:D3'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>unmerge_cells<span class="token punctuation">(</span><span class="token string">'C5:D5'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'merged.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>拆分后，值回到A1位置。</p>
 <h3 id="Worksheet-freeze-panes"><a href="#Worksheet-freeze-panes" class="headerlink" title="Worksheet.freeze_panes"></a>Worksheet.freeze_panes</h3><hr>
-<pre><code>&gt;&gt;&gt; import openpyxl
-&gt;&gt;&gt; wb = openpyxl.load_workbook(&#39;produceSales.xlsx&#39;)
-&gt;&gt;&gt; sheet = wb.get_active_sheet()
-&gt;&gt;&gt; sheet.freeze_panes = &#39;A2&#39;
-&gt;&gt;&gt; wb.save(&#39;freezeExample.xlsx&#39;)</code></pre><p>如果将 freeze_panes 属性设置为’A2’，行 1 将永远可见，无论用户将电子表格滚动到何处</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> openpyxl
+<span class="token operator">>></span><span class="token operator">></span> wb <span class="token operator">=</span> openpyxl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'produceSales.xlsx'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet <span class="token operator">=</span> wb<span class="token punctuation">.</span>get_active_sheet<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> sheet<span class="token punctuation">.</span>freeze_panes <span class="token operator">=</span> <span class="token string">'A2'</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'freezeExample.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果将 freeze_panes 属性设置为’A2’，行 1 将永远可见，无论用户将电子表格滚动到何处</p>
 <h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p>–</p>
 <p>书中的代码报错误，于是使用官方文档中的代码</p>
-<pre><code>&gt;&gt;&gt; from openpyxl.chart import BarChart
-&gt;&gt;&gt; chartObj = BarChart()
-&gt;&gt;&gt; chartObj.title = &#39;First series&#39;
-&gt;&gt;&gt; from openpyxl.chart import Reference
-&gt;&gt;&gt; data = Reference(ws, min_col=1, min_row=1, max_row=10, max_col=1)
-&gt;&gt;&gt; chartObj.add_data(data)
-&gt;&gt;&gt; ws.add_chart(chartObj, &#39;C2&#39;)
-&gt;&gt;&gt; wb.save(&#39;sampleChart.xlsx&#39;)</code></pre><p>Reference 对象选择数据区域，BarChart 对象为柱形图表对象，设置完后，利用 worksheet.add_chart 函数 添加 BarChart 对象</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> openpyxl<span class="token punctuation">.</span>chart <span class="token keyword">import</span> BarChart
+<span class="token operator">>></span><span class="token operator">></span> chartObj <span class="token operator">=</span> BarChart<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> chartObj<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'First series'</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> openpyxl<span class="token punctuation">.</span>chart <span class="token keyword">import</span> Reference
+<span class="token operator">>></span><span class="token operator">></span> data <span class="token operator">=</span> Reference<span class="token punctuation">(</span>ws<span class="token punctuation">,</span> min_col<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> min_row<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> max_row<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> max_col<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> chartObj<span class="token punctuation">.</span>add_data<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> ws<span class="token punctuation">.</span>add_chart<span class="token punctuation">(</span>chartObj<span class="token punctuation">,</span> <span class="token string">'C2'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'sampleChart.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Reference 对象选择数据区域，BarChart 对象为柱形图表对象，设置完后，利用 worksheet.add_chart 函数 添加 BarChart 对象</p>
 <h3 id="图表布局"><a href="#图表布局" class="headerlink" title="图表布局"></a>图表布局</h3><hr>
-<pre><code>&gt;&gt;&gt; from copy import deepcopy
-&gt;&gt;&gt; from openpyxl.chart.layout import Layout, ManualLayout
-&gt;&gt;&gt; ch2 = deepcopy(chartObj)
-... ch2.title = &quot;Manual chart layout&quot;
-... ch2.legend.position = &quot;tr&quot;
-... ch2.layout=Layout(
-...     manualLayout=ManualLayout(
-...         x=0.25, y=0.25
-...     )
-... )
-&gt;&gt;&gt; ws.add_chart(ch2, &#39;N2&#39;)
-&gt;&gt;&gt; wb.save(&#39;sampleChart.xlsx&#39;)</code></pre><p>x , y 控制图表在容器中的位置，x是从左边开始的水平位置y是顶边开始垂直的位置 <code>legend.position = &#39;tr&#39;</code> 是图例布局</p>
-<pre><code>&gt;&gt;&gt; ch6 = deepcopy(chartObj)
-... ch6.title = &quot;Manual chart layout&quot;
-... ch6.layout=Layout(
-...     manualLayout=ManualLayout(
-...         h=1, w=1
-...     )
-... )
-... ws.add_chart(ch6, &#39;N36&#39;)
-... wb.save(&#39;sampleChart.xlsx&#39;)</code></pre><p>h, w 是调整大小</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> copy <span class="token keyword">import</span> deepcopy
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> openpyxl<span class="token punctuation">.</span>chart<span class="token punctuation">.</span>layout <span class="token keyword">import</span> Layout<span class="token punctuation">,</span> ManualLayout
+<span class="token operator">>></span><span class="token operator">></span> ch2 <span class="token operator">=</span> deepcopy<span class="token punctuation">(</span>chartObj<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> ch2<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">"Manual chart layout"</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> ch2<span class="token punctuation">.</span>legend<span class="token punctuation">.</span>position <span class="token operator">=</span> <span class="token string">"tr"</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> ch2<span class="token punctuation">.</span>layout<span class="token operator">=</span>Layout<span class="token punctuation">(</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     manualLayout<span class="token operator">=</span>ManualLayout<span class="token punctuation">(</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>         x<span class="token operator">=</span><span class="token number">0.25</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token number">0.25</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> ws<span class="token punctuation">.</span>add_chart<span class="token punctuation">(</span>ch2<span class="token punctuation">,</span> <span class="token string">'N2'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'sampleChart.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>x , y 控制图表在容器中的位置，x是从左边开始的水平位置y是顶边开始垂直的位置 <code>legend.position = &#39;tr&#39;</code> 是图例布局</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> ch6 <span class="token operator">=</span> deepcopy<span class="token punctuation">(</span>chartObj<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> ch6<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">"Manual chart layout"</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> ch6<span class="token punctuation">.</span>layout<span class="token operator">=</span>Layout<span class="token punctuation">(</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     manualLayout<span class="token operator">=</span>ManualLayout<span class="token punctuation">(</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>         h<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> w<span class="token operator">=</span><span class="token number">1</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> ws<span class="token punctuation">.</span>add_chart<span class="token punctuation">(</span>ch6<span class="token punctuation">,</span> <span class="token string">'N36'</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'sampleChart.xlsx'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>h, w 是调整大小</p>
 
             </div>
             <hr />
@@ -1229,7 +1260,7 @@ PermissionError: [Errno 13] Permission denied: &#39;styled.xlsx&#39;</code></pre
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">19.5k</span>
+            <span class="white-color">17.4k</span>
             
 
             <br>

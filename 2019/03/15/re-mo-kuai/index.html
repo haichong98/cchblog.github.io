@@ -7,8 +7,9 @@
     <meta name="keywords" content="正则表达式, 懂得感恩，是收获幸福的源泉。懂得感恩，你会发现原来自己周围的一切都是那样的美好。">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
-    <meta name="description" content="创建正则表达式对象phoneNumRegex = re.compile(r&amp;#39;ddd-ddd-dddd&amp;#39;)传入一个字符串值，表示正则表达式，它将返回一个 Regex 模式对象（或者就简称为 Regex 对象）。
-匹配 Rege">
+    <meta name="description" content="创建正则表达式对象phoneNumRegex = re.compile(r&#39;ddd-ddd-dddd&#39;)
+传入一个字符串值，表示正则表达式，它将返回一个 Regex 模式对象（或者就简称为 Regex 对象）。
+匹配 Regex 对象如果字">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -445,14 +446,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    3.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    15 分
                 </div>
                 
                 
@@ -468,177 +469,205 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="创建正则表达式对象"><a href="#创建正则表达式对象" class="headerlink" title="创建正则表达式对象"></a>创建正则表达式对象</h2><pre><code>phoneNumRegex = re.compile(r&#39;ddd-ddd-dddd&#39;)</code></pre><p>传入一个字符串值，表示正则表达式，它将返回一个 Regex 模式对象（或者就简称为 Regex 对象）。</p>
-<h2 id="匹配-Regex-对象"><a href="#匹配-Regex-对象" class="headerlink" title="匹配 Regex 对象"></a>匹配 Regex 对象</h2><p>如果字符串中没有找到该正则表达式模式，search()方法将返回 None。如果找到了该模式，search()方法将返回一个 Match 对象。Match 对象有一个 group()方法，它返回被查找字符串中实际匹配的文本</p>
-<pre><code>phoneNumRegex = re.compile(r&#39;ddd-ddd-dddd&#39;)
-mo = phoneNumRegex.search(&#39;My number is 415-555-4242.&#39;)
-print(&#39;Phone number found: &#39; + mo.group())
-Phone number found: 415-555-4242</code></pre><h2 id="利用括号分组"><a href="#利用括号分组" class="headerlink" title="利用括号分组"></a>利用括号分组</h2><p>正则表达式字符串中的第一对括号是第 1 组。第二对括号是第 2 组。向 group()匹配对象方法传入整数 1 或 2，就可以取得匹配文本的不同部分。向 group()方法传入 0 或不传入参数，将返回整个匹配的文本。</p>
-<pre><code>&gt;&gt;&gt; phoneNumRegex = re.compile(r&#39;(ddd)-(ddd-dddd)&#39;)
-&gt;&gt;&gt; mo = phoneNumRegex.search(&#39;My number is 415-555-4242.&#39;)
-&gt;&gt;&gt; mo.group(1)
-&#39;415&#39; </code></pre><p>如果想要一次就获取所有的分组，请使用 groups()方法，注意函数名的复数形式。</p>
-<pre><code>&gt;&gt;&gt; mo.groups()
-(&#39;415&#39;, &#39;555-4242&#39;)
-&gt;&gt;&gt; areaCode, mainNumber = mo.groups()
-&gt;&gt;&gt; print(areaCode)
-415
-&gt;&gt;&gt; print(mainNumber)
-555-4242</code></pre><h2 id="管道匹配多个分组"><a href="#管道匹配多个分组" class="headerlink" title="管道匹配多个分组"></a>管道匹配多个分组</h2><p>字符|称为“管道”。希望匹配许多表达式中的一个时，就可以使用它。如果 Batman 和 Tina Fey 都出现在被查找的字符串中，第一次出现的匹配文本，将作为 Match 对象返回。</p>
-<pre><code>&gt;&gt;&gt; heroRegex = re.compile (r&#39;Batman|Tina Fey&#39;)
-&gt;&gt;&gt; mo1 = heroRegex.search(&#39;Batman and Tina Fey.&#39;)
-&gt;&gt;&gt; mo1.group()
-&#39;Batman&#39;
-&gt;&gt;&gt; mo2 = heroRegex.search(&#39;Tina Fey and Batman.&#39;)
-&gt;&gt;&gt; mo2.group()
-&#39;Tina Fey&#39; </code></pre><p>也可以使用管道来匹配多个模式中的一个，作为正则表达式的一部分。例如，假设你希望匹配 ‘Batman’ 、’Batmobile’ 、’Batcopter’ 和 ‘Batbat’ 中任意一个。因为所有这些字符串都以 Bat 开始，所以如果能够只指定一次前缀，就很方便。这可以通过括号实现。在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; batRegex = re.compile(r&#39;Bat(man|mobile|copter|bat)&#39;)
-&gt;&gt;&gt; mo = batRegex.search(&#39;Batmobile lost a wheel&#39;)
-&gt;&gt;&gt; mo.group()
-&#39;Batmobile&#39;
-&gt;&gt;&gt; mo.group(1)
-&#39;mobile</code></pre><h2 id="用问号实现可选匹配"><a href="#用问号实现可选匹配" class="headerlink" title="用问号实现可选匹配"></a>用问号实现可选匹配</h2><p>有时候，想匹配的模式是可选的。就是说，不论这段文本在不在，正则表达式都会认为匹配。字符?表明它前面的分组在这个模式中是可选的。例如，在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; batRegex = re.compile(r&#39;Bat(wo)?man&#39;)
-&gt;&gt;&gt; mo1 = batRegex.search(&#39;The Adventures of Batman&#39;)
-&gt;&gt;&gt; mo1.group()
-&#39;Batman&#39;
-&gt;&gt;&gt; mo2 = batRegex.search(&#39;The Adventures of Batwoman&#39;)
-&gt;&gt;&gt; mo2.group()
-&#39;Batwoman&#39;</code></pre><p>你可以认为?是在说，“匹配这个问号之前的分组零次或一次”。</p>
+                <h2 id="创建正则表达式对象"><a href="#创建正则表达式对象" class="headerlink" title="创建正则表达式对象"></a>创建正则表达式对象</h2><pre class="line-numbers language-python"><code class="language-python">phoneNumRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'ddd-ddd-dddd'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>传入一个字符串值，表示正则表达式，它将返回一个 Regex 模式对象（或者就简称为 Regex 对象）。</p>
+<h2 id="匹配-Regex-对象"><a href="#匹配-Regex-对象" class="headerlink" title="匹配 Regex 对象"></a>匹配 Regex 对象</h2><p>如果字符串中没有找到该正则表达式模式，<code>search()</code>方法将返回 None。如果找到了该模式，<code>search()</code>方法将返回一个 Match 对象。Match 对象有一个 <code>group()</code>方法，它返回被查找字符串中实际匹配的文本</p>
+<pre class="line-numbers language-python"><code class="language-python">phoneNumRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'ddd-ddd-dddd'</span><span class="token punctuation">)</span>
+mo <span class="token operator">=</span> phoneNumRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'My number is 415-555-4242.'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Phone number found: '</span> <span class="token operator">+</span> mo<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+Phone number found<span class="token punctuation">:</span> <span class="token number">415</span><span class="token operator">-</span><span class="token number">555</span><span class="token operator">-</span><span class="token number">4242</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="利用括号分组"><a href="#利用括号分组" class="headerlink" title="利用括号分组"></a>利用括号分组</h2><p>正则表达式字符串中的第一对括号是第 1 组。第二对括号是第 2 组。向 <code>group()</code>匹配对象方法传入整数 1 或 2，就可以取得匹配文本的不同部分。向 <code>group()</code>方法传入 0 或不传入参数，将返回整个匹配的文本。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> phoneNumRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'(ddd)-(ddd-dddd)'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo <span class="token operator">=</span> phoneNumRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'My number is 415-555-4242.'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token string">'415'</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果想要一次就获取所有的分组，请使用 <code>groups()</code>方法，注意函数名的复数形式。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> mo<span class="token punctuation">.</span>groups<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'415'</span><span class="token punctuation">,</span> <span class="token string">'555-4242'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> areaCode<span class="token punctuation">,</span> mainNumber <span class="token operator">=</span> mo<span class="token punctuation">.</span>groups<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>areaCode<span class="token punctuation">)</span>
+<span class="token number">415</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>mainNumber<span class="token punctuation">)</span>
+<span class="token number">555</span><span class="token operator">-</span><span class="token number">4242</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="管道匹配多个分组"><a href="#管道匹配多个分组" class="headerlink" title="管道匹配多个分组"></a>管道匹配多个分组</h2><p>字符|称为“管道”。希望匹配许多表达式中的一个时，就可以使用它。如果 Batman 和 Tina Fey 都出现在被查找的字符串中，第一次出现的匹配文本，将作为 Match 对象返回。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> heroRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile <span class="token punctuation">(</span>r<span class="token string">'Batman|Tina Fey'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1 <span class="token operator">=</span> heroRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'Batman and Tina Fey.'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Batman'</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2 <span class="token operator">=</span> heroRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'Tina Fey and Batman.'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Tina Fey'</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>也可以使用管道来匹配多个模式中的一个，作为正则表达式的一部分。例如，假设你希望匹配 ‘Batman’ 、’Batmobile’ 、’Batcopter’ 和 ‘Batbat’ 中任意一个。因为所有这些字符串都以 Bat 开始，所以如果能够只指定一次前缀，就很方便。这可以通过括号实现。在交互式环境中输入以下代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> batRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'Bat(man|mobile|copter|bat)'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'Batmobile lost a wheel'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Batmobile'</span>
+<span class="token operator">>></span><span class="token operator">></span> mo<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+'mobile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="用问号实现可选匹配"><a href="#用问号实现可选匹配" class="headerlink" title="用问号实现可选匹配"></a>用问号实现可选匹配</h2><p>有时候，想匹配的模式是可选的。就是说，不论这段文本在不在，正则表达式都会认为匹配。字符?表明它前面的分组在这个模式中是可选的。例如，在交互式环境中输入以下代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> batRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'Bat(wo)?man'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batman'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Batman'</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batwoman'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Batwoman'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>你可以认为?是在说，“匹配这个问号之前的分组零次或一次”。</p>
 <h2 id="用星号匹配零次或多次"><a href="#用星号匹配零次或多次" class="headerlink" title="用星号匹配零次或多次"></a>用星号匹配零次或多次</h2><p>*（称为星号）意味着“匹配零次或多次”，即星号之前的分组，可以在文本中出现任意次。它可以完全不存在，或一次又一次地重复。让我们再来看看 Batman 的例子。</p>
-<pre><code>&gt;&gt;&gt; batRegex = re.compile(r&#39;Bat(wo)*man&#39;)
-&gt;&gt;&gt; mo1 = batRegex.search(&#39;The Adventures of Batman&#39;)
-&gt;&gt;&gt; mo1.group()
-&#39;Batman&#39;
-&gt;&gt;&gt; mo2 = batRegex.search(&#39;The Adventures of Batwoman&#39;)
-&gt;&gt;&gt; mo2.group()
-&#39;Batwoman&#39;
-&gt;&gt;&gt; mo3 = batRegex.search(&#39;The Adventures of Batwowowowoman&#39;)
-&gt;&gt;&gt; mo3.group()
-&#39;Batwowowowoman&#39;</code></pre><p>对于’Batman’，正则表达式的(wo)<em>部分匹配 wo 的零个实例。对于’Batwoman’，(wo)</em>匹配 wo 的一个实例。对于’Batwowowowoman’，(wo)*匹配 wo 的 4 个实例。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> batRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'Bat(wo)*man'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batman'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Batman'</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batwoman'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Batwoman'</span>
+<span class="token operator">>></span><span class="token operator">></span> mo3 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batwowowowoman'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo3<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Batwowowowoman'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对于’Batman’，正则表达式的<code>(wo)*</code>部分匹配 wo 的零个实例。对于’Batwoman’，<code>(wo)*</code>匹配 wo 的一个实例。对于’Batwowowowoman’，<code>(wo)*</code>匹配 wo 的 4 个实例。</p>
 <h2 id="用加号匹配一次或多次"><a href="#用加号匹配一次或多次" class="headerlink" title="用加号匹配一次或多次"></a>用加号匹配一次或多次</h2><p>*意味着“匹配零次或多次”，+（加号）则意味着“匹配一次或多次”。星号不要求分组出现在匹配的字符串中，但加号不同，加号前面的分组必须“至少出现一次”。</p>
-<pre><code>&gt;&gt;&gt; batRegex = re.compile(r&#39;Bat(wo)+man&#39;)
-&gt;&gt;&gt; mo1 = batRegex.search(&#39;The Adventures of Batwoman&#39;)
-&gt;&gt;&gt; mo1.group()
-&#39;Batwoman&#39;
-&gt;&gt;&gt; mo2 = batRegex.search(&#39;The Adventures of Batwowowowoman&#39;)
-&gt;&gt;&gt; mo2.group()
-&#39;Batwowowowoman&#39;
-&gt;&gt;&gt; mo3 = batRegex.search(&#39;The Adventures of Batman&#39;)
-&gt;&gt;&gt; mo3 == None
-True</code></pre><h2 id="用花括号匹配特定次数"><a href="#用花括号匹配特定次数" class="headerlink" title="用花括号匹配特定次数"></a>用花括号匹配特定次数</h2><p>正则表达式(Ha){3}将匹配字符串’HaHaHa’，但不会匹配’HaHa’，因为后者只重复了(Ha)分组两次。 除了一个数字，还可以指定一个范围，即在花括号中写下一个最小值、一个逗号和一个最大值。例如，正则表达式(Ha){3,5}将匹配’HaHaHa’、’HaHaHaHa’和’HaHaHaHaHa’。 也可以不写花括号中的第一个或第二个数字，不限定最小值或最大值。例如， (Ha){3,}将匹配 3 次或更多次实例，(Ha){,5}将匹配 0 到 5 次实例。</p>
-<pre><code>&gt;&gt;&gt; haRegex = re.compile(r&#39;(Ha){3}&#39;)
-&gt;&gt;&gt; mo1 = haRegex.search(&#39;HaHaHa&#39;)
-&gt;&gt;&gt; mo1.group()
-&#39;HaHaHa&#39;
-&gt;&gt;&gt; mo2 = haRegex.search(&#39;Ha&#39;)
-&gt;&gt;&gt; mo2 == None
-True </code></pre><p>这里，(Ha){3}匹配’HaHaHa’，但不匹配’Ha’。因为它不匹配’Ha’，所以 search()返回 None。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> batRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'Bat(wo)+man'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batwoman'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Batwoman'</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batwowowowoman'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Batwowowowoman'</span>
+<span class="token operator">>></span><span class="token operator">></span> mo3 <span class="token operator">=</span> batRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'The Adventures of Batman'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo3 <span class="token operator">==</span> None
+<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="用花括号匹配特定次数"><a href="#用花括号匹配特定次数" class="headerlink" title="用花括号匹配特定次数"></a>用花括号匹配特定次数</h2><p>正则表达式(Ha){3}将匹配字符串’HaHaHa’，但不会匹配’HaHa’，因为后者只重复了(Ha)分组两次。 除了一个数字，还可以指定一个范围，即在花括号中写下一个最小值、一个逗号和一个最大值。例如，正则表达式(Ha){3,5}将匹配’HaHaHa’、’HaHaHaHa’和’HaHaHaHaHa’。 也可以不写花括号中的第一个或第二个数字，不限定最小值或最大值。例如， (Ha){3,}将匹配 3 次或更多次实例，(Ha){,5}将匹配 0 到 5 次实例。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> haRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'(Ha){3}'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1 <span class="token operator">=</span> haRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'HaHaHa'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'HaHaHa'</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2 <span class="token operator">=</span> haRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'Ha'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2 <span class="token operator">==</span> None
+<span class="token boolean">True</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里，(Ha){3}匹配’HaHaHa’，但不匹配’Ha’。因为它不匹配’Ha’，所以 search()返回 None。</p>
 <h2 id="贪心和非贪心匹配"><a href="#贪心和非贪心匹配" class="headerlink" title="贪心和非贪心匹配"></a>贪心和非贪心匹配</h2><p>在字符串’HaHaHaHaHa’中，因为(Ha){3,5}可以匹配 3 个、4 个或 5 个实例，你可能会想，为什么在前面花括号的例子中，Match 对象的 group()调用会返回’HaHaHaHaHa’，而不是更短的可能结果。毕竟，’HaHaHa’和’HaHaHaHa’也能够有效地匹配正则表达式(Ha){3,5}。 Python 的正则表达式默认是“贪心”的，这表示在有二义的情况下，它们会尽可能匹配最长的字符串。花括号的“非贪心”版本匹配尽可能最短的字符串，即在结束的花括号后跟着一个问号。 在交互式环境中输入以下代码，注意在查找相同字符串时，花括号的贪心形式和非贪心形式之间的区别：</p>
-<pre><code>&gt;&gt;&gt; greedyHaRegex = re.compile(r&#39;(Ha){3,5}&#39;)
-&gt;&gt;&gt; mo1 = greedyHaRegex.search(&#39;HaHaHaHaHa&#39;)
-&gt;&gt;&gt; mo1.group()
-&#39;HaHaHaHaHa&#39;
-&gt;&gt;&gt; nongreedyHaRegex = re.compile(r&#39;(Ha){3,5}?&#39;)
-&gt;&gt;&gt; mo2 = nongreedyHaRegex.search(&#39;HaHaHaHaHa&#39;)
-&gt;&gt;&gt; mo2.group()
-&#39;HaHaHa&#39; </code></pre><p>请注意，问号在正则表达式中可能有两种含义：声明非贪心匹配或表示可选的分组。这两种含义是完全无关的。</p>
-<h2 id="findall-方法"><a href="#findall-方法" class="headerlink" title="findall()方法"></a>findall()方法</h2><p>findall()方法返回一个字符串列表，只要在正则表达式中没有分组。列表中的每个字符串都是一段被查找的文本，它匹配该正则表达式。在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; phoneNumRegex = re.compile(r&#39;ddd-ddd-dddd&#39;) # has no groups
-&gt;&gt;&gt; phoneNumRegex.findall(&#39;Cell: 415-555-9999 Work: 212-555-0000&#39;)
-[&#39;415-555-9999&#39;, &#39;212-555-0000&#39;]</code></pre><p>如果在正则表达式中有分组，那么 findall 将返回元组的列表。每个元组表示一个找到的匹配，其中的项就是正则表达式中每个分组的匹配字符串。为了看看 findall()的效果，请在交互式环境中输入以下代码（请注意，被编译的正则表达式现在有括号分组）：</p>
-<pre><code>&gt;&gt;&gt; phoneNumRegex = re.compile(r&#39;(ddd)-(ddd)-(dddd)&#39;) # has groups
-&gt;&gt;&gt; phoneNumRegex.findall(&#39;Cell: 415-555-9999 Work: 212-555-0000&#39;)
-[(&#39;415&#39;, &#39;555&#39;, &#39;1122&#39;), (&#39;212&#39;, &#39;555&#39;, &#39;0000&#39;)] </code></pre><p>作为 findall()方法的返回结果的总结，请记住下面两点：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> greedyHaRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'(Ha){3,5}'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1 <span class="token operator">=</span> greedyHaRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'HaHaHaHaHa'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo1<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'HaHaHaHaHa'</span>
+<span class="token operator">>></span><span class="token operator">></span> nongreedyHaRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'(Ha){3,5}?'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2 <span class="token operator">=</span> nongreedyHaRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'HaHaHaHaHa'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo2<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'HaHaHa'</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>请注意，问号在正则表达式中可能有两种含义：声明非贪心匹配或表示可选的分组。这两种含义是完全无关的。</p>
+<h2 id="findall-方法"><a href="#findall-方法" class="headerlink" title="findall()方法"></a>findall()方法</h2><p><code>findall()</code>方法返回一个字符串列表，只要在正则表达式中没有分组。列表中的每个字符串都是一段被查找的文本，它匹配该正则表达式。在交互式环境中输入以下代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> phoneNumRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'ddd-ddd-dddd'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># has no groups</span>
+<span class="token operator">>></span><span class="token operator">></span> phoneNumRegex<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'Cell: 415-555-9999 Work: 212-555-0000'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'415-555-9999'</span><span class="token punctuation">,</span> <span class="token string">'212-555-0000'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>如果在正则表达式中有分组，那么 findall 将返回元组的列表。每个元组表示一个找到的匹配，其中的项就是正则表达式中每个分组的匹配字符串。为了看看<code>findall()</code>的效果，请在交互式环境中输入以下代码（请注意，被编译的正则表达式现在有括号分组）：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> phoneNumRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'(ddd)-(ddd)-(dddd)'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># has groups</span>
+<span class="token operator">>></span><span class="token operator">></span> phoneNumRegex<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'Cell: 415-555-9999 Work: 212-555-0000'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'415'</span><span class="token punctuation">,</span> <span class="token string">'555'</span><span class="token punctuation">,</span> <span class="token string">'1122'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'212'</span><span class="token punctuation">,</span> <span class="token string">'555'</span><span class="token punctuation">,</span> <span class="token string">'0000'</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>作为<code>findall()</code>方法的返回结果的总结，请记住下面两点：</p>
 <ol>
 <li>如果调用在一个没有分组的正则表达式上，例如ddd-ddd-dddd，方法 findall()将返回一个匹配字符串的列表，例如[‘415-555-9999’, ‘212-555-0000’]。</li>
 <li>如果调用在一个有分组的正则表达式上，例如(ddd)-(ddd)-(dddd)，方 法 findall()将返回一个字符串的元组的列表（每个分组对应一个字符串），例如[(‘415’, ‘555’, ‘1122’), (‘212’, ‘555’, ‘0000’)]。</li>
 </ol>
 <h2 id="字符分类"><a href="#字符分类" class="headerlink" title="字符分类"></a>字符分类</h2><blockquote>
 <p>d 0 到 9 的任何数字 D 除 0 到 9 的数字以外的任何字符 w 任何字母、数字或下划线字符（可以认为是匹配“单词”字符） W 除字母、数字和下划线以外的任何字符 s 空格、制表符或换行符（可以认为是匹配“空白”字符） S 除空格、制表符和换行符以外的任何字符</p>
-<pre><code>&gt;&gt; xmasRegex = re.compile(r&#39;d+sw+&#39;)
-&gt;&gt; xmasRegex.findall(&#39;12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7
-swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge&#39;)
-[&#39;12 drummers&#39;, &#39;11 pipers&#39;, &#39;10 lords&#39;, &#39;9 ladies&#39;, &#39;8 maids&#39;, &#39;7 swans&#39;, &#39;6
-geese&#39;, &#39;5 rings&#39;, &#39;4 birds&#39;, &#39;3 hens&#39;, &#39;2 doves&#39;, &#39;1 partridge&#39;]</code></pre><p>正则表达式d+sw+匹配的文本有一个或多个数字(d+)，接下来是一个空白字符(s)，接下来是一个或多个字母/数字/下划线字符(w+)。findall()方法将返回所有匹配该正则表达式的字符串，放在一个列表中。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span> xmasRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'d+sw+'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span> xmasRegex<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>'<span class="token number">12</span> drummers<span class="token punctuation">,</span> <span class="token number">11</span> pipers<span class="token punctuation">,</span> <span class="token number">10</span> lords<span class="token punctuation">,</span> <span class="token number">9</span> ladies<span class="token punctuation">,</span> <span class="token number">8</span> maids<span class="token punctuation">,</span> <span class="token number">7</span>
+swans<span class="token punctuation">,</span> <span class="token number">6</span> geese<span class="token punctuation">,</span> <span class="token number">5</span> rings<span class="token punctuation">,</span> <span class="token number">4</span> birds<span class="token punctuation">,</span> <span class="token number">3</span> hens<span class="token punctuation">,</span> <span class="token number">2</span> doves<span class="token punctuation">,</span> <span class="token number">1</span> partridge'<span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'12 drummers'</span><span class="token punctuation">,</span> <span class="token string">'11 pipers'</span><span class="token punctuation">,</span> <span class="token string">'10 lords'</span><span class="token punctuation">,</span> <span class="token string">'9 ladies'</span><span class="token punctuation">,</span> <span class="token string">'8 maids'</span><span class="token punctuation">,</span> <span class="token string">'7 swans'</span><span class="token punctuation">,</span> '<span class="token number">6</span>
+geese<span class="token string">', '</span><span class="token number">5</span> rings<span class="token string">', '</span><span class="token number">4</span> birds<span class="token string">', '</span><span class="token number">3</span> hens<span class="token string">', '</span><span class="token number">2</span> doves<span class="token string">', '</span><span class="token number">1</span> partridge'<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>正则表达式d+sw+匹配的文本有一个或多个数字(d+)，接下来是一个空白字符(s)，接下来是一个或多个字母/数字/下划线字符(w+)。<code>findall()</code>方法将返回所有匹配该正则表达式的字符串，放在一个列表中。</p>
 </blockquote>
 <h2 id="建立自己的字符分类"><a href="#建立自己的字符分类" class="headerlink" title="建立自己的字符分类"></a>建立自己的字符分类</h2><p>有时候你想匹配一组字符，但缩写的字符分类（d、w、s 等）太宽泛。你可以用方括号定义自己的字符分类。例如，字符分类[aeiouAEIOU]将匹配所有元音字符，不论大小写。在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; vowelRegex = re.compile(r&#39;[aeiouAEIOU]&#39;)
-&gt;&gt;&gt; vowelRegex.findall(&#39;RoboCop eats baby food. BABY FOOD.&#39;)
-[&#39;o&#39;, &#39;o&#39;, &#39;o&#39;, &#39;e&#39;, &#39;a&#39;, &#39;a&#39;, &#39;o&#39;, &#39;o&#39;, &#39;A&#39;, &#39;O&#39;, &#39;O&#39;] </code></pre><p>也可以使用短横表示字母或数字的范围。例如，字符分类[a-zA-Z0-9]将匹配所有小写字母、大写字母和数字。 请注意，在方括号内，普通的正则表达式符号不会被解释。这意味着，你不需要前面加上倒斜杠转义.、*、?或()字符。例如，字符分类将匹配数字 0 到 5 和一个句点。你不需要将它写成[0-5.]。 通过在字符分类的左方括号后加上一个插入字符（^），就可以得到“非字符类”。非字符类将匹配不在这个字符类中的所有字符。例如，在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; consonantRegex = re.compile(r&#39;[^aeiouAEIOU]&#39;)
-&gt;&gt;&gt; consonantRegex.findall(&#39;RoboCop eats baby food. BABY FOOD.&#39;)
-[&#39;R&#39;, &#39;b&#39;, &#39;c&#39;, &#39;p&#39;, &#39; &#39;, &#39;t&#39;, &#39;s&#39;, &#39; &#39;, &#39;b&#39;, &#39;b&#39;, &#39;y&#39;, &#39; &#39;, &#39;f&#39;, &#39;d&#39;, &#39;.&#39;, &#39;
-&#39;, &#39;B&#39;, &#39;B&#39;, &#39;Y&#39;, &#39; &#39;, &#39;F&#39;, &#39;D&#39;, &#39;.&#39;]</code></pre><p>现在，不是匹配所有元音字符，而是匹配所有非元音字符。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> vowelRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'[aeiouAEIOU]'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> vowelRegex<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'RoboCop eats baby food. BABY FOOD.'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'o'</span><span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> <span class="token string">'o'</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'O'</span><span class="token punctuation">,</span> <span class="token string">'O'</span><span class="token punctuation">]</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>也可以使用短横表示字母或数字的范围。例如，字符分类[a-zA-Z0-9]将匹配所有小写字母、大写字母和数字。 请注意，在方括号内，普通的正则表达式符号不会被解释。这意味着，你不需要前面加上倒斜杠转义.、*、?或()字符。例如，字符分类将匹配数字 0 到 5 和一个句点。你不需要将它写成[0-5.]。 通过在字符分类的左方括号后加上一个插入字符（^），就可以得到“非字符类”。非字符类将匹配不在这个字符类中的所有字符。例如，在交互式环境中输入以下代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> consonantRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'[^aeiouAEIOU]'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> consonantRegex<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'RoboCop eats baby food. BABY FOOD.'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'R'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'p'</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">'t'</span><span class="token punctuation">,</span> <span class="token string">'s'</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'.'</span><span class="token punctuation">,</span> '
+<span class="token string">', '</span>B<span class="token string">', '</span>B<span class="token string">', '</span>Y<span class="token string">', '</span> <span class="token string">', '</span>F<span class="token string">', '</span>D<span class="token string">', '</span><span class="token punctuation">.</span>'<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>现在，不是匹配所有元音字符，而是匹配所有非元音字符。</p>
 <h2 id="插入字符和美元字符"><a href="#插入字符和美元字符" class="headerlink" title="插入字符和美元字符"></a>插入字符和美元字符</h2><ul>
 <li>（^），表明匹配必须发生在被查找文本开始处。</li>
 <li>（$），表示该字符串必须以这个正则表达式的模式结束。</li>
 </ul>
 <p>可以同时使用^和$，表明整个字符串必须匹配该模式，也就是说，只匹配该字符串的某个子集是不够的。正则表达式 r’^Hello’匹配以’Hello’开始的字符串。在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; beginsWithHello = re.compile(r&#39;^Hello&#39;)
-&gt;&gt;&gt; beginsWithHello.search(&#39;Hello world!&#39;)
-&lt;_sre.SRE_Match object; span=(0, 5), match=&#39;Hello&#39;&gt;
-&gt;&gt;&gt; beginsWithHello.search(&#39;He said hello.&#39;) == None
-True</code></pre><p>正则表达式 r’d$’匹配以数字 0 到 9 结束的字符串。在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; endsWithNumber = re.compile(r&#39;d$&#39;)
-&gt;&gt;&gt; endsWithNumber.search(&#39;Your number is 42&#39;)
-&lt;_sre.SRE_Match object; span=(16, 17), match=&#39;2&#39;&gt;</code></pre><p>正则表达式 r’^d+$’匹配从开始到结束都是数字的字符串。在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; wholeStringIsNum = re.compile(r&#39;^d+$&#39;)
-&gt;&gt;&gt; wholeStringIsNum.search(&#39;1234567890&#39;)
-&lt;_sre.SRE_Match object; span=(0, 10), match=&#39;1234567890&#39;&gt;
-&gt;&gt;&gt; wholeStringIsNum.search(&#39;12345xyz67890&#39;) == None
-True
-&gt;&gt;&gt; wholeStringIsNum.search(&#39;12 34567890&#39;) == None
-True</code></pre><p>前面交互式脚本例子中的最后两次 search()调用表明，如果使用了^和$，那么整个字符串必须匹配该正则表达式。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> beginsWithHello <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'^Hello'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> beginsWithHello<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'Hello world!'</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>_sre<span class="token punctuation">.</span>SRE_Match object<span class="token punctuation">;</span> span<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> match<span class="token operator">=</span><span class="token string">'Hello'</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> beginsWithHello<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'He said hello.'</span><span class="token punctuation">)</span> <span class="token operator">==</span> None
+<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>正则表达式 r’d$’匹配以数字 0 到 9 结束的字符串。在交互式环境中输入以下代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> endsWithNumber <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'d$'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> endsWithNumber<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'Your number is 42'</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>_sre<span class="token punctuation">.</span>SRE_Match object<span class="token punctuation">;</span> span<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">)</span><span class="token punctuation">,</span> match<span class="token operator">=</span><span class="token string">'2'</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>正则表达式 r’^d+$’匹配从开始到结束都是数字的字符串。在交互式环境中输入以下代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> wholeStringIsNum <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'^d+$'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> wholeStringIsNum<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'1234567890'</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>_sre<span class="token punctuation">.</span>SRE_Match object<span class="token punctuation">;</span> span<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> match<span class="token operator">=</span><span class="token string">'1234567890'</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> wholeStringIsNum<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'12345xyz67890'</span><span class="token punctuation">)</span> <span class="token operator">==</span> None
+<span class="token boolean">True</span>
+<span class="token operator">>></span><span class="token operator">></span> wholeStringIsNum<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'12 34567890'</span><span class="token punctuation">)</span> <span class="token operator">==</span> None
+<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>前面交互式脚本例子中的最后两次 <code>search()</code>调用表明，如果使用了^和$，那么整个字符串必须匹配该正则表达式。</p>
 <h2 id="通配字符"><a href="#通配字符" class="headerlink" title="通配字符"></a>通配字符</h2><p>在正则表达式中，.（句点）字符称为“通配符”。它匹配除了换行之外的所有字符。例如，在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; atRegex = re.compile(r&#39;.at&#39;)
-&gt;&gt;&gt; atRegex.findall(&#39;The cat in the hat sat on the flat mat.&#39;)
-[&#39;cat&#39;, &#39;hat&#39;, &#39;sat&#39;, &#39;lat&#39;, &#39;mat&#39;]</code></pre><p>要记住，句点字符只匹配一个字符</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> atRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'.at'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> atRegex<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'The cat in the hat sat on the flat mat.'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'hat'</span><span class="token punctuation">,</span> <span class="token string">'sat'</span><span class="token punctuation">,</span> <span class="token string">'lat'</span><span class="token punctuation">,</span> <span class="token string">'mat'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>要记住，句点字符只匹配一个字符</p>
 <h2 id="用点-星匹配所有字符"><a href="#用点-星匹配所有字符" class="headerlink" title="用点-星匹配所有字符"></a>用点-星匹配所有字符</h2><p>句点字符表示“除换行外所有单个字符”，星号字符表示“前面字符出现零次或多次”。在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; nameRegex = re.compile(r&#39;First Name: (.*) Last Name: (.*)&#39;)
-&gt;&gt;&gt; mo = nameRegex.search(&#39;First Name: Al Last Name: Sweigart&#39;)
-&gt;&gt;&gt; mo.group(1)
-&#39;Al&#39;
-&gt;&gt;&gt; mo.group(2)
-&#39;Sweigart&#39;</code></pre><p>点-星使用“贪心”模式：它总是匹配尽可能多的文本。要用“非贪心”模式匹配所有文本，就使用点-星和问号。</p>
-<pre><code>&gt;&gt;&gt; nongreedyRegex = re.compile(r&#39;&lt;.*?&gt;&#39;)
-&gt;&gt;&gt; mo = nongreedyRegex.search(&#39;&lt;To serve man&gt; for dinner.&gt;&#39;)
-&gt;&gt;&gt; mo.group()
-&#39;&lt;To serve man&gt;&#39;
-&gt;&gt;&gt; greedyRegex = re.compile(r&#39;&lt;.*&gt;&#39;)
-&gt;&gt;&gt; mo = greedyRegex.search(&#39;&lt;To serve man&gt; for dinner.&gt;&#39;)
-&gt;&gt;&gt; mo.group()
-&#39;&lt;To serve man&gt; for dinner.&gt;&#39;</code></pre><p>两个正则表达式都可以翻译成“匹配一个左尖括号，接下来是任意字符，接下来是一个右尖括号”。但是字符串’ for dinner.&gt;’对右肩括号有两种可能的匹配。在非贪心的正则表达式中，Python 匹配最短可能的字符串：’’。在贪心版本中，Python 匹配最长可能的字符串：’ for dinner.&gt;’。</p>
-<h2 id="用句点字符匹配换行"><a href="#用句点字符匹配换行" class="headerlink" title="用句点字符匹配换行"></a>用句点字符匹配换行</h2><p>点-星将匹配除换行外的所有字符。通过传入 re.DOTALL 作为 re.compile()的第二个参数，可以让句点字符匹配所有字符，包括换行字符。</p>
-<pre><code>&gt;&gt;&gt; noNewlineRegex = re.compile(&#39;.*&#39;)
-&gt;&gt;&gt; noNewlineRegex.search(&#39;Serve the public trust.nProtect the innocent.
-nUphold the law.&#39;).group()
-&#39;Serve the public trust.&#39;
-&gt;&gt;&gt; newlineRegex = re.compile(&#39;.*&#39;, re.DOTALL)
-&gt;&gt;&gt; newlineRegex.search(&#39;Serve the public trust.nProtect the innocent.nUphold the law.&#39;).group()
-&#39;Serve the public trust.nProtect the innocent.nUphold the law.&#39;</code></pre><h2 id="不区分大小写的匹配"><a href="#不区分大小写的匹配" class="headerlink" title="不区分大小写的匹配"></a>不区分大小写的匹配</h2><p>要让正则表达式不区分大小写，可以向 re.compile()传入 re.IGNORECASE 或 re.I，作为第二个参数。 在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; robocop = re.compile(r&#39;robocop&#39;, re.I)
-&gt;&gt;&gt; robocop.search(&#39;RoboCop is part man, part machine, all cop.&#39;).group()
-&#39;RoboCop&#39;
-&gt;&gt;&gt; robocop.search(&#39;ROBOCOP protects the innocent.&#39;).group()
-&#39;ROBOCOP&#39; </code></pre><h2 id="用-sub-方法替换字符串"><a href="#用-sub-方法替换字符串" class="headerlink" title="用 sub()方法替换字符串"></a>用 sub()方法替换字符串</h2><p>第一个参数是一个字符串，用于取代发现的匹配。第二个参数是一个字符串，即正则表达式。sub()方法返回替换完成后的字符串。例如，在交互式环境中输入以下代码：</p>
-<pre><code>&gt;&gt;&gt; namesRegex = re.compile(r&#39;Agent w+&#39;)
-&gt;&gt;&gt; namesRegex.sub(&#39;CENSORED&#39;, &#39;Agent Alice gave the secret documents to Agent Bob.&#39;)
-&#39;CENSORED gave the secret documents to CENSORED.&#39;</code></pre><p>有时候，你可能需要使用匹配的文本本身，作为替换的一部分。在 sub()的第一个参数中，可以输入1、2、3……。表示“在替换中输入分组 1、2、3……的文本”。 例如，假定想要隐去密探的姓名，只显示他们姓名的第一个字母。要做到这一点，可以使用正则表达式 Agent (w)w<em>，传入 r’1<em>*</em></em>‘作为 sub()的第一个参数。字符串中的1 将由分组 1 匹配的文本所替代，也就是正则表达式的(w)分组。</p>
-<pre><code>&gt;&gt;&gt; agentNamesRegex = re.compile(r&#39;Agent (w)w*&#39;)
-&gt;&gt;&gt; agentNamesRegex.sub(r&#39;1****&#39;, &#39;Agent Alice told Agent Carol that Agent
-Eve knew Agent Bob was a double agent.&#39;)
-A**** told C**** that E**** knew B**** was a double agent.&#39;</code></pre><h2 id="管理复杂的正则表达式"><a href="#管理复杂的正则表达式" class="headerlink" title="管理复杂的正则表达式"></a>管理复杂的正则表达式</h2><p>忽略正则表达式字符串中的空白符和注释，可以向 re.compile()传入变量 re.VERBOSE，作为第二个参数。</p>
-<pre><code>phoneRegex = re.compile(r&#39;&#39;&#39;(
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> nameRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'First Name: (.*) Last Name: (.*)'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo <span class="token operator">=</span> nameRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'First Name: Al Last Name: Sweigart'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token string">'Al'</span>
+<span class="token operator">>></span><span class="token operator">></span> mo<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token string">'Sweigart'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>点-星使用“贪心”模式：它总是匹配尽可能多的文本。要用“非贪心”模式匹配所有文本，就使用点-星和问号。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> nongreedyRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'&lt;.*?>'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo <span class="token operator">=</span> nongreedyRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'&lt;To serve man> for dinner.>'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'&lt;To serve man>'</span>
+<span class="token operator">>></span><span class="token operator">></span> greedyRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'&lt;.*>'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo <span class="token operator">=</span> greedyRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'&lt;To serve man> for dinner.>'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> mo<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'&lt;To serve man> for dinner.>'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>两个正则表达式都可以翻译成“匹配一个左尖括号，接下来是任意字符，接下来是一个右尖括号”。但是字符串’ for dinner.&gt;’对右肩括号有两种可能的匹配。在非贪心的正则表达式中，Python 匹配最短可能的字符串：’’。在贪心版本中，Python 匹配最长可能的字符串：’ for dinner.&gt;’。</p>
+<h2 id="用句点字符匹配换行"><a href="#用句点字符匹配换行" class="headerlink" title="用句点字符匹配换行"></a>用句点字符匹配换行</h2><p>点-星将匹配除换行外的所有字符。通过传入 re.DOTALL 作为 <code>re.compile()</code>的第二个参数，可以让句点字符匹配所有字符，包括换行字符。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> noNewlineRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span><span class="token string">'.*'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> noNewlineRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span>'Serve the public trust<span class="token punctuation">.</span>nProtect the innocent<span class="token punctuation">.</span>
+nUphold the law<span class="token punctuation">.</span>'<span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Serve the public trust.'</span>
+<span class="token operator">>></span><span class="token operator">></span> newlineRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span><span class="token string">'.*'</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>DOTALL<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> newlineRegex<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'Serve the public trust.nProtect the innocent.nUphold the law.'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Serve the public trust.nProtect the innocent.nUphold the law.'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="不区分大小写的匹配"><a href="#不区分大小写的匹配" class="headerlink" title="不区分大小写的匹配"></a>不区分大小写的匹配</h2><p>要让正则表达式不区分大小写，可以向 <code>re.compile()</code>传入 <code>re.IGNORECASE</code> 或 <code>re.I</code>，作为第二个参数。 在交互式环境中输入以下代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> robocop <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'robocop'</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>I<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> robocop<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'RoboCop is part man, part machine, all cop.'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'RoboCop'</span>
+<span class="token operator">>></span><span class="token operator">></span> robocop<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'ROBOCOP protects the innocent.'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'ROBOCOP'</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="用-sub-方法替换字符串"><a href="#用-sub-方法替换字符串" class="headerlink" title="用 sub()方法替换字符串"></a>用 sub()方法替换字符串</h2><p>第一个参数是一个字符串，用于取代发现的匹配。第二个参数是一个字符串，即正则表达式。<code>sub()</code>方法返回替换完成后的字符串。例如，在交互式环境中输入以下代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> namesRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'Agent w+'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> namesRegex<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">'CENSORED'</span><span class="token punctuation">,</span> <span class="token string">'Agent Alice gave the secret documents to Agent Bob.'</span><span class="token punctuation">)</span>
+<span class="token string">'CENSORED gave the secret documents to CENSORED.'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>有时候，你可能需要使用匹配的文本本身，作为替换的一部分。在 sub()的第一个参数中，可以输入1、2、3……。表示“在替换中输入分组 1、2、3……的文本”。 例如，假定想要隐去密探的姓名，只显示他们姓名的第一个字母。要做到这一点，可以使用正则表达式 Agent (w)w<em>，传入 r’1<em>*</em></em>‘作为 sub()的第一个参数。字符串中的1 将由分组 1 匹配的文本所替代，也就是正则表达式的(w)分组。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> agentNamesRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'Agent (w)w*'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> agentNamesRegex<span class="token punctuation">.</span>sub<span class="token punctuation">(</span>r<span class="token string">'1****'</span><span class="token punctuation">,</span> 'Agent Alice told Agent Carol that Agent
+Eve knew Agent Bob was a double agent<span class="token punctuation">.</span>'<span class="token punctuation">)</span>
+A<span class="token operator">**</span><span class="token operator">**</span> told C<span class="token operator">**</span><span class="token operator">**</span> that E<span class="token operator">**</span><span class="token operator">**</span> knew B<span class="token operator">**</span><span class="token operator">**</span> was a double agent<span class="token punctuation">.</span>'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="管理复杂的正则表达式"><a href="#管理复杂的正则表达式" class="headerlink" title="管理复杂的正则表达式"></a>管理复杂的正则表达式</h2><p>忽略正则表达式字符串中的空白符和注释，可以向<code>re.compile()</code>传入变量 re.VERBOSE，作为第二个参数。</p>
+<pre class="line-numbers language-python"><code class="language-python">phoneRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token triple-quoted-string string">'''(
  (d{3}|(d{3}))? # area code
  (s|-|.)? # separator
  d{3} # first 3 digits
  (s|-|.) # separator
  d{4} # last 4 digits
  (s*(ext|x|ext.)s*d{2,5})? # extension
- )&#39;&#39;&#39;, re.VERBOSE)</code></pre><p>请注意，前面的例子使用了三重引号(‘“)，创建了一个多行字符串。这样就可以将正则表达式定义放在多行中，让它更可读。</p>
+ )'''</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>VERBOSE<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>请注意，前面的例子使用了三重引号(‘“)，创建了一个多行字符串。这样就可以将正则表达式定义放在多行中，让它更可读。</p>
 <h2 id="组合使用-re-IGNOREC-ASE、re-DOTALL-和-re-VERBOSE"><a href="#组合使用-re-IGNOREC-ASE、re-DOTALL-和-re-VERBOSE" class="headerlink" title="组合使用 re.IGNOREC ASE、re.DOTALL 和 re.VERBOSE"></a>组合使用 re.IGNOREC ASE、re.DOTALL 和 re.VERBOSE</h2><p>可以使用管道字符（|）将变量组合起来，从而绕过这个限制。管道字符在这里称为“按位或”操作符。所以，如果希望正则表达式不区分大小写，并且句点字符匹配换行，就可以这样构造 re.compile()调用：</p>
-<pre><code>&gt;&gt;&gt; someRegexValue = re.compile(&#39;foo&#39;, re.IGNORECASE | re.DOTALL)</code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> someRegexValue <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> re<span class="token punctuation">.</span>IGNORECASE <span class="token operator">|</span> re<span class="token punctuation">.</span>DOTALL<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1111,7 +1140,7 @@ A**** told C**** that E**** knew B**** was a double agent.&#39;</code></pre><h2 
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">19.5k</span>
+            <span class="white-color">17.4k</span>
             
 
             <br>
