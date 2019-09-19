@@ -478,12 +478,12 @@
             <div id="articleContent">
                 <div align="middle">
 
-        <div id="aplayer-aHdrbuvx" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;width:40%;">
+        <div id="aplayer-dCTQQWbl" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;width:40%;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-aHdrbuvx"),
+            element: document.getElementById("aplayer-dCTQQWbl"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -507,7 +507,7 @@
 <h2 id="网络层（network-layer）"><a href="#网络层（network-layer）" class="headerlink" title="网络层（network layer）"></a>网络层（network layer）</h2><p>不同的社区之间该如何通信呢？ 换句话说，如何让WiFi上的一台计算机和以太网上的另一台计算机通信呢？我们需要一个“中间人”。这个“中间人”必须有以下功能: 1. 能从物理层上在两个网络的接收和发送0/1序列，2. 能同时理解两种网络的帧格式。路由器（router）就是为此而产生的“翻译”。一个路由器有多个网卡（NIC，Network Interface Controller），每个NIC可以接入多个网络，并理解相应的连接层协议。在帧经过路由到达另一个网络的时候，路由会读取帧的信息，并改写以发送到另一个网络。所以<font color="#FF0000">路由器就像是在两个社区都有分支的邮局</font>。一个社区的邮差将信送到本社区的邮局分支，而邮局会通过自己在另一个地区的分支将信转交给另一个社区的邮差手中，并由另一个社区的邮差最终送到目的地。<br><img src="3.jpg" alt="通过路由连接的WiFi和以太网"></p>
 <p>整个通信过程如下:WiFi上的计算机1 -&gt; 路由WiFi接口 -&gt;  路由以太网接口 -&gt; 以太网上的计算机2（蓝色表示WiFi网络，绿色表示以太网络）</p>
 <p>在链路层，我们的一个帧中只能记录SRC和DST两个地址。而上面的过程需要经过四个地址 （计算机1，WiFi接口，以太网接口，计算机2）。显然，仅仅靠链路层协议无法满足我们的需要。由于链路层协议开发在先，我们无法改动链路层协议，只能在链路层的数据（payload），也就是信纸内部下功夫了。IP协议应运而生。</p>
-<p>计算机1，路由器和计算机2都要懂得IP协议。当计算机1写信的时候，会在<font color="#FF0000">信纸的开头</font>写上这封信的出发地址和最终到达地址 （而不是在信封上），而在信封上写上要送往邮局。WiFi网的邮差将信送往邮局。在邮局，信被打开，邮局工作人员看到最终地址，于是将信包装在一个新的信封中，写上出发地为邮局，到达地为计算机2，并交给以太网的邮差，由以太网的邮差送往计算机2。<br>（IP协议还要求写如诸如校验等信息，交通状况等信息，以保护通信的稳定性。）<br><img src="4.GIF" alt="转交给邮局"></p>
+<p>计算机1，路由器和计算机2都要懂得IP协议。当计算机1写信的时候，会在<font color="#FF0000">信纸的开头</font>写上这封信的出发地址和最终到达地址 （而不是在信封上），而在信封上写上要送往邮局。WiFi网的邮差将信送往邮局。在邮局，信被打开，邮局工作人员看到最终地址，于是将信包装在一个新的信封中，写上出发地为邮局，到达地为计算机2，并交给以太网的邮差，由以太网的邮差送往计算机2。<br>（IP协议还要求写如诸如校验等信息，交通状况等信息，以保护通信的稳定性。）<br><img src="4.gif" alt="转交给邮局"></p>
 <p>在链路层，邮差只负责在本社区送信，所以信封上的地址总是“第一条街第三座房子”或者说“中心十字路口拐角的小房子”这样一些本地人才了解的地址描述，这给邮局的工作带来不便。所以邮局要求，<font color="#FF0000">信纸上写的地址</font>必须是一个符合官方规定的“<font color="#FF0000">邮编</font>”，也就是<font color="#FF0000">IP地址</font>。这个地址为世界上的每一个房子编号（邮编）。当信件送到邮局的时候，邮局根据邮编，就能查到对应的地址描述，从而能顺利改写信封上的信息。</p>
 <p>每个邮局一般连接多个社区，而一个社区也可以有多个邮局，分别通往不同的社区。<font color="#FF0000">有时候一封信要通过多个邮局转交，才能最终到达目的地，这个过程叫做route</font>。邮局将分离的局域网络连接成了internet，并最终构成了覆盖全球的互联网。</p>
 <h2 id="传输层（transport-layer）"><a href="#传输层（transport-layer）" class="headerlink" title="传输层（transport layer）"></a>传输层（transport layer）</h2><p>上面的三层协议让不同的计算机之间可以通信。但<font color="#FF0000">计算机中实际上有许多个进程</font>，每个进程都可能有通信的需求。这就好像一所房子里住了好几个人（进程），如何让信精确的送到某个人手里呢？遵照之前相同的逻辑，我们<font color="#FF0000">需要在信纸上写上新的信息</font>，比如收信人的姓名，才可能让信送到。所以，传输层就是在信纸的空白上写上新的“收信人”信息。每一所房子会配备一个管理员（传输层协议）。管理员从邮差手中接过信，会根据“收信人”，将信送给房子中的某个人。<br><img src="5.jpg" alt="管理员"></p>
