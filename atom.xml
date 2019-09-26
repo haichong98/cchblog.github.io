@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cchblog.cn/"/>
-  <updated>2019-09-19T08:13:43.045Z</updated>
+  <updated>2019-09-26T02:45:01.146Z</updated>
   <id>https://cchblog.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>系统引导概述</title>
+    <link href="https://cchblog.cn/2019/09/25/xi-tong-yin-dao-gai-shu/"/>
+    <id>https://cchblog.cn/2019/09/25/xi-tong-yin-dao-gai-shu/</id>
+    <published>2019-09-25T03:42:44.000Z</published>
+    <updated>2019-09-26T02:45:01.146Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>01 邮差与邮局 (网络协议概观)</title>
@@ -411,7 +433,7 @@
     <link href="https://cchblog.cn/2019/03/15/re-mo-kuai/"/>
     <id>https://cchblog.cn/2019/03/15/re-mo-kuai/</id>
     <published>2019-03-15T06:54:30.000Z</published>
-    <updated>2019-09-18T09:34:31.170Z</updated>
+    <updated>2019-09-26T03:02:42.737Z</updated>
     
     <summary type="html">
     

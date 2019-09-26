@@ -650,7 +650,7 @@ nUphold the law<span class="token punctuation">.</span>'<span class="token punct
 <pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> namesRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'Agent w+'</span><span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span> namesRegex<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">'CENSORED'</span><span class="token punctuation">,</span> <span class="token string">'Agent Alice gave the secret documents to Agent Bob.'</span><span class="token punctuation">)</span>
 <span class="token string">'CENSORED gave the secret documents to CENSORED.'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>有时候，你可能需要使用匹配的文本本身，作为替换的一部分。在 sub()的第一个参数中，可以输入1、2、3……。表示“在替换中输入分组 1、2、3……的文本”。 例如，假定想要隐去密探的姓名，只显示他们姓名的第一个字母。要做到这一点，可以使用正则表达式 Agent (w)w<em>，传入 r’1<em>*</em></em>‘作为 sub()的第一个参数。字符串中的1 将由分组 1 匹配的文本所替代，也就是正则表达式的(w)分组。</p>
+<p>有时候，你可能需要使用匹配的文本本身，作为替换的一部分。在 <code>sub()</code>的第一个参数中，可以输入<code>1、2、3……</code>。表示“在替换中输入分组 <code>1、2、3……</code>的文本”。 例如，假定想要隐去密探的姓名，只显示他们姓名的第一个字母。要做到这一点，可以使用正则表达式 <code>Agent (w)w*</code>，传入 <code>r&#39;1****&#39;</code>作为 <code>sub()</code>的第一个参数。字符串中的<code>1</code> 将由分组 <code>1</code> 匹配的文本所替代，也就是正则表达式的<code>(w)</code>分组。</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> agentNamesRegex <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'Agent (w)w*'</span><span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span> agentNamesRegex<span class="token punctuation">.</span>sub<span class="token punctuation">(</span>r<span class="token string">'1****'</span><span class="token punctuation">,</span> 'Agent Alice told Agent Carol that Agent
 Eve knew Agent Bob was a double agent<span class="token punctuation">.</span>'<span class="token punctuation">)</span>
@@ -1140,7 +1140,7 @@ A<span class="token operator">**</span><span class="token operator">**</span> to
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">19.8k</span>
+            <span class="white-color">20.3k</span>
             
 
             <br>
