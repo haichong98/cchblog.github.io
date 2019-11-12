@@ -7,10 +7,10 @@
     <meta name="keywords" content="Linux 基础知识总结(快速入门), 懂得感恩，是收获幸福的源泉。懂得感恩，你会发现原来自己周围的一切都是那样的美好。">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
-    <meta name="description" content="1. 显示日期：datecch@cch-virtual-machine:~$ date
+    <meta name="description" content="入门显示日期：datecch@cch-virtual-machine:~$ date
 2019年 09月 20日 星期五 09:59:43 CST加参数
 cch@cch-virtual-machine:~$ date +%Y%m%d
-20">
+201">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -434,14 +434,14 @@ cch@cch-virtual-machine:~$ date +%Y%m%d
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    3.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    16 分
                 </div>
                 
                 
@@ -457,10 +457,10 @@ cch@cch-virtual-machine:~$ date +%Y%m%d
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-显示日期：date"><a href="#1-显示日期：date" class="headerlink" title="1. 显示日期：date"></a>1. 显示日期：date</h3><pre><code>cch@cch-virtual-machine:~$ date
+                <h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="显示日期：date"><a href="#显示日期：date" class="headerlink" title="显示日期：date"></a>显示日期：date</h3><pre><code>cch@cch-virtual-machine:~$ date
 2019年 09月 20日 星期五 09:59:43 CST</code></pre><p>加参数</p>
 <pre><code>cch@cch-virtual-machine:~$ date +%Y%m%d
-20190920</code></pre><h3 id="2、列出目录内容：ls"><a href="#2、列出目录内容：ls" class="headerlink" title="2、列出目录内容：ls"></a>2、列出目录内容：ls</h3><pre><code>cch@cch-virtual-machine:~$ ls
+20190920</code></pre><h3 id="列出目录内容：ls"><a href="#列出目录内容：ls" class="headerlink" title="列出目录内容：ls"></a>列出目录内容：ls</h3><pre><code>cch@cch-virtual-machine:~$ ls
 electron-ssr-0.2.6       git-rectify           monaco.ttf     公共的  图片  音乐
 electron-ssr-0.2.6.deb       git-rectifyapt-get  shadowsocks.json  模板     文档  桌面
 electron-ssr-0.2.6.tar.gz  monaco-font           workspace     视频     下载</code></pre><p>使用<code>ls</code>命令可以列出当前目录下的内容，加个参数试试</p>
@@ -486,9 +486,9 @@ drwxr-xr-x 3 cch cch     4096 8月  31 10:59 桌面</code></pre><p>注意到桌�
 <p><code>ls -l</code>的作用是详细显示当前目录下的所有文件</p>
 <p>如果只是想详细显示其中一个文件，只要加上需要显示的文件就可以了。</p>
 <pre><code>cch@cch-virtual-machine:~$ ls -l shadowsocks.json 
--rw-rw-r-- 1 cch cch 146 8月  27 14:34 shadowsocks.json</code></pre><h3 id="3、显示文件内容：cat"><a href="#3、显示文件内容：cat" class="headerlink" title="3、显示文件内容：cat"></a>3、显示文件内容：cat</h3><p><code>test.txt</code>是一个文本文件，<code>cat</code> 显示文件内容</p>
+-rw-rw-r-- 1 cch cch 146 8月  27 14:34 shadowsocks.json</code></pre><h3 id="显示文件内容：cat"><a href="#显示文件内容：cat" class="headerlink" title="显示文件内容：cat"></a>显示文件内容：cat</h3><p><code>test.txt</code>是一个文本文件，<code>cat</code> 显示文件内容</p>
 <pre><code>cch@cch-virtual-machine:~$ cat test.txt 
-hello world!!</code></pre><h3 id="4、使用-man-page"><a href="#4、使用-man-page" class="headerlink" title="4、使用 man page"></a>4、使用 man page</h3><p>不知道命令<code>ls</code>的使用方法吗？输入 <code>man ls</code>。查看<code>man</code>文件的时候，可以使用</p>
+hello world!!</code></pre><h3 id="使用-man-page"><a href="#使用-man-page" class="headerlink" title="使用 man page"></a>使用 man page</h3><p>不知道命令<code>ls</code>的使用方法吗？输入 <code>man ls</code>。查看<code>man</code>文件的时候，可以使用</p>
 <ul>
 <li>上下方向键阅读文件内容</li>
 <li>空格翻页</li>
@@ -499,7 +499,7 @@ hello world!!</code></pre><h3 id="4、使用-man-page"><a href="#4、使用-man-
 <pre><code>cch@cch-virtual-machine:~$ man -f reboot
 reboot (8)           - Halt, power-off or reboot the machine
 reboot (2)           - reboot or enable/disable Ctrl-Alt-Del</code></pre><p>然后可用 <code>man 2 reboot</code> 或者 <code>man 8 reboot</code>来分别查看<code>reboot</code>命令在<code>man</code>文件的第二章和第八章中的解释</p>
-<h3 id="5、使用-info-page"><a href="#5、使用-info-page" class="headerlink" title="5、使用 info page"></a>5、使用 info page</h3><p><code>info</code> 工具是一个基于菜单的超文本系统。输入<code>info ls</code>来显示<code>ls</code>命令的说明文档：</p>
+<h3 id="使用-info-page"><a href="#使用-info-page" class="headerlink" title="使用 info page"></a>使用 info page</h3><p><code>info</code> 工具是一个基于菜单的超文本系统。输入<code>info ls</code>来显示<code>ls</code>命令的说明文档：</p>
 <pre><code>cch@cch-virtual-machine:~$ info ls
 
 Next: dir invocation,  Up: Directory listing
@@ -512,22 +512,11 @@ directories).  Options and file arguments can be intermixed arbitrarily,
 as usual.</code></pre><ul>
 <li>空格向下翻页</li>
 <li><code>PageUp</code>上翻页，<code>PageDown</code>下翻页</li>
-<li><code>q</code>退出<code>info</code>查询</li>
+<li><code>q</code>退出<code>info</code>查询<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h3 id="UID和GID"><a href="#UID和GID" class="headerlink" title="UID和GID"></a>UID和GID</h3>使用 <code>ls -l</code> 查看文件时，第三列和第四列显示的是这个文件的所有者是用户<code>cch</code>，所有组是<code>root</code>组，加上<code>-n</code>参数，第三列和第四列则是用<code>UID</code>和<code>GID</code>来显示，这里分别是<code>1000</code>和<code>1000</code><br>```<br>cch@cch-virtual-machine:~$ ls -l test.txt </li>
+<li>rw-rw-r– 1 cch cch 14 9月  20 15:30 test.txt<br>cch@cch-virtual-machine:~$ ls -ln test.txt</li>
+<li>rw-rw-r– 1 1000 1000 14 9月  20 15:30 test.txt<pre><code>要确认自己的`UID`，使用`id`</code></pre>cch@cch-virtual-machine:~$ id<br>uid=1000(cch) gid=1000(cch) 组=1000(cch),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),116(lpadmin),126(sambashare)<pre><code>要确认自己所属的用户组，使用`groups`</code></pre>cch@cch-virtual-machine:~$ groups<br>cch adm cdrom sudo dip plugdev lpadmin sambashare<pre><code>查询当前在线用户，使用`who`命令查看登录在系统中的所有用户</code></pre>cch@cch-virtual-machine:~$ who<br>cch      :0           2019-09-10 17:51 (:0)<br>cch      tty3         2019-09-10 17:54<br>cch      tty5         2019-09-20 09:57<br>cch      pts/0        2019-09-20 15:28 (192.168.3.1)<pre><code></code></pre></li>
 </ul>
-<h3 id="6、UID和GID"><a href="#6、UID和GID" class="headerlink" title="6、UID和GID"></a>6、UID和GID</h3><p>使用 <code>ls -l</code> 查看文件时，第三列和第四列显示的是这个文件的所有者是用户<code>cch</code>，所有组是<code>root</code>组，加上<code>-n</code>参数，第三列和第四列则是用<code>UID</code>和<code>GID</code>来显示，这里分别是<code>1000</code>和<code>1000</code></p>
-<pre><code>cch@cch-virtual-machine:~$ ls -l test.txt 
--rw-rw-r-- 1 cch cch 14 9月  20 15:30 test.txt
-cch@cch-virtual-machine:~$ ls -ln test.txt
--rw-rw-r-- 1 1000 1000 14 9月  20 15:30 test.txt</code></pre><p>要确认自己的<code>UID</code>，使用<code>id</code></p>
-<pre><code>cch@cch-virtual-machine:~$ id
-uid=1000(cch) gid=1000(cch) 组=1000(cch),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),116(lpadmin),126(sambashare)</code></pre><p>要确认自己所属的用户组，使用<code>groups</code></p>
-<pre><code>cch@cch-virtual-machine:~$ groups
-cch adm cdrom sudo dip plugdev lpadmin sambashare</code></pre><p>查询当前在线用户，使用<code>who</code>命令查看登录在系统中的所有用户</p>
-<pre><code>cch@cch-virtual-machine:~$ who
-cch      :0           2019-09-10 17:51 (:0)
-cch      tty3         2019-09-10 17:54
-cch      tty5         2019-09-20 09:57
-cch      pts/0        2019-09-20 15:28 (192.168.3.1)</code></pre><h3 id="7、-etc-passwd-和-etc-shadow"><a href="#7、-etc-passwd-和-etc-shadow" class="headerlink" title="7、/etc/passwd 和 /etc/shadow"></a>7、/etc/passwd 和 /etc/shadow</h3><p>前面已经说明，在登录 Linux 时必须要输入用户名和密码。而系统用来记录用户名、密码最重要的两个文件就是<code>/et/passwd</code>和<code>/etclshadow</code>。以下是<code>/etc/passwd</code>中的几行内容:</p>
+<h3 id="etc-passwd-和-etc-shadow"><a href="#etc-passwd-和-etc-shadow" class="headerlink" title="/etc/passwd 和 /etc/shadow"></a>/etc/passwd 和 /etc/shadow</h3><p>前面已经说明，在登录 Linux 时必须要输入用户名和密码。而系统用来记录用户名、密码最重要的两个文件就是<code>/et/passwd</code>和<code>/etclshadow</code>。以下是<code>/etc/passwd</code>中的几行内容:</p>
 <pre><code>lrootelocalhost ~]# cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin
@@ -611,7 +600,24 @@ No mail.
 No Plan.
 # 显示用户最近一次登录到系统中的时间
 # 显示邮件信息
-# 显示计划信息</code></pre>
+# 显示计划信息</code></pre><h3 id="切换用户：su"><a href="#切换用户：su" class="headerlink" title="切换用户：su"></a>切换用户：su</h3><p><code>su</code>命令切换用户，默认表示切换到<code>root</code>用户<br><code>exit</code>命令退出<code>root</code>切换到原先的用户</p>
+<pre><code>cch@cch-virtual-machine:~$ su
+密码： 
+root@cch-virtual-machine:/home/cch# pwd
+/home/cch
+root@cch-virtual-machine:/home/cch# exit
+exit</code></pre><p><code>su</code>命令加上<code>-</code>参数，会切换家目录，还可以跟其他用户名作为参数，这样可以切换成指定用户的身份</p>
+<pre><code>su - user1
+su user</code></pre><h3 id="用其他用户的身份执行命令：sudo"><a href="#用其他用户的身份执行命令：sudo" class="headerlink" title="用其他用户的身份执行命令：sudo"></a>用其他用户的身份执行命令：sudo</h3><pre><code>sudo passwd user1</code></pre><p>用<code>root</code>的身份修改<code>user1</code>的密码。运行该命令时，系统首先会检查<code>/etc/sudoers</code>，判断该用户是否有执行<code>sudo</code>的权限，在确定有执行权限后，系统要求用户输自己的密码，如果密码输入正确，则会以<code>root</code>用户的身份运行<code>passwd user1</code>命令。</p>
+<p><code>visudo</code>命令编辑<code>/etc/sudoers</code>，编辑后保存退出时会自动检查语法设置，以防止不小心配置错误而造成无法使用sudo命令。</p>
+<pre><code># User privilege specification
+root    ALL=(ALL:ALL) ALL
+cch     ALL=(ALL:ALL) ALL</code></pre><p>加入的<code>john ALL=(ALL)
+ALL</code>这一行代表的意思是，<code>john</code> 这个用户（第一列）可<br>以从任何地方登录后（第二列的ALL）执行任何人（第三列的ALL）的任何命令（第四列的<br>ALL）。还可以定义某一个组的<code>sudo</code>权限，比如<code>%john ALL=(ALL) ALL</code> 可以让所有<br>属于<code>john</code>用户组的用户从任何地方登录后执行任何人的任何命令。</p>
+<p>想要实现不需要输人密码就可<br>以执行命令，可以在最后一个ALL前添加<code>NOPASSWD:</code>,如下所示:</p>
+<pre><code>john   ALL= (ALL)    NOPASSWD: ALL</code></pre><p>这样用户<code>john</code>在使用<code>sudo</code>时就不再需要输人密码了。实际上，将最后一个参数设置为<br><code>ALL</code>是很不安全的，因为这意味着用户实际拥有了全部的系统权限，和<code>root</code>的权限是一致<br>的，在工作中可以根据用户实际的工作内容定义用户可以<code>sudo</code>执行的命令列表。假设用户<br><code>john</code>由于工作需要，经常要重启或者关闭服务器，那么就可以进行如下设置:</p>
+<pre><code>john  ALL= (ALL)  NOPASSWD: /sbin/shutdown, /usr/bin/ reboot</code></pre><p>严格来说，<code>sudo</code>并不是真的切换了用户，而是使用其他用户的身份和权限执行了命令。</p>
+
             </div>
             <hr />
 
@@ -850,10 +856,10 @@ No Plan.
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 显示日期：datecch@cch-virtual-machine:~$ date
+                            入门显示日期：datecch@cch-virtual-machine:~$ date
 2019年 09月 20日 星期五 09:59:43 CST加参数
 cch@cch-virtual-machine:~$ date +%Y%m%d
-20
+201
                         
                     </div>
                     <div class="publish-info">
@@ -1058,7 +1064,7 @@ cch@cch-virtual-machine:~$ date +%Y%m%d
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">24.7k</span>
+            <span class="white-color">25.2k</span>
             
 
             <br>
